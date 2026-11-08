@@ -1,0 +1,296 @@
+{
+    "stories": [
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66640",
+            "tokens": [
+                "доступен",
+                "emscripten",
+                "компилятор",
+                "webassembly"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://3dnews.ru/1150999",
+            "tokens": [
+                "китайский",
+                "почти",
+                "догнал",
+                "секретную",
+                "модель",
+                "openai",
+                "взломе",
+                "сетей",
+                "оказался",
+                "дешевле"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/07/zavisaniia-vylety-i-problemy-s-kameroi-xiaomi-gotovit-ispravleniia-dlia-hyperos-4.html",
+            "tokens": [
+                "зависания",
+                "вылеты",
+                "проблемы",
+                "камерой",
+                "xiaomi",
+                "готовит",
+                "исправления",
+                "hyperos"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/rentgen-pokazal-iphone-18-i-iphone-18e-iznutri-smartfony-mogut-polucit-odinakovye-batarei-4430-mac-bolse-cem-u-iphone-17-i-iphone-17e.html",
+            "tokens": [
+                "рентген",
+                "показал",
+                "iphone",
+                "18e",
+                "изнутри",
+                "смартфоны",
+                "могут",
+                "получить",
+                "одинаковые",
+                "батареи",
+                "4430",
+                "больше",
+                "17e"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/desevye-plansetofony-vozvrashhaiutsia-predstavlen-7-diuimovyi-bpad-x7-za-110.html",
+            "tokens": [
+                "дешевые",
+                "планшетофоны",
+                "возвращаются",
+                "представлен",
+                "дюймовый",
+                "bpad",
+                "110"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://3dnews.ru/1151009/gamesblender-801",
+            "tokens": [
+                "gamesblender",
+                "801",
+                "песчаная",
+                "tes",
+                "sentinel",
+                "новый",
+                "шутер",
+                "джона",
+                "ромеро",
+                "xbox",
+                "крокодиле"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1104888",
+            "tokens": [
+                "нейросети",
+                "max",
+                "рубли",
+                "решить",
+                "первого",
+                "платежа"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.intermedia.ru/news/407971",
+            "tokens": [
+                "британский",
+                "исполнитель",
+                "passenger",
+                "выпустил",
+                "альбом",
+                "wild",
+                "love"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105026",
+            "tokens": [
+                "применение",
+                "проведении",
+                "численных",
+                "экспериментов",
+                "оформлении",
+                "статей",
+                "поисковых",
+                "нир"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/novenkii-iphone-slomalsia-cerez-cetyre-dnia-posle-pokupki-apple-ocenila-remont-v-1500.html",
+            "tokens": [
+                "новенький",
+                "iphone",
+                "сломался",
+                "через",
+                "четыре",
+                "дня",
+                "покупки",
+                "apple",
+                "оценила",
+                "ремонт",
+                "1500"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/zapekat-35-minut-pri-130-c-polzovatel-pocinil-neispravnuiu-geforce-gtx-1080-neobycnym-sposobom-zapek-ee-v-duxovke.html",
+            "tokens": [
+                "запекать",
+                "минут",
+                "130",
+                "пользователь",
+                "починил",
+                "неисправную",
+                "geforce",
+                "gtx",
+                "1080",
+                "необычным",
+                "способом",
+                "запек",
+                "духовке"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.igromania.ru/news/169794/uyutnaya-hozy-vyijdet-na-ps5-i-xbox-series-uzhe-zavtra-9-noyabrya",
+            "tokens": [
+                "уютная",
+                "hozy",
+                "выйдет",
+                "ps5",
+                "xbox",
+                "series",
+                "завтра",
+                "ноября"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105036",
+            "tokens": [
+                "ускоряем",
+                "развитие",
+                "wine",
+                "помощью"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105016",
+            "tokens": [
+                "поставить",
+                "arch",
+                "linux",
+                "рядом",
+                "android",
+                "usb",
+                "кабелю",
+                "пошагово",
+                "windows"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66639",
+            "tokens": [
+                "выпуск",
+                "дистрибутивов",
+                "openindiana",
+                "2026",
+                "omnios",
+                "r151060",
+                "технологиях",
+                "opensolaris"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1104998",
+            "tokens": [
+                "алдуин",
+                "летит",
+                "запустил",
+                "skyrim",
+                "ноутбуке",
+                "2012",
+                "года",
+                "nvidia",
+                "optimus",
+                "linux",
+                "mint"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/07/geforce-rtx-5080-uskorilas-v-220-raz-svezee-obnovlenie-directx-raytracing-proverili-nezavisimym-testom.html",
+            "tokens": [
+                "geforce",
+                "rtx",
+                "5080",
+                "ускорилась",
+                "220",
+                "раз",
+                "свежее",
+                "обновление",
+                "directx",
+                "raytracing",
+                "проверили",
+                "независимым",
+                "тестом"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://3dnews.ru/1151005",
+            "tokens": [
+                "расследование",
+                "показало",
+                "сша",
+                "разрешили",
+                "закупать",
+                "чипы",
+                "nvidia",
+                "несуществующим",
+                "китайским",
+                "компаниям"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://cubiq.ru/igry-s-interesnoj-magicheskoj-sistemoj",
+            "tokens": [
+                "игры",
+                "интересной",
+                "магической",
+                "системой"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://stopgame.ru/newsdata/73417/podrobnosti_kovenov_umbrii_novogo_dopolneniya_dlya_path_of_exile",
+            "tokens": [
+                "подробности",
+                "ковенов",
+                "умбрии",
+                "нового",
+                "дополнения",
+                "path",
+                "exile"
+            ],
+            "editionDate": "2026-11-08"
+        }
+    ]
+}

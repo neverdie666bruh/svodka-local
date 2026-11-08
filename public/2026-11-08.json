@@ -1,0 +1,982 @@
+{
+    "schema": 1,
+    "editionDate": "2026-11-08",
+    "timezone": "Asia/Dushanbe",
+    "generatedAt": "2026-11-08T10:56:08.890891479Z",
+    "windowHours": 36,
+    "collector": "svodka-local-deterministic",
+    "partial": false,
+    "limitations": [
+        "Отбор детерминированный: группа источника, ключевые слова и порог совпадения. Это не смысловой разбор.",
+        "Фрагмент — текст, который отдала лента RSS или Atom. Он очищен от разметки и усечён. Полная статья не скачивается.",
+        "Совпадение с другим источником не проверялось. Пометка «не проверено независимо» относится к каждому пункту.",
+        "Мнений, чужих точек зрения и вердикта нет: сборщик их не сочиняет.",
+        "Мировые новости проходят только при нескольких сильных маркерах крупного события. Если уверенности нет, пункт опускается."
+    ],
+    "summary": "В окне 36 ч правила оставили 20 материалов. Это не оценка важности и не редакционный обзор.",
+    "schedule": {
+        "timezone": "Asia/Dushanbe",
+        "localTime": "08:15",
+        "cron": "15 8 * * *",
+        "utcEquivalent": "03:15",
+        "guarantee": "Точная минута не обещается: GitHub может задержать или пропустить запуск."
+    },
+    "items": [
+        {
+            "id": "cb187ea1b42281b8",
+            "title": "Доступен Emscripten 7.0, компилятор из C/C++ в WebAssembly",
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66640",
+            "category": "programming",
+            "sourceId": "opennet",
+            "sourceName": "OpenNET",
+            "sourceFeed": "https://www.opennet.ru/opennews/opennews_all_utf.rss",
+            "publishedAt": "2026-11-08T07:02:45Z",
+            "excerpt": "Опубликован выпуск инструментария Emscripten 7.0, позволяющего компилировать код на C/C++ и других языках, для которых имеются фронтэнды на базе LLVM, в универсальный низкоуровневый промежуточный код WebAssembly. Полученный результат можно использовать для интеграции с JavaScript-проектами, запуска в web-браузере, использования в Node.js или создания обособленных многоплатформенных приложений, запускаемых при помощи wasm runtime. Код проекта распространяется под лицензией MIT…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 1.0,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: компилятор, webassembly, emscripten",
+                    "счёт 1.00 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "emscripten",
+                    "webassembly",
+                    "компилятор"
+                ]
+            }
+        },
+        {
+            "id": "62565ffa4fb87d20",
+            "title": "Китайский ИИ почти догнал секретную модель OpenAI во взломе сетей — и оказался дешевле",
+            "url": "https://3dnews.ru/1150999",
+            "category": "ai",
+            "sourceId": "3dnews",
+            "sourceName": "3DNews",
+            "sourceFeed": "https://3dnews.ru/news/rss/",
+            "publishedAt": "2026-11-07T10:59:00Z",
+            "excerpt": "Эксперимент, в ходе которого моделям искусственного интеллекта ставилась задача взломать имитированные сети, показал, что способности китайских нейросетей DeepSeek и Z.ai GLM практически не уступают самой продвинутой модели от OpenAI, которая даже не находится в открытом доступе. Источник изображения: Zach M / unsplash.com",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.86,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: openai, ии",
+                    "ключевые слова во фрагменте: нейросет",
+                    "счёт 0.86 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "openai",
+                    "ии",
+                    "нейросет"
+                ]
+            }
+        },
+        {
+            "id": "d8d29c3ca2b28445",
+            "title": "Зависания, вылеты и проблемы с камерой: Xiaomi готовит исправления для HyperOS 4",
+            "url": "https://www.ixbt.com/news/2026/11/07/zavisaniia-vylety-i-problemy-s-kameroi-xiaomi-gotovit-ispravleniia-dlia-hyperos-4.html",
+            "category": "gadgets",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-07T10:05:00Z",
+            "excerpt": "Xiaomi перечислила ошибки HyperOS 4, которые исправит в смартфонах линейки Xiaomi 17 Сотрудники Xiaomi опубликовали на официальном форуме список ошибок HyperOS 4, над устранением которых сейчас работает компания. Большая часть багов касается смартфонов серии Xiaomi 17. Исправления будут постепенно появляться в последующих обновлениях системы, причём сроки зависят от конкретной модели и версии приложений. Источник изображения: Xiaomi // https://www.mi.com/prod/xiaomi-17-pro На…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.86,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: hyperos, xiaomi",
+                    "ключевые слова во фрагменте: смартфон",
+                    "счёт 0.86 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "hyperos",
+                    "xiaomi",
+                    "смартфон"
+                ]
+            }
+        },
+        {
+            "id": "235bd1e15658042d",
+            "title": "Рентген показал iPhone 18 и iPhone 18e изнутри: смартфоны могут получить одинаковые батареи 4430 мА·ч (больше, чем у iPhone 17 и iPhone 17e)",
+            "url": "https://www.ixbt.com/news/2026/11/08/rentgen-pokazal-iphone-18-i-iphone-18e-iznutri-smartfony-mogut-polucit-odinakovye-batarei-4430-mac-bolse-cem-u-iphone-17-i-iphone-17e.html",
+            "category": "gadgets",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T10:14:00Z",
+            "excerpt": "iPhone 18e сохранит одинарную камеру В китайских соцсетях появились рентгеновские снимки двух предположительно новых смартфонов Apple — iPhone 18 и iPhone 18e. Изображения были опубликованы 5 ноября известным инсайдером Littertree66 на форуме Baidu Tieba. На них указаны кодовые названия Taycan и Nevera, которые источник связывает с этими моделями. Источник изображения: Littertree66 на Baidu Tieba // https://tieba.baidu.com/p/11169809559 Судя по снимкам, оба устройства могут п…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.78,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: смартфон, iphone",
+                    "счёт 0.78 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "iphone",
+                    "смартфон"
+                ]
+            }
+        },
+        {
+            "id": "1befa7b2c9561e27",
+            "title": "Дешевые планшетофоны возвращаются: представлен 7-дюймовый BPad X7 за $110",
+            "url": "https://www.ixbt.com/news/2026/11/08/desevye-plansetofony-vozvrashhaiutsia-predstavlen-7-diuimovyi-bpad-x7-za-110.html",
+            "category": "gadgets",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T08:42:00Z",
+            "excerpt": "Android 16, 90 Гц и 13-мегапиксельная камера Китайская компания BNCF представила BPad X7, производитель называет устройство «7-дюймовым широкоформатным смартфоном». Оценили новинку в 799 юаней ($110). Источник изображения: BNCF (опубликовано ITHome) // https://www.ithome.com/1/023/919.htm Устройство оснащено 7-дюймовым IPS-дисплеем с разрешением 1280 × 720 пикселей, частотой обновления 90 Гц и пиковой яркостью 450 нит. Фронтальная камера имеет разрешение 5 Мп, основная — 13 М…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.72,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: планшет",
+                    "ключевые слова во фрагменте: смартфон, android",
+                    "счёт 0.72 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "android",
+                    "планшет",
+                    "смартфон"
+                ]
+            }
+        },
+        {
+            "id": "f37a01a8ac053798",
+            "title": "Gamesblender № 801: песчаная TES VI: Sentinel, новый шутер Джона Ромеро и Xbox в крокодиле",
+            "url": "https://3dnews.ru/1151009/gamesblender-801",
+            "category": "games",
+            "sourceId": "3dnews-games",
+            "sourceName": "3DNews: игры",
+            "sourceFeed": "https://3dnews.ru/games/rss/",
+            "publishedAt": "2026-11-07T20:30:00Z",
+            "excerpt": "Добро пожаловать в новый выпуск GamesBlender! The Elder Scrolls VI наконец получила подзаголовок Sentinel и показала нам пустыню Хаммерфелла — правда, до самой игры, похоже, еще далеко. Джон Ромеро спас свой новый шутер после сокращений в Microsoft, Remedy празднует успех Control Resonant, а создатель Yakuza лишился новой студии и Gang of Dragon. Тем временем Nintendo столкнулась с проблемами производства картриджей, а Nvidia вспоминает легендарную GeForce 8800 GTX",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.72,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: xbox",
+                    "ключевые слова во фрагменте: игры, nintendo",
+                    "счёт 0.72 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "nintendo",
+                    "xbox",
+                    "игры"
+                ]
+            }
+        },
+        {
+            "id": "433060571de61473",
+            "title": "Нейросети в MAX за рубли: что решить до первого платежа",
+            "url": "https://habr.com/ru/articles/1104888",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-07T12:46:01Z",
+            "excerpt": "Я сделал в MAX бота «Спроси ИИ»: в нём можно задать вопрос ChatGPT или Gemini и нарисовать картинку в Nano Banana. Платить можно российской картой или по СБП, ничего дополнительно ставить не нужно. Код оказался самой простой частью. Сложнее было с деньгами, чеками и законами — о них и расскажу. Текст пригодится всем, кто думает сделать платного бота в MAX. Читать далее",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.72,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: нейросет",
+                    "ключевые слова во фрагменте: chatgpt, ии",
+                    "счёт 0.72 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "chatgpt",
+                    "ии",
+                    "нейросет"
+                ]
+            }
+        },
+        {
+            "id": "577237517d396db6",
+            "title": "Британский исполнитель Passenger выпустил альбом «Wild Love»",
+            "url": "https://www.intermedia.ru/news/407971",
+            "category": "music",
+            "sourceId": "intermedia",
+            "sourceName": "InterMedia",
+            "sourceFeed": "https://www.intermedia.ru/rss/news.xml",
+            "publishedAt": "2026-11-08T08:27:00Z",
+            "excerpt": "Британский музыкант Майкл Розенберг, известный как Passenger, выпустил 6 ноября 2026 года свой новый альбом «Wild Love». Релиз состоялся на всех...",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: music",
+                    "ключевые слова в заголовке: выпустил альбом",
+                    "ключевые слова во фрагменте: новый альбом",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "выпустил альбом",
+                    "новый альбом"
+                ]
+            }
+        },
+        {
+            "id": "3130fafa3602ea5a",
+            "title": "Применение ИИ в проведении численных экспериментов и оформлении статей поисковых НИР",
+            "url": "https://habr.com/ru/articles/1105026",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-08T06:59:52Z",
+            "excerpt": "Всем привет. Представлюсь: Шевченко Максим Юрьевич. Работал мануальным тестировщиком (в том числе); считаю себя исследователем, в основном, в области математики. В этой публикации я хочу поделиться личным опытом и результатами использования LLM Gemini в связке с Python для проведения численных экспериментов и оформления статей в рамках своих математических исследований. Они носят поисковый характер. Здесь нет жесткого плана, и методология взаимодействия больше похожа на Agile…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "ключевые слова во фрагменте: llm",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "llm",
+                    "ии"
+                ]
+            }
+        },
+        {
+            "id": "24f0c572d90f0b63",
+            "title": "Новенький iPhone сломался через четыре дня после покупки: Apple оценила ремонт в $1500",
+            "url": "https://www.ixbt.com/news/2026/11/08/novenkii-iphone-slomalsia-cerez-cetyre-dnia-posle-pokupki-apple-ocenila-remont-v-1500.html",
+            "category": "gadgets",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T04:09:00Z",
+            "excerpt": "В Apple считают, что неисправность возникла по вине пользователя В Китае покупатель складного iPhone Duo столкнулся с серьезной неисправностью всего через четыре дня после приобретения смартфона. По словам мужчины по фамилии Чжан, он заплатил 18 000 юаней (около $2700) за версию с 512 ГБ памяти, однако внутренний экран внезапно перестал работать. Владелец утверждает, что устройство не падало и не получало механических повреждений. Обратившись в магазин Apple в Ханчжоу, он узн…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: iphone",
+                    "ключевые слова во фрагменте: смартфон",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "iphone",
+                    "смартфон"
+                ]
+            }
+        },
+        {
+            "id": "cc60aa6da4cc8a13",
+            "title": "Запекать 35 минут при 130 °C: пользователь починил неисправную GeForce GTX 1080 необычным способом — запёк её в духовке",
+            "url": "https://www.ixbt.com/news/2026/11/08/zapekat-35-minut-pri-130-c-polzovatel-pocinil-neispravnuiu-geforce-gtx-1080-neobycnym-sposobom-zapek-ee-v-duxovke.html",
+            "category": "hardware",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-07T22:15:00Z",
+            "excerpt": "Духовка вместо сервисного центра Пользователь форума PCGH Extreme под ником FoxX11 рассказал, что ему удалось вернуть к работе неисправную видеокарту Nvidia GeForce GTX 1080 после нагрева в духовке. По его словам, после обработки устройство снова прошло нагрузочный тест без прежних сбоев. Источник изображения: VideoCardz // https://videocardz.com/newz/desperate-times-call-for-desperate-measures-geforce-gtx-1080-revived-in-an-oven-after-35-minutes Видеокарта принадлежала колле…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: geforce",
+                    "ключевые слова во фрагменте: видеокарт",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "geforce",
+                    "видеокарт"
+                ]
+            }
+        },
+        {
+            "id": "b731b2dfd2d4cc4e",
+            "title": "Уютная Hozy выйдет на PS5 и Xbox Series уже завтра, 9 ноября",
+            "url": "https://www.igromania.ru/news/169794/uyutnaya-hozy-vyijdet-na-ps5-i-xbox-series-uzhe-zavtra-9-noyabrya",
+            "category": "games",
+            "sourceId": "kanobu-pulse",
+            "sourceName": "Kanobu",
+            "sourceFeed": "https://www.igromania.ru/rss/news.xml",
+            "publishedAt": "2026-11-08T10:37:02Z",
+            "excerpt": "Уютный симулятор Hozy о ремонте и обновлении строений вскоре выйдет на PS5 и Xbox Series — релиз на консолях состоится уже завтра, 9 ноября.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: xbox",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "xbox"
+                ]
+            }
+        },
+        {
+            "id": "0a2cb509b1306acf",
+            "title": "Ускоряем развитие Wine с помощью ИИ",
+            "url": "https://habr.com/ru/articles/1105036",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-08T08:06:56Z",
+            "excerpt": "Привет, Хабр! Это Иван Сорокин, вы меня знаете по статья про far2l, его идейному продолжению f4 и порту Dos Navigator на современные системы. Хочу рассказать про новый проект (на самом деле, проекты), вам наверняка понравится и пригодится! Представляю fix-it-in-wine и dllmgr . Первый это скилл, он позволяет поручать ИИ-агенту исправление ошибок совместимости Windows-приложений с Wine. Второй - что-то вроде пакетного менеджера для DLL: позволяет устанавливать исправленные библ…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ии"
+                ]
+            }
+        },
+        {
+            "id": "dc58cb2326e24aa7",
+            "title": "Как поставить Arch Linux рядом с Android по USB-кабелю: пошагово, с Windows или Linux",
+            "url": "https://habr.com/ru/articles/1105016",
+            "category": "programming",
+            "sourceId": "habr-android",
+            "sourceName": "Хабр: разработка под Android",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/android_dev/articles/?fl=ru",
+            "publishedAt": "2026-11-08T06:45:21Z",
+            "excerpt": "В прошлой статье я разбирал, как Arch Linux грузится на Xiaomi 12T Pro на штатном ядре Android. Теперь это можно поставить самому: установщик для Windows и Linux, нужен только USB-кабель. Android остаётся, при включении система выбирается кнопкой громкости. Ниже — по шагам: что подготовить, что нажать и что в это время происходит на телефоне. В конце — как всё удалить. Читать далее",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: linux",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "linux"
+                ]
+            }
+        },
+        {
+            "id": "f8ab8efdbf75feca",
+            "title": "Выпуск дистрибутивов OpenIndiana 2026.10 и OmniOS r151060 на технологиях OpenSolaris",
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66639",
+            "category": "programming",
+            "sourceId": "opennet",
+            "sourceName": "OpenNET",
+            "sourceFeed": "https://www.opennet.ru/opennews/opennews_all_utf.rss",
+            "publishedAt": "2026-11-08T06:35:49Z",
+            "excerpt": "Представлен релиз свободного дистрибутива OpenIndiana 2026.10, пришедшего на смену дистрибутиву OpenSolaris, развитие которого было прекращено компанией Oracle. OpenIndiana предоставляет пользователю рабочее окружение, построенное на базе свежего среза кодовой базы проекта Illumos. Непосредственно разработка технологий OpenSolaris продолжается проектом Illumos, в котором развивается ядро, сетевой стек, файловые системы, драйверы, а также базовый набор пользовательских системн…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: дистрибутив",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "дистрибутив"
+                ]
+            }
+        },
+        {
+            "id": "950fbd7cd1ca8e06",
+            "title": "«Алдуин летит!»: как я запустил Skyrim на ноутбуке 2012 года с NVIDIA Optimus под Linux Mint",
+            "url": "https://habr.com/ru/articles/1104998",
+            "category": "programming",
+            "sourceId": "habr-develop",
+            "sourceName": "Хабр: поток разработки",
+            "sourceFeed": "https://habr.com/ru/rss/flows/develop/articles/?fl=ru",
+            "publishedAt": "2026-11-07T22:14:02Z",
+            "excerpt": "TL;DR: Купил на Avito ASUS N56VZ 2012 года (i7-3630QM, GT 650M) за 6800 ₽, восстановил его после чужого «ремонта», поставил Linux Mint 22.3 и упёрся в NVIDIA Optimus. Собрал драйвер 470 с патчами из репозитория joanbm под ядро 6.14.0-37, победил чёрный экран, настроил PRIME Render Offload и DXVK, заставил Vulkan увидеть NVIDIA и запустил Skyrim. Девять дней, один нерабочий nvidia-xconfig и одно «АЛДУИН ЛЕТИТ!». Читать далее",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: linux",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "linux"
+                ]
+            }
+        },
+        {
+            "id": "a78220093668be91",
+            "title": "GeForce RTX 5080 ускорилась в 220 раз. Свежее обновление DirectX Raytracing проверили независимым тестом",
+            "url": "https://www.ixbt.com/news/2026/11/07/geforce-rtx-5080-uskorilas-v-220-raz-svezee-obnovlenie-directx-raytracing-proverili-nezavisimym-testom.html",
+            "category": "hardware",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-07T18:58:00Z",
+            "excerpt": "Недавно Microsoft анонсировала самое значительное обновление DirectX Raytracing с 2018 года , и в Сети уже появились первые независимые результаты тестирования этой технологии. Напомним, представленные технологии технологии DirectX Raytracing (DXR) Clustered Geometry и Partitioned Top-Level Acceleration Structures (PTLAS), согласно данным самой Microsoft, позволяли в определённых специально созданных сценах повышать производительность трассировки лучей в десятки раз. Энтузиас…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: geforce",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "geforce"
+                ]
+            }
+        },
+        {
+            "id": "a4851601a7bfe041",
+            "title": "Расследование показало, что США разрешили закупать чипы Nvidia несуществующим китайским компаниям",
+            "url": "https://3dnews.ru/1151005",
+            "category": "hardware",
+            "sourceId": "3dnews",
+            "sourceName": "3DNews",
+            "sourceFeed": "https://3dnews.ru/news/rss/",
+            "publishedAt": "2026-11-07T18:41:00Z",
+            "excerpt": "Министерство торговли США одобрило поставку чипов Nvidia H200 целому ряду китайских компаний. Как выяснилось в результате расследования The New York Times, некоторые из них связаны с фирмами, находящимися под санкциями по соображениям национальной безопасности, а некоторые существуют только на бумаге. Источник изображения: NVIDIA",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: чипы",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "чипы"
+                ]
+            }
+        },
+        {
+            "id": "ff2e21140309e741",
+            "title": "Игры с интересной магической системой",
+            "url": "https://cubiq.ru/igry-s-interesnoj-magicheskoj-sistemoj",
+            "category": "games",
+            "sourceId": "cubiq",
+            "sourceName": "Cubiq",
+            "sourceFeed": "https://cubiq.ru/feed/",
+            "publishedAt": "2026-11-07T15:41:34Z",
+            "excerpt": "Магия – это круто, правда? Мечи, луки, арбалеты и мушкеты тоже хороши, но они редко так органично вплетаются в заданный сеттинг, как это обычно получается у магии. Вдобавок, благодаря знаниям и силе духа волшебники могут повелевать самой реальностью. Каким бы накачанным ни был бицепс, он не остановит летящий в лицо огненный шар. Давайте взглянем на игры, где использование магии стало в той или иной степени жутко крутым!",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: игры",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "игры"
+                ]
+            }
+        },
+        {
+            "id": "f1d41619af3a35d7",
+            "title": "Подробности «Ковенов Умбрии» — нового дополнения для Path of Exile",
+            "url": "https://stopgame.ru/newsdata/73417/podrobnosti_kovenov_umbrii_novogo_dopolneniya_dlya_path_of_exile",
+            "category": "games",
+            "sourceId": "stopgame",
+            "sourceName": "StopGame",
+            "sourceFeed": "https://rss.stopgame.ru/rss_news.xml",
+            "publishedAt": "2026-11-07T11:17:08Z",
+            "excerpt": "Прошедшей ночью студия Grinding Gear Games провела специальную трансляцию в честь запуска фестиваля ExileCon 2026. Помимо всего прочего на стриме состоялся полноценный анонс свежего контента для первой Path of Exile, который входит в состав… […]",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: дополнен",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "дополнен"
+                ]
+            }
+        }
+    ],
+    "sources": [
+        {
+            "id": "habr-ai",
+            "name": "Хабр: искусственный интеллект",
+            "url": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 3
+        },
+        {
+            "id": "habr-ml",
+            "name": "Хабр: машинное обучение",
+            "url": "https://habr.com/ru/rss/hubs/machine_learning/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-infosec",
+            "name": "Хабр: информационная безопасность",
+            "url": "https://habr.com/ru/rss/hubs/infosecurity/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-android",
+            "name": "Хабр: разработка под Android",
+            "url": "https://habr.com/ru/rss/hubs/android_dev/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 1
+        },
+        {
+            "id": "habr-gadgets",
+            "name": "Хабр: гаджеты",
+            "url": "https://habr.com/ru/rss/hubs/gadgets/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-hardware",
+            "name": "Хабр: железо",
+            "url": "https://habr.com/ru/rss/hubs/hardware/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-astronomy",
+            "name": "Хабр: астрономия",
+            "url": "https://habr.com/ru/rss/hubs/astronomy/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-gamedev",
+            "name": "Хабр: игры и разработка игр",
+            "url": "https://habr.com/ru/rss/hubs/gamedev/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "habr-develop",
+            "name": "Хабр: поток разработки",
+            "url": "https://habr.com/ru/rss/flows/develop/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 1
+        },
+        {
+            "id": "habr-popsci",
+            "name": "Хабр: научпоп",
+            "url": "https://habr.com/ru/rss/hubs/popular_science/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0
+        },
+        {
+            "id": "3dnews",
+            "name": "3DNews",
+            "url": "https://3dnews.ru/news/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 55,
+            "itemsUsed": 2
+        },
+        {
+            "id": "3dnews-games",
+            "name": "3DNews: игры",
+            "url": "https://3dnews.ru/games/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 1
+        },
+        {
+            "id": "3dnews-soft",
+            "name": "3DNews: программы",
+            "url": "https://3dnews.ru/software/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0
+        },
+        {
+            "id": "ixbt",
+            "name": "iXBT",
+            "url": "https://www.ixbt.com/export/news/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 50,
+            "itemsUsed": 6
+        },
+        {
+            "id": "ixbt-hard",
+            "name": "iXBT: железо",
+            "url": "https://www.ixbt.com/export/hardnews.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 50,
+            "itemsUsed": 0
+        },
+        {
+            "id": "opennet",
+            "name": "OpenNET",
+            "url": "https://www.opennet.ru/opennews/opennews_all_utf.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 2
+        },
+        {
+            "id": "securitylab",
+            "name": "SecurityLab",
+            "url": "https://www.securitylab.ru/_services/export/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0
+        },
+        {
+            "id": "xakep",
+            "name": "Хакер",
+            "url": "https://xakep.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0
+        },
+        {
+            "id": "stopgame",
+            "name": "StopGame",
+            "url": "https://rss.stopgame.ru/rss_news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 1
+        },
+        {
+            "id": "kanobu-pulse",
+            "name": "Kanobu",
+            "url": "https://www.igromania.ru/rss/news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 1
+        },
+        {
+            "id": "cubiq",
+            "name": "Cubiq",
+            "url": "https://cubiq.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 1
+        },
+        {
+            "id": "4pda",
+            "name": "4PDA",
+            "url": "https://4pda.to/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 0
+        },
+        {
+            "id": "overclockers",
+            "name": "Overclockers.ru",
+            "url": "https://overclockers.ru/rss/news.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 20,
+            "itemsUsed": 0
+        },
+        {
+            "id": "androidinsider",
+            "name": "AndroidInsider",
+            "url": "https://androidinsider.ru/feed",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 20,
+            "itemsUsed": 0
+        },
+        {
+            "id": "nplus1",
+            "name": "N+1",
+            "url": "https://nplus1.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0
+        },
+        {
+            "id": "elementy",
+            "name": "Элементы",
+            "url": "https://elementy.ru/rss/news",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0
+        },
+        {
+            "id": "postnauka",
+            "name": "ПостНаука",
+            "url": "https://postnauka.org/feed",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 4,
+            "itemsUsed": 0
+        },
+        {
+            "id": "mirf",
+            "name": "Мир фантастики",
+            "url": "https://www.mirf.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 12,
+            "itemsUsed": 0
+        },
+        {
+            "id": "intermedia",
+            "name": "InterMedia",
+            "url": "https://www.intermedia.ru/rss/news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 1
+        },
+        {
+            "id": "newsmuz",
+            "name": "NewsMuz",
+            "url": "https://newsmuz.com/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0
+        },
+        {
+            "id": "bbc-russian",
+            "name": "BBC Russian",
+            "url": "https://feeds.bbci.co.uk/russian/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 38,
+            "itemsUsed": 0
+        },
+        {
+            "id": "meduza-news",
+            "name": "Meduza: новости",
+            "url": "https://meduza.io/rss/news",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 0
+        },
+        {
+            "id": "kommersant-world",
+            "name": "Коммерсантъ: мир",
+            "url": "https://www.kommersant.ru/rss/section-world.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0
+        },
+        {
+            "id": "interfax",
+            "name": "Интерфакс",
+            "url": "https://www.interfax.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "attempts": 1,
+            "itemsSeen": 25,
+            "itemsUsed": 0
+        },
+        {
+            "id": "darker",
+            "name": "DARKER",
+            "url": "https://darkermagazine.ru/feed",
+            "enabled": false,
+            "ok": true,
+            "attempts": 0,
+            "itemsSeen": 0,
+            "itemsUsed": 0
+        }
+    ],
+    "counts": {
+        "seen": 1304,
+        "published": 20,
+        "duplicates": 7,
+        "outOfWindow": 838,
+        "excluded": 27,
+        "lowConfidence": 368,
+        "badDate": 2,
+        "notRussian": 7
+    }
+}

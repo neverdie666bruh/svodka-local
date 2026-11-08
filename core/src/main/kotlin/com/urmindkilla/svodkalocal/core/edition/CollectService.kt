@@ -14,6 +14,7 @@ import com.urmindkilla.svodkalocal.core.model.SourceStatus
 import com.urmindkilla.svodkalocal.core.net.FeedDiscovery
 import com.urmindkilla.svodkalocal.core.net.UrlPolicy
 import com.urmindkilla.svodkalocal.core.rss.FeedParseException
+import com.urmindkilla.svodkalocal.core.rss.HtmlIndexParser
 import com.urmindkilla.svodkalocal.core.rss.RssDates
 import com.urmindkilla.svodkalocal.core.rss.SafeFeedParser
 import com.urmindkilla.svodkalocal.core.store.DataBranchReadme
@@ -70,6 +71,8 @@ class CollectService(
                 if (useValidators) prior?.etag else null,
                 if (useValidators) prior?.lastModified else null,
                 existing,
+                prior?.consecutiveFailures ?: 0,
+                force,
             )
         }
         val combined = if (decision == RunDecision.RETRY_PARTIAL && existing != null) {
@@ -197,7 +200,21 @@ class CollectService(
         etag: String?,
         modifiedSince: String?,
         existing: Edition?,
+        consecutiveFailures: Int,
+        force: Boolean,
     ): FetchedSource {
+        if (!force && consecutiveFailures >= 4) {
+            return FetchedSource(
+                source,
+                emptyList(),
+                SourceStatus(
+                    source.id, source.name, source.url, true, false,
+                    error = "пауза после повторных сбоев",
+                    fetchedAt = now.toString(), attempts = 0,
+                    note = "источник пропускается, пока сбор не запустят с force",
+                ),
+            )
+        }
         val blocked = UrlPolicy.rejection(source.url)
         if (blocked != null) {
             return FetchedSource(
@@ -255,7 +272,7 @@ class CollectService(
             }
             var body = response.body
             var note: String? = null
-            if (looksLikeHtml(body)) {
+            if (source.format != "html-index" && looksLikeHtml(body)) {
                 val alternate = FeedDiscovery.alternate(body, source.url)
                 val discovered = if (alternate == null) null else try {
                     transport.get(alternate)
@@ -273,8 +290,21 @@ class CollectService(
                 body = discoveredBody
                 note = "лента найдена на том же сайте"
             }
+            val parsed = try {
+                if (source.format == "html-index") HtmlIndexParser.parse(source, body) else parser.parse(body, source.excerptMaxChars)
+            } catch (e: FeedParseException) {
+                return FetchedSource(
+                    source,
+                    emptyList(),
+                    SourceStatus(
+                        id = source.id, name = source.name, url = source.url, enabled = true, ok = false,
+                        httpStatus = response.status, error = e.message ?: "лента не разобрана",
+                        fetchedAt = now.toString(), attempts = attempt,
+                    ),
+                )
+            }
             return try {
-                val entries = parser.parse(body, source.excerptMaxChars)
+                val entries = parsed
                 FetchedSource(
                     source,
                     entries,

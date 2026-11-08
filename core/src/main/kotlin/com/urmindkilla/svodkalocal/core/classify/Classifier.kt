@@ -24,6 +24,23 @@ class Classifier(val rules: RuleFile) {
     }
 
     fun classify(title: String, excerpt: String, source: FeedSource): Classified? {
+        if (source.assumeGroup && source.groups.size == 1) {
+            val category = source.groups.single()
+            val rule = categories.getValue(category)
+            if (hits("$title $excerpt", rule.negative).isNotEmpty()) return null
+            if (category.name !in rules.filmExempt && hits("$title $excerpt", rules.filmTerms).isNotEmpty()) return null
+            return Classified(
+                category = category,
+                match = MatchInfo(
+                    confidence = 0.4,
+                    labels = listOf(
+                        "детерминированное совпадение, не смысловой разбор",
+                        "страница источника уже ограничена темой ${category.name}",
+                    ),
+                    positiveTerms = emptyList(),
+                ),
+            )
+        }
         var best: Classified? = null
         for (category in Category.entries) {
             val rule = categories.getValue(category)

@@ -18,8 +18,11 @@ import com.urmindkilla.svodkalocal.core.model.TransportResponse
 import com.urmindkilla.svodkalocal.core.net.FeedDiscovery
 import com.urmindkilla.svodkalocal.core.store.FileDigestStore
 import com.urmindkilla.svodkalocal.core.text.Tokens
+import com.urmindkilla.svodkalocal.core.net.BoundedBody
+import com.urmindkilla.svodkalocal.core.rss.HtmlIndexParser
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
@@ -137,6 +140,56 @@ class EditionOneOneTest {
         assertTrue(kept.collectionFailed)
         assertTrue(kept.summary.contains("Сохранён предыдущий список"))
         assertTrue(store.readHealth().sources.single().consecutiveFailures >= 1)
+    }
+
+    @Test
+    fun animagPageSampleBecomesAnimeAndGamesStayGames() {
+        val html = """
+            <h3 class="field-content"><a href="/news/yuru-camp-4">Дата выхода четвёртого сезона "Yuru Camp"</a></h3>
+            Четвёртый сезон выйдет весной. ноя 07, 2026 09:15
+            <h3 class="field-content"><a href="/review/old">Обзор не новость</a></h3>
+            ноя 08, 2026 01:00
+            <h3 class="field-content"><a href="https://evil.example/news/x">Чужая лента</a></h3>
+            ноя 08, 2026 01:00
+        """.trimIndent()
+        val source = FeedSource(
+            "animag", "АниМаг", "https://animag.ru/", listOf(Category.anime),
+            format = "html-index", assumeGroup = true, licenseNote = "тест",
+        )
+        val entries = HtmlIndexParser.parse(source, html.toByteArray())
+        assertEquals(1, entries.size)
+        assertEquals("https://animag.ru/news/yuru-camp-4", entries.single().url)
+        assertNotNull(entries.single().publishedAt)
+        val built = builder.build(
+            now,
+            listOf(FetchedSource(source, entries, SourceStatus(source.id, source.name, source.url, true, true, 200, itemsSeen = 1))),
+            emptyList(),
+        )
+        assertEquals(Category.anime, built.edition.items.single().category)
+        assertEquals(1, built.edition.coverage.first { it.category == Category.anime }.enabledSources)
+        val games = classifier.classify(
+            "Хендерсон: игру Assassin's Creed отложили до 2028 года",
+            "релиз студии",
+            FeedSource("dtf", "DTF", "https://dtf.ru/rss", listOf(Category.games), licenseNote = "тест"),
+        )
+        assertEquals(Category.games, games?.category)
+        assertTrue(classifier.classify("Вышел новый фильм на Netflix", "премьера", source(Category.games)) == null)
+    }
+
+    @Test
+    fun blockedReadDoesNotWaitPastTheDeadline() {
+        val stream = object : java.io.InputStream() {
+            @Volatile var closed = false
+            override fun read(): Int {
+                while (!closed) Thread.sleep(30)
+                return -1
+            }
+            override fun close() { closed = true }
+        }
+        val started = System.nanoTime()
+        val error = runCatching { BoundedBody.read(stream, 1000, started + 200_000_000L) }
+        assertTrue(error.exceptionOrNull() is BoundedBody.ReadTimeout)
+        assertTrue(System.nanoTime() - started < 2_000_000_000L)
     }
 
     @Test

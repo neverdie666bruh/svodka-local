@@ -47,6 +47,8 @@ data class FeedSource(
     val verifiedAt: String? = null,
     val verifiedStatus: Int? = null,
     val verifiedLatest: String? = null,
+    val format: String = "rss",
+    val assumeGroup: Boolean = false,
 )
 
 @Serializable

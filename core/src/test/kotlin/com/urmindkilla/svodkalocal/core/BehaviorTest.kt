@@ -326,6 +326,21 @@ class BehaviorTest {
         assertTrue(reader.contains("PublicDigest.INDEX_URL"))
         assertFalse(screen.contains("OutlinedTextField"))
         assertFalse(screen.contains("Сохранить адрес"))
+        val wrapper = root.resolve("gradle/wrapper/gradle-wrapper.properties").readText()
+        assertTrue(wrapper.contains("distributionUrl=https\\://services.gradle.org/distributions/gradle-8.11.1-bin.zip"))
+        assertTrue(wrapper.contains("distributionSha256Sum=f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6"))
+        val bootstrap = root.resolve("scripts/bootstrap-gradle.py").readText()
+        assertTrue(bootstrap.contains("https://services.gradle.org/distributions/gradle-8.11.1-bin.zip"))
+        assertTrue(bootstrap.contains("f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6"))
+        assertTrue(bootstrap.contains("gradle/gradle-distributions"))
+        assertFalse(bootstrap.contains("actions/cache"))
+        assertFalse(bootstrap.contains("upload-artifact"))
+        assertFalse(bootstrap.contains("aliyun"))
+        assertFalse(bootstrap.contains("npmmirror"))
+        val publish = root.resolve("scripts/publish-data-branch.sh").readText()
+        val assemble = root.resolve("scripts/ci-assemble-apk.sh").readText()
+        assertTrue(publish.indexOf("bootstrap-gradle.sh") < publish.indexOf("./gradlew"))
+        assertTrue(assemble.indexOf("bootstrap-gradle.sh") < assemble.indexOf("./gradlew"))
         assertEquals(
             "https://raw.githubusercontent.com/neverdie666bruh/svodka-local/data/public/index.json",
             com.urmindkilla.svodkalocal.core.net.PublicDigest.INDEX_URL,

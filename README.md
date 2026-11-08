@@ -89,11 +89,14 @@ timezone: Asia/Dushanbe
 
 ```bash
 echo "sdk.dir=$ANDROID_HOME" > local.properties
+bash scripts/bootstrap-gradle.sh
 ./gradlew :core:test :collector:test
 ./gradlew :app:assembleRelease
 ```
 
 `local.properties` не коммитится. Debug-сборка — это debug-подпись, не выпуск.
+
+Дистрибутив закреплён: Gradle 8.11.1, только `https://services.gradle.org/distributions/gradle-8.11.1-bin.zip`, SHA-256 `f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6` (тот же отпечаток на [gradle.org/release-checksums](https://gradle.org/release-checksums/)). `scripts/bootstrap-gradle.sh` вызывается сборщиком и сборкой APK до `./gradlew`. Адрес запрашивается по HTTPS. Если редирект отвечает 502, 503 или 504, скрипт повторяет попытку и чередует её с тем же официальным файлом `gradle/gradle-distributions` тега `v8.11.1`. Общий бюджет повторов — 8 минут. Файл принимается только если это zip и SHA-256 совпал. Чужие зеркала, `actions/cache` и загрузка архива дистрибутива в артефакты не используются. Wrapper проверяет `distributionSha256Sum` ещё раз.
 
 Новая подпись создаётся так и больше не печатает пароль:
 

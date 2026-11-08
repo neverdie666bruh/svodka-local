@@ -1,4 +1,6 @@
 .gradle/
+__pycache__/
+*.pyc
 build/
 **/build/
 local.properties

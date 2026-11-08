@@ -41,6 +41,8 @@ data class ReaderUi(
     val lastSuccess: String? = null,
     val lastError: String? = null,
     val banner: String? = null,
+    val filter: String? = null,
+    val query: String = "",
 )
 
 class ReaderViewModel(app: Application) : AndroidViewModel(app) {
@@ -102,6 +104,23 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    fun setFilter(category: String?) {
+        _state.value = _state.value.copy(filter = category)
+    }
+
+    fun setQuery(value: String) {
+        _state.value = _state.value.copy(query = value.take(80))
+    }
+
+    fun visible(items: List<EditionItem>): List<EditionItem> {
+        val filter = _state.value.filter
+        val query = _state.value.query.trim().lowercase()
+        return items.filter { item ->
+            (filter == null || item.category.name == filter) &&
+                (query.isEmpty() || item.title.lowercase().contains(query) || item.excerpt.lowercase().contains(query))
+        }
+    }
+
     fun openEdition(date: String) {
         selectedDate = date
         val edition = archive.loadEdition(date) ?: return
@@ -154,12 +173,12 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     private fun download(indexUrl: String) {
         val indexBytes = client.get(indexUrl)
         val index = Codec.index(indexBytes.toString(Charsets.UTF_8))
-        if (index.schema != SCHEMA) error("неизвестная версия указателя")
+        if (index.schema > SCHEMA) error("неизвестная версия указателя")
         val latest = index.latest ?: error("в указателе нет выпуска")
         val row = index.editions.firstOrNull { it.date == latest } ?: error("в указателе нет файла выпуска")
         val editionUrl = IndexLocator.editionUrl(indexUrl, row.file) ?: error("файл выпуска указан небезопасно")
         val edition = Codec.edition(client.get(editionUrl).toString(Charsets.UTF_8))
-        if (edition.schema != SCHEMA) error("неизвестная версия выпуска")
+        if (edition.schema > SCHEMA) error("неизвестная версия выпуска")
         archive.saveEdition(edition)
         archive.prune(LocalDate.now(EditionCalendar.ZONE), keepDays = 30)
     }
@@ -180,6 +199,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
                 "Показан выпуск за ${edition.editionDate}. Сегодня по Asia/Dushanbe $today. Обновление не удалось: $error"
             edition.editionDate != today ->
                 "Это не выпуск за сегодня. Дата сводки ${edition.editionDate}, сегодня по Asia/Dushanbe $today."
+            edition.collectionFailed -> edition.summary
             edition.partial -> "Выпуск неполный: часть источников не ответила."
             error != null -> "На экране сохранённая копия. Последняя загрузка не удалась: $error"
             else -> null

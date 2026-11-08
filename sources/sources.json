@@ -384,5 +384,71 @@
     "verifiedAt": "2026-11-08",
     "verifiedStatus": 200,
     "verifiedLatest": "Sun, 08 Nov 2026 11:54:00 +0300"
+  },
+  {
+    "id": "fantlab",
+    "name": "FantLab",
+    "url": "https://fantlab.ru/news.rss",
+    "groups": ["books"],
+    "excerptMaxChars": 480,
+    "licenseNote": "8 ноября 2026, 13:14 UTC: HTTP 200, text/xml, свежий пункт «Лауреаты премии „Дети ночи“» от 8 ноября 2026. Ссылки в ленте с http, сборщик поднимает их до https того же сайта. Copyright в ленте нет. Только усечённый description.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Sun, 08 Nov 2026 14:00:00 +0300"
+  },
+  {
+    "id": "astronet",
+    "name": "Астронет",
+    "url": "https://www.astronet.ru/db/rss.xml",
+    "groups": ["space"],
+    "excerptMaxChars": 480,
+    "licenseNote": "8 ноября 2026: HTTP 200, windows-1251. Свежие пункты — астрономические недели и журнал «Небосвод», не запуски ракет. Copyright в ленте нет.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Sun, 08 Nov 2026 06:14:18 GMT"
+  },
+  {
+    "id": "securelist",
+    "name": "Securelist",
+    "url": "https://securelist.ru/feed/",
+    "groups": ["security"],
+    "excerptMaxChars": 480,
+    "licenseNote": "8 ноября 2026: HTTP 200, UTF-8. Свежий пункт от 6 ноября 2026 про виртуализацию и шифровальщиков. В окне 36 часов лента часто пустая. Copyright в ленте нет.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Fri, 06 Nov 2026 10:00:17 +0000"
+  },
+  {
+    "id": "kaspersky-blog",
+    "name": "Блог Касперского",
+    "url": "https://www.kaspersky.ru/blog/feed/",
+    "groups": ["security"],
+    "excerptMaxChars": 480,
+    "licenseNote": "8 ноября 2026: HTTP 200. Свежий пункт от 5 ноября 2026. Часть записей — пояснения к продуктам; в выпуск проходит только текст с словами уязвимости, утечки или вредоноса. Copyright в ленте нет.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Thu, 05 Nov 2026 19:05:36 +0000"
+  },
+  {
+    "id": "dtf",
+    "name": "DTF",
+    "url": "https://dtf.ru/rss",
+    "groups": ["games"],
+    "excerptMaxChars": 360,
+    "licenseNote": "8 ноября 2026: HTTP 200, application/rss+xml. В снимке из 12 пунктов были игры и кино. Кино отсекается правилами фильмов. Отдельной ленты dtf.ru/anime нет: страница без RSS, в этом снимке слова «аниме» не было. Copyright в ленте нет.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Sun, 08 Nov 2026 14:16:36 +0300"
+  },
+  {
+    "id": "nkj",
+    "name": "Наука и жизнь",
+    "url": "https://www.nkj.ru/rss/",
+    "groups": ["brain", "oddities", "space"],
+    "excerptMaxChars": 480,
+    "licenseNote": "8 ноября 2026: HTTP 200. Самый свежий пункт в выборке был от 22 октября 2026, то есть старше окна 36 часов. Источник оставлен для дней, когда выйдет подходящий материал. Общая наука без слова темы не проходит. Copyright в ленте нет.",
+    "verifiedAt": "2026-11-08",
+    "verifiedStatus": 200,
+    "verifiedLatest": "Thu, 22 Oct 2026 12:29:00 +0300"
   }
 ]

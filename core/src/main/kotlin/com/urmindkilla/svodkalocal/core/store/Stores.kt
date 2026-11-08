@@ -8,6 +8,7 @@ import com.urmindkilla.svodkalocal.core.model.Edition
 import com.urmindkilla.svodkalocal.core.model.EditionItem
 import com.urmindkilla.svodkalocal.core.model.FeedbackDb
 import com.urmindkilla.svodkalocal.core.model.IndexRow
+import com.urmindkilla.svodkalocal.core.model.HealthState
 import com.urmindkilla.svodkalocal.core.model.SeenState
 import com.urmindkilla.svodkalocal.core.model.Vote
 import java.nio.file.Files
@@ -26,6 +27,8 @@ interface DigestStore {
     fun writeIndex(index: DigestIndex)
     fun writeReadme(text: String)
     fun writeLastRun(text: String)
+    fun readHealth(): HealthState = HealthState()
+    fun writeHealth(state: HealthState) {}
 }
 
 class FileDigestStore(private val root: Path) : DigestStore {
@@ -64,6 +67,15 @@ class FileDigestStore(private val root: Path) : DigestStore {
         val file = root.resolve("state/last-run.txt")
         Files.createDirectories(file.parent)
         file.writeText(text)
+    }
+
+    override fun readHealth(): HealthState =
+        read(root.resolve("state/health.json"))?.let(Codec::health) ?: HealthState()
+
+    override fun writeHealth(state: HealthState) {
+        val file = root.resolve("state/health.json")
+        Files.createDirectories(file.parent)
+        file.writeText(Codec.write(state))
     }
 
     private fun read(path: Path): String? = if (path.exists()) path.readText() else null

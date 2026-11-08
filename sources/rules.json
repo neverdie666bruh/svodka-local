@@ -78,7 +78,7 @@
       "minScore": 0.5
     },
     "gadgets": {
-      "positive": ["смартфон", "наушник", "планшет", "смарт-час", "умные часы", "hyperos", "xiaomi", "android", "pixel", "galaxy", "iphone", "гарнитур", "фитнес-браслет", "ноутбук"],
+      "positive": ["смартфон", "наушник", "планшет", "смарт-час", "умные часы", "hyperos", "xiaomi", "poco", "redmi", "android", "pixel", "galaxy", "iphone", "гарнитур", "фитнес-браслет", "ноутбук"],
       "minScore": 0.5
     },
     "programming": {

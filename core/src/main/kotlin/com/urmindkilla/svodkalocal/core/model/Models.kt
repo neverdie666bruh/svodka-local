@@ -59,6 +59,23 @@ data class ScheduleDecl(
 )
 
 @Serializable
+data class RelatedLink(
+    val sourceName: String,
+    val url: String,
+    val title: String,
+)
+
+@Serializable
+data class TopicCoverage(
+    val category: Category,
+    val enabledSources: Int,
+    val sourceDomains: Int,
+    val eligible: Int,
+    val published: Int,
+    val note: String,
+)
+
+@Serializable
 data class MatchInfo(
     val confidence: Double,
     val labels: List<String>,
@@ -79,6 +96,7 @@ data class EditionItem(
     val excerptTruncated: Boolean,
     val excerptOrigin: String,
     val match: MatchInfo,
+    val related: List<RelatedLink> = emptyList(),
 )
 
 @Serializable
@@ -94,6 +112,9 @@ data class SourceStatus(
     val attempts: Int = 0,
     val itemsSeen: Int = 0,
     val itemsUsed: Int = 0,
+    val note: String? = null,
+    val etag: String? = null,
+    val lastModified: String? = null,
 )
 
 @Serializable
@@ -123,6 +144,8 @@ data class Edition(
     val items: List<EditionItem> = emptyList(),
     val sources: List<SourceStatus> = emptyList(),
     val counts: EditionCounts = EditionCounts(),
+    val collectionFailed: Boolean = false,
+    val coverage: List<TopicCoverage> = emptyList(),
 )
 
 @Serializable
@@ -154,6 +177,23 @@ data class SeenStory(
 @Serializable
 data class SeenState(
     val stories: List<SeenStory> = emptyList(),
+)
+
+@Serializable
+data class SourceHealth(
+    val id: String,
+    val ok: Boolean,
+    val httpStatus: Int? = null,
+    val error: String? = null,
+    val checkedAt: String,
+    val consecutiveFailures: Int = 0,
+    val etag: String? = null,
+    val lastModified: String? = null,
+)
+
+@Serializable
+data class HealthState(
+    val sources: List<SourceHealth> = emptyList(),
 )
 
 @Serializable
@@ -191,6 +231,9 @@ val LIMITATIONS = listOf(
     "Совпадение с другим источником не проверялось. Пометка «не проверено независимо» относится к каждому пункту.",
     "Мнений, чужих точек зрения и вердикта нет: сборщик их не сочиняет.",
     "Мировые новости проходят только при нескольких сильных маркерах крупного события. Если уверенности нет, пункт опускается.",
+    "Места в выпуске сначала отдаются разным темам, у которых есть прошедший порог материал. Пустая тема не заполняется чужой новостью.",
+    "Повтор того же заголовка из другой ленты склеивается в один пункт со ссылками. Это не проверка факта вторым источником.",
+    "Лайк и дизлайк меняют только порядок на этом телефоне и не перенастраивают серверный сбор.",
 )
 
 data class ParsedEntry(
@@ -210,8 +253,14 @@ data class TransportResponse(
     val error: String?,
     val attempts: Int,
     val finalUrl: String?,
+    val etag: String? = null,
+    val lastModified: String? = null,
 )
 
 fun interface FeedTransport {
     fun get(url: String): TransportResponse
+}
+
+interface ConditionalFeedTransport : FeedTransport {
+    fun get(url: String, etag: String?, modifiedSince: String?): TransportResponse
 }

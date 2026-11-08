@@ -1,4 +1,31 @@
-# Проверка лент 8 ноября 2026
+# Проверка лент
+
+## Добавление 8 ноября 2026, вечер (UTC)
+
+Живые ответы, не предполагаемые адреса.
+
+| Адрес | Итог |
+| --- | --- |
+| https://fantlab.ru/news.rss | 200, UTF-8, пункт «Лауреаты премии „Дети ночи“», 8 ноября 2026. Добавлен в книги. |
+| https://www.astronet.ru/db/rss.xml | 200, windows-1251, астрономические недели 8 ноября 2026. Добавлен в космос. |
+| https://securelist.ru/feed/ | 200, пункт 6 ноября про виртуализацию. Добавлен в безопасность. Часто вне окна 36 часов. |
+| https://www.kaspersky.ru/blog/feed/ | 200, пункт 5 ноября. Добавлен в безопасность. |
+| https://dtf.ru/rss | 200, игры и кино 8 ноября. Кино режут правила. Аниме в 12 пунктах не было. Добавлен только в игры. |
+| https://www.nkj.ru/rss/ | 200, свежий пункт 22 октября 2026. В живом сборе 8 ноября сборщик получил HTTP 200 и SAXException, лента не разобрана. Источник оставлен видимой ошибкой, не как пустая тема. |
+| https://shikimori.one/rss и /rss/news | 403. Не используется. |
+| https://animego.org/feed, /rss, /rss.xml | 404. |
+| https://www.anilibria.tv/public/rss.php | 404. |
+| https://anime365.ru/rss | 403. |
+| https://www.world-art.ru/animation/rss.php | таймаут TLS. |
+| https://dtf.ru/anime | HTML без alternate RSS. |
+| https://biomolecula.ru/public.atom | 200, записей нет. Не добавлен. |
+| https://eksmo.ru/news/rss/ | пункты 2009 года. Не добавлен. |
+| https://ast.ru/news/rss/ | гороскопы и быт. Не добавлен. |
+| https://www.anti-malware.ru/rss.xml | последний пункт 21 марта 2019. Не добавлен. |
+| https://the-flow.ru/ | HTML без RSS. Не добавлен. |
+| https://darkermagazine.ru/feed | снова 403. Остаётся выключенным. |
+
+## Проверка лент 8 ноября 2026
 
 Пробы шли по HTTPS, без ключа и без обхода проверки. Клиент пробы: `SvodkaLocalFeedProbe/1.0`. Сборщик: `SvodkaLocalCollector/1.0`. Скачивался только XML ленты, не HTML статей. Время проб — около 09:00–09:30 UTC, то есть день 8 ноября в `Asia/Dushanbe`.
 

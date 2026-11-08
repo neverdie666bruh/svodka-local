@@ -5,6 +5,8 @@ package com.urmindkilla.svodkalocal.ui
 import android.content.ActivityNotFoundException
 import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,6 +34,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -48,6 +51,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.urmindkilla.svodkalocal.core.model.Category
 import com.urmindkilla.svodkalocal.core.model.Edition
 import com.urmindkilla.svodkalocal.core.model.EditionItem
 import com.urmindkilla.svodkalocal.core.model.LIMITATIONS
@@ -121,15 +125,48 @@ private fun TodayScreen(state: ReaderUi, model: ReaderViewModel, open: (String) 
         }
         state.banner?.let { text -> item { Banner(text) } }
         if (state.loading) item { CircularProgressIndicator(color = MaterialTheme.colorScheme.primary) }
+        item {
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilterChip(selected = state.filter == null, onClick = { model.setFilter(null) }, label = { Text("Все") })
+                Category.entries.forEach { category ->
+                    FilterChip(
+                        selected = state.filter == category.name,
+                        onClick = { model.setFilter(if (state.filter == category.name) null else category.name) },
+                        label = { Text(category.titleRu()) },
+                    )
+                }
+            }
+        }
+        item {
+            TextField(
+                value = state.query,
+                onValueChange = model::setQuery,
+                modifier = Modifier.fillMaxWidth(),
+                label = { Text("Найти в выпуске") },
+                singleLine = true,
+            )
+        }
         state.edition?.let { edition ->
             item { Text(edition.summary, style = MaterialTheme.typography.bodyLarge) }
             if (edition.items.isEmpty()) {
-                item { EmptyCard("За это окно правила никого не пропустили. Пустой список честный: чужие темы сюда не добавляются.") }
+                item {
+                    EmptyCard(
+                        if (edition.collectionFailed) {
+                            "Сбор не удался. Пустой список — ошибка источников, а не тихий новостной день."
+                        } else {
+                            "За это окно правила никого не пропустили. Пустые темы не заполняются."
+                        },
+                    )
+                }
             }
         } ?: item {
             EmptyCard("Когда сервер опубликует ветку data, нажмите «Загрузить» на экране «Сбор». Адрес указателя уже вшит.")
         }
-        items(state.ranked, key = { it.id }) { item ->
+        val shown = model.visible(state.ranked)
+        if (state.ranked.isNotEmpty() && shown.isEmpty()) {
+            item { EmptyCard("В этом фильтре ничего нет. Другие темы на месте.") }
+        }
+        items(shown, key = { it.id }) { item ->
             ArticleCard(item) { open(item.id) }
         }
     }
@@ -206,10 +243,21 @@ private fun StatusScreen(state: ReaderUi, model: ReaderViewModel) {
             )
         }
         state.edition?.let { edition ->
+            item { Text("Темы", style = MaterialTheme.typography.titleLarge) }
+            if (edition.coverage.isEmpty()) {
+                item { Text("В этом файле нет таблицы тем. Она появится в выпуске версии 1.1.") }
+            }
+            items(edition.coverage, key = { "coverage-${it.category.name}" }) { row ->
+                Text(
+                    "${row.category.titleRu()}: источников ${row.enabledSources}, доменов ${row.sourceDomains}, в выпуске ${row.published}. ${row.note}",
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            }
             item { Text("Источники выпуска ${edition.editionDate}", style = MaterialTheme.typography.titleLarge) }
             items(edition.sources, key = { it.id }) { source ->
                 val line = when {
-                    !source.enabled -> "выключен"
+                    !source.enabled -> "выключен в списке источников и сам не включается"
+                    source.paused -> source.note ?: "автопауза до следующей проверки"
                     source.ok -> "ок · ${source.itemsSeen} в ленте · ${source.itemsUsed} в выпуске"
                     else -> "ошибка · ${source.error ?: "без текста"}"
                 }
@@ -279,8 +327,25 @@ private fun DetailScreen(item: EditionItem?, model: ReaderViewModel, back: () ->
             Text("Почему пункт в выпуске", style = MaterialTheme.typography.titleLarge)
             Text("Совпадение ${item.match.confidence}", color = MaterialTheme.colorScheme.primary)
             item.match.labels.forEach { label -> Text("· $label") }
+            if (item.related.isNotEmpty()) {
+                Text("Тот же заголовок в других лентах. Это не проверка факта.", modifier = Modifier.padding(top = 8.dp))
+                item.related.forEach { link ->
+                    TextButton(onClick = {
+                        val intent = model.openExternal(link.url) ?: return@TextButton
+                        try {
+                            context.startActivity(intent)
+                        } catch (_: ActivityNotFoundException) {
+                            Toast.makeText(context, "Нет приложения, чтобы открыть ссылку", Toast.LENGTH_SHORT).show()
+                        }
+                    }) { Text("${link.sourceName}: ${link.title}") }
+                }
+            }
             Text(
-                "Это не мнение и не вывод о важности. Второго источника у сборщика нет.",
+                if (item.related.isEmpty()) {
+                    "Это не мнение и не вывод о важности. Второго источника у сборщика нет."
+                } else {
+                    "Соседние ссылки — повтор сюжета в других лентах, не подтверждение факта."
+                },
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp),
             )
@@ -328,6 +393,9 @@ private fun ArticleCard(item: EditionItem, open: () -> Unit) {
                     Text(item.excerpt, maxLines = 3, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 Text("Материал источника · не проверено независимо", style = MaterialTheme.typography.labelSmall)
+                if (item.related.isNotEmpty()) {
+                    Text("Ещё ${item.related.size} лент с тем же сюжетом", style = MaterialTheme.typography.labelSmall)
+                }
             }
         }
     }

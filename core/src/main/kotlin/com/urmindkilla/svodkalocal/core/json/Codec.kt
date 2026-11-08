@@ -5,6 +5,7 @@ import com.urmindkilla.svodkalocal.core.model.DigestIndex
 import com.urmindkilla.svodkalocal.core.model.Edition
 import com.urmindkilla.svodkalocal.core.model.FeedbackDb
 import com.urmindkilla.svodkalocal.core.model.FeedSource
+import com.urmindkilla.svodkalocal.core.model.HealthState
 import com.urmindkilla.svodkalocal.core.model.SeenState
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -23,12 +24,14 @@ object Codec {
     fun sources(text: String): List<FeedSource> = json.decodeFromString(text)
     fun feedback(text: String): FeedbackDb = json.decodeFromString(text)
     fun bookmarks(text: String): BookmarkDb = json.decodeFromString(text)
+    fun health(text: String): HealthState = json.decodeFromString(text)
 
     fun write(value: Edition): String = json.encodeToString(Edition.serializer(), value) + "\n"
     fun write(value: DigestIndex): String = json.encodeToString(DigestIndex.serializer(), value) + "\n"
     fun write(value: SeenState): String = json.encodeToString(SeenState.serializer(), value) + "\n"
     fun write(value: FeedbackDb): String = json.encodeToString(FeedbackDb.serializer(), value) + "\n"
     fun write(value: BookmarkDb): String = json.encodeToString(BookmarkDb.serializer(), value) + "\n"
+    fun write(value: HealthState): String = json.encodeToString(HealthState.serializer(), value) + "\n"
 }
 
 @Serializable

@@ -3,19 +3,25 @@ package com.urmindkilla.svodkalocal.core.edition
 import com.urmindkilla.svodkalocal.core.classify.Classifier
 import com.urmindkilla.svodkalocal.core.model.DigestIndex
 import com.urmindkilla.svodkalocal.core.model.Edition
+import com.urmindkilla.svodkalocal.core.model.ConditionalFeedTransport
 import com.urmindkilla.svodkalocal.core.model.FeedSource
 import com.urmindkilla.svodkalocal.core.model.FeedTransport
 import com.urmindkilla.svodkalocal.core.model.IndexRow
 import com.urmindkilla.svodkalocal.core.model.ParsedEntry
+import com.urmindkilla.svodkalocal.core.model.HealthState
+import com.urmindkilla.svodkalocal.core.model.SourceHealth
 import com.urmindkilla.svodkalocal.core.model.SourceStatus
+import com.urmindkilla.svodkalocal.core.net.FeedDiscovery
 import com.urmindkilla.svodkalocal.core.net.UrlPolicy
 import com.urmindkilla.svodkalocal.core.rss.FeedParseException
+import com.urmindkilla.svodkalocal.core.rss.HtmlIndexParser
 import com.urmindkilla.svodkalocal.core.rss.RssDates
 import com.urmindkilla.svodkalocal.core.rss.SafeFeedParser
 import com.urmindkilla.svodkalocal.core.store.DataBranchReadme
 import com.urmindkilla.svodkalocal.core.store.DigestStore
 import com.urmindkilla.svodkalocal.core.time.EditionCalendar
 import com.urmindkilla.svodkalocal.core.time.RunDecision
+import java.time.Duration
 import java.time.Instant
 import java.time.ZoneId
 
@@ -56,7 +62,20 @@ class CollectService(
         } else {
             enabled
         }
-        val fetched = toFetch.map { fetchOne(it, now) }
+        val health = store.readHealth().sources.associateBy { it.id }
+        val useValidators = force && existing != null
+        val fetched = toFetch.map { source ->
+            val prior = health[source.id]
+            fetchOne(
+                source,
+                now,
+                if (useValidators) prior?.etag else null,
+                if (useValidators) prior?.lastModified else null,
+                existing,
+                prior,
+                force,
+            )
+        }
         val combined = if (decision == RunDecision.RETRY_PARTIAL && existing != null) {
             reconstructed(existing, sources) + fetched
         } else {
@@ -65,11 +84,74 @@ class CollectService(
         }
         val seenForBuild = store.readSeen().stories.filter { it.editionDate != date }
         val built = EditionBuilder(classifier).build(now, combined, seenForBuild, zone)
-        store.writeEdition(built.edition)
-        store.writeSeen(com.urmindkilla.svodkalocal.core.model.SeenState(built.seen))
-        touch(store, built.edition, now, if (built.edition.partial) "partial" else "built")
-        val code = if (built.edition.partial) 2 else 0
-        return CollectOutcome(code, date, skipped = false, partial = built.edition.partial, published = built.edition.items.size)
+        val enabledStatuses = built.edition.sources.filter { it.enabled }
+        val allDown = enabledStatuses.isNotEmpty() && enabledStatuses.all { !it.ok }
+        val edition = when {
+            allDown && existing != null && existing.items.isNotEmpty() -> existing.copy(
+                partial = true,
+                collectionFailed = true,
+                generatedAt = now.toString(),
+                summary = "Новый обход не удался: ни один включённый источник не ответил. " +
+                    "Сохранён предыдущий список этой даты. Это не вывод, что новостей не было.",
+                sources = built.edition.sources,
+                coverage = built.edition.coverage,
+            )
+            allDown -> built.edition.copy(
+                collectionFailed = true,
+                partial = true,
+                summary = "Сбор не удался: ни один включённый источник не ответил. " +
+                    "Пустой список — ошибка сбора, а не сообщение, что важных новостей не было.",
+            )
+            else -> built.edition
+        }
+        store.writeEdition(edition)
+        if (!(allDown && existing != null && existing.items.isNotEmpty())) {
+            store.writeSeen(com.urmindkilla.svodkalocal.core.model.SeenState(built.seen))
+        }
+        writeHealth(store, edition, now)
+        val mode = when {
+            edition.collectionFailed -> "failed"
+            edition.partial -> "partial"
+            else -> "built"
+        }
+        touch(store, edition, now, mode)
+        val code = if (edition.partial) 2 else 0
+        return CollectOutcome(code, date, skipped = false, partial = edition.partial, published = edition.items.size)
+    }
+
+    private fun writeHealth(store: DigestStore, edition: Edition, now: Instant) {
+        val previous = store.readHealth().sources.associateBy { it.id }
+        val next = edition.sources.map { status ->
+            val before = previous[status.id]
+            if (status.paused) {
+                return@map (before ?: SourceHealth(status.id, false, checkedAt = now.toString())).copy(
+                    ok = false,
+                    httpStatus = status.httpStatus ?: before?.httpStatus,
+                    error = status.error ?: before?.error,
+                    checkedAt = now.toString(),
+                )
+            }
+            val failures = if (status.ok) 0 else (before?.consecutiveFailures ?: 0) + 1
+            val badDocument = SourceCircuit.malformed(status.error)
+            val nextProbe = if (!status.ok && failures >= SourceCircuit.THRESHOLD) {
+                now.plus(SourceCircuit.pauseFor(failures, badDocument)).toString()
+            } else {
+                null
+            }
+            SourceHealth(
+                id = status.id,
+                ok = status.ok,
+                httpStatus = status.httpStatus,
+                error = status.error,
+                checkedAt = now.toString(),
+                consecutiveFailures = failures,
+                etag = status.etag ?: before?.etag,
+                lastModified = status.lastModified ?: before?.lastModified,
+                lastFailureAt = if (status.ok) null else now.toString(),
+                nextProbeAt = nextProbe,
+            )
+        }
+        store.writeHealth(HealthState(next))
     }
 
     private fun touch(store: DigestStore, edition: Edition, now: Instant, mode: String) {
@@ -129,7 +211,30 @@ class CollectService(
         attempts = 0,
     )
 
-    private fun fetchOne(source: FeedSource, now: Instant): FetchedSource {
+    private fun fetchOne(
+        source: FeedSource,
+        now: Instant,
+        etag: String?,
+        modifiedSince: String?,
+        existing: Edition?,
+        prior: com.urmindkilla.svodkalocal.core.model.SourceHealth?,
+        force: Boolean,
+    ): FetchedSource {
+        if (SourceCircuit.waiting(prior, now, force)) {
+            val until = prior?.nextProbeAt ?: ""
+            return FetchedSource(
+                source,
+                emptyList(),
+                SourceStatus(
+                    source.id, source.name, source.url, true, false,
+                    httpStatus = prior?.httpStatus,
+                    error = prior?.error ?: "временная пауза",
+                    fetchedAt = now.toString(), attempts = 0,
+                    note = "автопауза до $until. Следующая проверка сама, force не обязателен.",
+                    paused = true,
+                ),
+            )
+        }
         val blocked = UrlPolicy.rejection(source.url)
         if (blocked != null) {
             return FetchedSource(
@@ -146,22 +251,80 @@ class CollectService(
             used = attempt
             if (attempt > 1) sleep(backoffs.getOrElse(attempt - 1) { 4000L })
             val response = try {
-                transport.get(source.url)
+                val conditional = transport as? ConditionalFeedTransport
+                if (conditional != null && (etag != null || modifiedSince != null)) {
+                    conditional.get(source.url, etag, modifiedSince)
+                } else {
+                    transport.get(source.url)
+                }
             } catch (e: Exception) {
                 lastError = e.javaClass.simpleName
                 continue
             }
             lastStatus = response.status
+            if (response.status == 304 && existing != null) {
+                val entries = existing.items.filter { it.sourceId == source.id }.map { item ->
+                    ParsedEntry(
+                        title = item.title,
+                        url = item.url,
+                        guid = item.id,
+                        publishedRaw = item.publishedAt,
+                        publishedAt = RssDates.parse(item.publishedAt) ?: Instant.parse(item.publishedAt),
+                        excerpt = item.excerpt,
+                        excerptTruncated = item.excerptTruncated,
+                        excerptOrigin = item.excerptOrigin,
+                    )
+                }
+                return FetchedSource(
+                    source,
+                    entries,
+                    SourceStatus(
+                        source.id, source.name, source.url, true, true, 304,
+                        fetchedAt = now.toString(), attempts = attempt, itemsSeen = entries.size,
+                        note = "лента не изменилась с прошлой проверки этой даты",
+                        etag = response.etag ?: etag, lastModified = response.lastModified ?: modifiedSince,
+                    ),
+                )
+            }
             if (response.error != null || response.body == null || response.status !in 200..299) {
                 lastError = response.error ?: "HTTP ${response.status}"
                 continue
             }
-            if (looksLikeHtml(response.body)) {
-                lastError = "ответ похож на HTML, не на ленту"
-                continue
+            var body = response.body
+            var note: String? = null
+            if (source.format != "html-index" && looksLikeHtml(body)) {
+                val alternate = FeedDiscovery.alternate(body, source.url)
+                val discovered = if (alternate == null) null else try {
+                    transport.get(alternate)
+                } catch (e: Exception) {
+                    lastError = e.javaClass.simpleName
+                    null
+                }
+                val discoveredBody = discovered?.body
+                if (alternate == null || discovered == null || discovered.error != null || discoveredBody == null ||
+                    discovered.status !in 200..299 || looksLikeHtml(discoveredBody)
+                ) {
+                    lastError = discovered?.error ?: "ответ похож на HTML, не на ленту"
+                    continue
+                }
+                body = discoveredBody
+                note = "лента найдена на том же сайте"
+            }
+            val parsed = try {
+                if (source.format == "html-index") HtmlIndexParser.parse(source, body) else parser.parse(body, source.excerptMaxChars)
+            } catch (e: FeedParseException) {
+                return FetchedSource(
+                    source,
+                    emptyList(),
+                    SourceStatus(
+                        id = source.id, name = source.name, url = source.url, enabled = true, ok = false,
+                        httpStatus = response.status, error = e.message ?: "лента не разобрана",
+                        fetchedAt = now.toString(), attempts = attempt,
+                    ),
+                )
             }
             return try {
-                val entries = parser.parse(response.body, source.excerptMaxChars)
+                val entries = parsed
                 FetchedSource(
                     source,
                     entries,
@@ -175,6 +338,9 @@ class CollectService(
                         fetchedAt = now.toString(),
                         attempts = attempt,
                         itemsSeen = entries.size,
+                        note = note,
+                        etag = response.etag,
+                        lastModified = response.lastModified,
                     ),
                 )
             } catch (e: FeedParseException) {

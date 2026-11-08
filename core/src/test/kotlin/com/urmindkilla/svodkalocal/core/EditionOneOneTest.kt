@@ -1,0 +1,336 @@
+package com.urmindkilla.svodkalocal.core
+
+import com.urmindkilla.svodkalocal.core.classify.Classifier
+import com.urmindkilla.svodkalocal.core.edition.CollectService
+import com.urmindkilla.svodkalocal.core.edition.SourceCircuit
+import com.urmindkilla.svodkalocal.core.edition.EditionBuilder
+import com.urmindkilla.svodkalocal.core.edition.FetchedSource
+import com.urmindkilla.svodkalocal.core.json.Codec
+import com.urmindkilla.svodkalocal.core.json.RuleFile
+import com.urmindkilla.svodkalocal.core.model.Category
+import com.urmindkilla.svodkalocal.core.model.Edition
+import com.urmindkilla.svodkalocal.core.model.EditionItem
+import com.urmindkilla.svodkalocal.core.model.FeedSource
+import com.urmindkilla.svodkalocal.core.model.FeedTransport
+import com.urmindkilla.svodkalocal.core.model.MatchInfo
+import com.urmindkilla.svodkalocal.core.model.ParsedEntry
+import com.urmindkilla.svodkalocal.core.model.HealthState
+import com.urmindkilla.svodkalocal.core.model.SourceHealth
+import com.urmindkilla.svodkalocal.core.model.SourceStatus
+import com.urmindkilla.svodkalocal.core.model.TransportResponse
+import com.urmindkilla.svodkalocal.core.net.FeedDiscovery
+import com.urmindkilla.svodkalocal.core.store.FileDigestStore
+import com.urmindkilla.svodkalocal.core.time.EditionCalendar
+import com.urmindkilla.svodkalocal.core.text.Tokens
+import com.urmindkilla.svodkalocal.core.net.BoundedBody
+import com.urmindkilla.svodkalocal.core.rss.HtmlIndexParser
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertNull
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.io.TempDir
+import java.nio.file.Files
+import java.nio.file.Path
+import java.time.Duration
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+import kotlin.io.path.readText
+
+class EditionOneOneTest {
+    private val now = Instant.parse("2026-11-08T08:00:00Z")
+    private val rules = Codec.json.decodeFromString<RuleFile>(repoRoot().resolve("sources/rules.json").readText())
+    private val classifier = Classifier(rules)
+    private val builder = EditionBuilder(classifier)
+
+    @Test
+    fun everyTopicHasPositiveAndExclusion() {
+        val cases = listOf(
+            Triple(Category.ai, "Вышла языковая модель для исследований", "описание модели"),
+            Triple(Category.gadgets, "Xiaomi обновила Poco и HyperOS на смартфоне", "камера"),
+            Triple(Category.programming, "Вышел язык программирования и открытый исходный код", "kotlin"),
+            Triple(Category.hardware, "Новая видеокарта GeForce получила больше видеопамяти", "тест"),
+            Triple(Category.security, "Закрыта уязвимость CVE-2026-1000 в библиотеке", "патч"),
+            Triple(Category.space, "Телескоп нашёл экзопланету у соседней звезды", "астрономы"),
+            Triple(Category.brain, "Нейронаука показала, как мозг держит рабочую память", "опыт"),
+            Triple(Category.games, "В Steam вышла новая инди игра", "релиз"),
+            Triple(Category.anime, "Вышел новый сезон аниме и опенинг", "студия"),
+            Triple(Category.music, "Певица выпустила новый альбом в цифровых магазинах", "запись"),
+            Triple(Category.books, "Издательство выпустило роман в жанре фантастики", "книга"),
+            Triple(Category.oddities, "Учёные впервые обнаружили странную находку", "заметка"),
+            Triple(Category.world, "Страна объявила войну и ввела чрезвычайное положение", "сводка"),
+        )
+        assertEquals(Category.entries.size, cases.size)
+        for ((category, title, excerpt) in cases) {
+            val source = FeedSource(category.name, category.name, "https://example.com/${category.name}.xml", listOf(category), licenseNote = "тест")
+            val result = classifier.classify(title, excerpt, source)
+            assertEquals(category, result?.category, title)
+        }
+        assertEquals("биткоин", classifier.hardExcluded("Смартфон Poco и биткоин в одном заголовке", "камера"))
+        assertEquals("футбол", classifier.hardExcluded("Игра и футбол в одном абзаце", "матч"))
+        assertEquals("гороскоп", classifier.hardExcluded("Гороскоп на неделю для всех знаков", "звёзды"))
+        assertTrue(classifier.classify("SpaceX показала телескоп", "запуск", source(Category.space)) == null)
+        assertTrue(classifier.classify("Вышел новый фильм Netflix", "премьера", source(Category.games)) == null)
+        assertTrue(classifier.classify("Певица анонсировала концерт и турне", "билеты", source(Category.music)) == null)
+    }
+
+    @Test
+    fun balanceKeepsAWeakTopicBesideTech() {
+        val tech = (1..20).map { entry("Нейросеть номер$it открыла архив района$it", "https://example.com/ai/$it") }
+        val anime = entry("Студия показала новый сезон аниме", "https://example.com/anime")
+        val source = FeedSource("mix", "mix", "https://example.com/mix.xml", listOf(Category.ai, Category.anime), licenseNote = "тест")
+        val built = builder.build(now, listOf(fetched(tech + anime, source)), emptyList())
+        assertTrue(built.edition.items.any { it.category == Category.anime })
+        assertTrue(built.edition.items.size <= 20)
+        assertEquals(1, built.edition.coverage.first { it.category == Category.anime }.published)
+    }
+
+    @Test
+    fun syndicationIsOneStoryWithRelatedLinks(@TempDir dir: Path) {
+        val first = entry("Новый телескоп нашёл далёкую экзопланету у звезды", "https://example.com/a")
+        val second = entry("Новый телескоп нашёл далёкую экзопланету у звезды", "https://other.example/b")
+        val built = builder.build(
+            now,
+            listOf(
+                fetched(listOf(first), source("alpha", Category.space, "https://alpha.example/rss")),
+                fetched(listOf(second), source("beta", Category.space, "https://beta.example/rss")),
+            ),
+            emptyList(),
+        )
+        assertEquals(1, built.edition.items.size)
+        val item = built.edition.items.single()
+        assertEquals(1, item.related.size)
+        assertTrue(item.match.labels.any { it.contains("не независимая проверка") })
+        assertTrue(built.edition.counts.duplicates >= 1)
+        val oldJson = """
+            {"schema":1,"editionDate":"2026-11-08","timezone":"Asia/Dushanbe","generatedAt":"2026-11-08T08:00:00Z","partial":false,"summary":"старый","items":[]}
+        """.trimIndent()
+        val decoded = Codec.edition(oldJson)
+        assertEquals(1, decoded.schema)
+        assertTrue(decoded.coverage.isEmpty())
+        assertFalse(decoded.collectionFailed)
+        FileDigestStore(dir).writeEdition(decoded)
+    }
+
+    @Test
+    fun httpLinkFromHttpsFeedBecomesHttps() {
+        val built = builder.build(
+            now,
+            listOf(fetched(listOf(entry("Телескоп нашёл новую экзопланету у звезды", "http://example.com/story")), source("space", Category.space, "https://example.com/rss"))),
+            emptyList(),
+        )
+        assertEquals("https://example.com/story", built.edition.items.single().url)
+    }
+
+    @Test
+    fun allSourcesDownDoesNotPretendTheDayWasEmpty(@TempDir dir: Path) {
+        val store = FileDigestStore(dir)
+        val service = CollectService(
+            FeedTransport { TransportResponse(503, null, "HTTP 503", 1, it) },
+            classifier,
+            clock = { now },
+            sleep = {},
+        )
+        val source = FeedSource("space", "space", "https://example.com/space.xml", listOf(Category.space), licenseNote = "тест")
+        val failed = service.run(store, listOf(source), false)
+        val edition = store.readEdition("2026-11-08")!!
+        assertEquals(2, failed.exitCode)
+        assertTrue(edition.collectionFailed)
+        assertTrue(edition.summary.contains("ошибка сбора"))
+        assertEquals(0, edition.items.size)
+        store.writeEdition(edition.copy(items = listOf(sampleItem()), collectionFailed = false, partial = true, summary = "хороший"))
+        val again = service.run(store, listOf(source), false)
+        val kept = store.readEdition("2026-11-08")!!
+        assertTrue(again.partial)
+        assertEquals(1, kept.items.size)
+        assertTrue(kept.collectionFailed)
+        assertTrue(kept.summary.contains("Сохранён предыдущий список"))
+        assertTrue(store.readHealth().sources.single().consecutiveFailures >= 1)
+    }
+
+    @Test
+    fun animagPageSampleBecomesAnimeAndGamesStayGames() {
+        val html = """
+            <h3 class="field-content"><a href="/news/yuru-camp-4">Дата выхода четвёртого сезона "Yuru Camp"</a></h3>
+            Четвёртый сезон выйдет весной. ноя 07, 2026 09:15
+            <h3 class="field-content"><a href="/review/old">Обзор не новость</a></h3>
+            ноя 08, 2026 01:00
+            <h3 class="field-content"><a href="https://evil.example/news/x">Чужая лента</a></h3>
+            ноя 08, 2026 01:00
+        """.trimIndent()
+        val source = FeedSource(
+            "animag", "АниМаг", "https://animag.ru/", listOf(Category.anime),
+            format = "html-index", assumeGroup = true, licenseNote = "тест",
+        )
+        val entries = HtmlIndexParser.parse(source, html.toByteArray())
+        assertEquals(1, entries.size)
+        assertEquals("https://animag.ru/news/yuru-camp-4", entries.single().url)
+        assertNotNull(entries.single().publishedAt)
+        val built = builder.build(
+            now,
+            listOf(FetchedSource(source, entries, SourceStatus(source.id, source.name, source.url, true, true, 200, itemsSeen = 1))),
+            emptyList(),
+        )
+        assertEquals(Category.anime, built.edition.items.single().category)
+        assertEquals(1, built.edition.coverage.first { it.category == Category.anime }.enabledSources)
+        val games = classifier.classify(
+            "Хендерсон: игру Assassin's Creed отложили до 2028 года",
+            "релиз студии",
+            FeedSource("dtf", "DTF", "https://dtf.ru/rss", listOf(Category.games), licenseNote = "тест"),
+        )
+        assertEquals(Category.games, games?.category)
+        assertTrue(classifier.classify("Вышел новый фильм на Netflix", "премьера", source(Category.games)) == null)
+    }
+
+    @Test
+    fun weeklyAstronomyCalendarIsNotADiscovery() {
+        val space = source(Category.space)
+        assertTrue(classifier.classify("Астрономическая неделя с 14 по 20 декабря", "календарь наблюдений", space) == null)
+        assertTrue(classifier.classify("Календарь наблюдателя на декабрь", "планеты", space) == null)
+        assertEquals(
+            Category.space,
+            classifier.classify("Телескоп нашёл экзопланету у соседней звезды", "астрономы", space)?.category,
+        )
+        assertEquals(Duration.ofHours(24), SourceCircuit.pauseFor(4, badDocument = false))
+        assertEquals(Duration.ofDays(3), SourceCircuit.pauseFor(4, badDocument = true))
+        assertEquals(Duration.ofDays(7), SourceCircuit.pauseFor(8, badDocument = false))
+    }
+
+    @Test
+    fun circuitProbesAgainWithoutForce(@TempDir dir: Path) {
+        val calls = mutableListOf<String>()
+        var fail = true
+        val transport = FeedTransport { url ->
+            calls += url
+            if (fail) {
+                TransportResponse(503, null, "HTTP 503", 1, url)
+            } else {
+                TransportResponse(200, telescopeRss(), null, 1, url)
+            }
+        }
+        var now = Instant.parse("2026-11-08T03:00:00Z")
+        val service = CollectService(transport, classifier, clock = { now }, sleep = {})
+        val store = FileDigestStore(dir)
+        val live = FeedSource("space", "space", "https://example.com/space.xml", listOf(Category.space), licenseNote = "тест")
+        val off = live.copy(id = "off", url = "https://example.com/off.xml", enabled = false)
+        repeat(4) { service.run(store, listOf(live, off), false) }
+        val paused = store.readHealth().sources.single { it.id == "space" }
+        assertEquals(4, paused.consecutiveFailures)
+        assertNotNull(paused.nextProbeAt)
+        assertNotNull(paused.lastFailureAt)
+        calls.clear()
+        now = Instant.parse(paused.nextProbeAt).minus(Duration.ofMinutes(1))
+        service.run(store, listOf(live, off), false)
+        assertTrue(calls.isEmpty())
+        assertEquals(4, store.readHealth().sources.single { it.id == "space" }.consecutiveFailures)
+        val pausedDay = EditionCalendar.editionDate(now).toString()
+        assertTrue(store.readEdition(pausedDay)!!.sources.single { it.id == "space" }.paused)
+        now = Instant.parse(paused.nextProbeAt)
+        fail = false
+        service.run(store, listOf(live, off), false)
+        val healedDay = EditionCalendar.editionDate(now).toString()
+        val healedSource = store.readEdition(healedDay)!!.sources.single { it.id == "space" }
+        assertEquals(
+            listOf(live.url),
+            calls.distinct(),
+            "calls=$calls ok=${healedSource.ok} err=${healedSource.error} note=${healedSource.note}",
+        )
+        val healed = store.readHealth().sources.single { it.id == "space" }
+        assertEquals(0, healed.consecutiveFailures)
+        assertNull(healed.nextProbeAt)
+        assertTrue(store.readEdition(EditionCalendar.editionDate(now).toString())!!.items.isNotEmpty())
+
+        val old = FileDigestStore(Files.createTempDirectory(dir, "old"))
+        old.writeHealth(HealthState(listOf(SourceHealth("space", false, checkedAt = now.toString(), consecutiveFailures = 4, error = "HTTP 503"))))
+        val migrated = mutableListOf<String>()
+        CollectService(
+            FeedTransport { url ->
+                migrated += url
+                TransportResponse(503, null, "HTTP 503", 1, url)
+            },
+            classifier,
+            clock = { now },
+            sleep = {},
+        ).run(old, listOf(live), false)
+        assertTrue(migrated.isNotEmpty() && migrated.all { it == live.url })
+    }
+
+    @Test
+    fun blockedReadDoesNotWaitPastTheDeadline() {
+        val stream = object : java.io.InputStream() {
+            @Volatile var closed = false
+            override fun read(): Int {
+                while (!closed) Thread.sleep(30)
+                return -1
+            }
+            override fun close() { closed = true }
+        }
+        val started = System.nanoTime()
+        val error = runCatching { BoundedBody.read(stream, 1000, started + 200_000_000L) }
+        assertTrue(error.exceptionOrNull() is BoundedBody.ReadTimeout)
+        assertTrue(System.nanoTime() - started < 2_000_000_000L)
+    }
+
+    @Test
+    fun discoveryStaysOnTheSameHost() {
+        val html = """<html><link rel="alternate" type="application/rss+xml" href="/news.xml"><link rel="alternate" type="application/rss+xml" href="https://evil.example/rss"></html>"""
+        assertEquals("https://example.com/news.xml", FeedDiscovery.alternate(html.toByteArray(), "https://example.com/page"))
+    }
+
+    @Test
+    fun continuationNeedsANewNumber() {
+        val ai = source(Category.ai)
+        val seen = com.urmindkilla.svodkalocal.core.model.SeenStory(
+            "https://example.com/old",
+            Tokens.titleTokens("Вышла большая языковая модель Альфа для исследований лаборатории"),
+            "2026-11-07",
+        )
+        val repeat = builder.build(
+            now,
+            listOf(fetched(listOf(entry("Вышла большая языковая модель Альфа для исследований лаборатории", "https://example.com/new")), ai)),
+            listOf(seen),
+        )
+        assertTrue(repeat.edition.items.isEmpty())
+        val next = builder.build(
+            now,
+            listOf(fetched(listOf(entry("Вышла большая языковая модель Альфа2 для исследований лаборатории", "https://example.com/new2")), ai)),
+            listOf(seen),
+        )
+        assertEquals(1, next.edition.items.size)
+        assertTrue(next.edition.items.single().match.labels.any { it.contains("продолжение") })
+    }
+
+    private fun source(category: Category) =
+        FeedSource(category.name, category.name, "https://example.com/${category.name}.xml", listOf(category), licenseNote = "тест")
+
+    private fun source(id: String, category: Category, url: String) =
+        FeedSource(id, id, url, listOf(category), licenseNote = "тест")
+
+    private fun fetched(entries: List<ParsedEntry>, source: FeedSource = source(Category.space)) = FetchedSource(
+        source,
+        entries,
+        SourceStatus(source.id, source.name, source.url, true, true, 200, itemsSeen = entries.size),
+    )
+
+    private fun entry(title: String, url: String) = ParsedEntry(
+        title, url, null, "Sun, 08 Nov 2026 01:00:00 GMT", now.minus(2, ChronoUnit.HOURS),
+        "Короткий фрагмент ленты.", false, "feed_description",
+    )
+
+    private fun telescopeRss() = """
+        <rss version="2.0"><channel><item>
+        <title>Телескоп нашёл экзопланету у соседней звезды</title>
+        <link>https://example.com/planet</link>
+        <pubDate>Sun, 08 Nov 2026 01:00:00 GMT</pubDate>
+        <description>Короткий фрагмент ленты про экзопланету.</description>
+        </item></channel></rss>
+    """.trimIndent().toByteArray()
+
+    private fun sampleItem() = EditionItem(
+        id = "keep", title = "Телескоп нашёл комету", url = "https://example.com/keep", category = Category.space,
+        sourceId = "space", sourceName = "space", sourceFeed = "https://example.com/space.xml", publishedAt = now.toString(),
+        excerpt = "фрагмент", excerptTruncated = false, excerptOrigin = "feed_description",
+        match = MatchInfo(0.8, listOf("детерминированное совпадение"), listOf("телескоп")),
+    )
+}

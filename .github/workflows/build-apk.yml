@@ -1,0 +1,59 @@
+# Только ручной запуск. Не по расписанию, не по тегу и не по push в data.
+# В артефакт попадает один подписанный release APK, хранение 1 день.
+# Без secrets подписи шаг сборки останавливается и ничего не загружает.
+# Релиз GitHub, письмо и отправка APK в чат не делаются.
+name: Build APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: svodka-local-apk-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Require a public repository
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: bash scripts/require-public-repo.sh
+
+      - name: Android SDK
+        run: bash scripts/ci-android-sdk.sh
+
+      - name: Assemble signed release
+        env:
+          SVODKA_LOCAL_KEYSTORE_B64: ${{ secrets.SVODKA_LOCAL_KEYSTORE_B64 }}
+          SVODKA_LOCAL_KEYSTORE_PASSWORD: ${{ secrets.SVODKA_LOCAL_KEYSTORE_PASSWORD }}
+          SVODKA_LOCAL_KEY_ALIAS: ${{ secrets.SVODKA_LOCAL_KEY_ALIAS }}
+          SVODKA_LOCAL_KEY_PASSWORD: ${{ secrets.SVODKA_LOCAL_KEY_PASSWORD }}
+        run: bash scripts/ci-assemble-apk.sh
+
+      - name: Upload signed release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: svodka-local-release-apk
+          path: dist/svodka-local-release.apk
+          retention-days: 1
+          if-no-files-found: error

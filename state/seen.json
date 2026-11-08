@@ -1,6 +1,22 @@
 {
     "stories": [
         {
+            "url": "https://androidinsider.ru/os/xiaomi-perechislila-problemy-hyperos-4-kamera-i-prilozheniya-rabotayut-nepravilno.html",
+            "tokens": [
+                "новая",
+                "hyperos",
+                "ломает",
+                "камеру",
+                "другие",
+                "приложения",
+                "проверьте",
+                "свой",
+                "смартфон",
+                "xiaomi"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
             "url": "https://www.opennet.ru/opennews/art.shtml?num=66640",
             "tokens": [
                 "доступен",
@@ -27,16 +43,21 @@
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://www.ixbt.com/news/2026/11/07/zavisaniia-vylety-i-problemy-s-kameroi-xiaomi-gotovit-ispravleniia-dlia-hyperos-4.html",
+            "url": "https://www.ixbt.com/news/2026/11/08/amd-gotovit-eshhe-odnu-ocen-biudzetnuiu-videokartu-iz-proslogo-pokoleniia-v-po-hwinfo-poiavilas-podderzka-radeon-rx-7500.html",
             "tokens": [
-                "зависания",
-                "вылеты",
-                "проблемы",
-                "камерой",
-                "xiaomi",
+                "amd",
                 "готовит",
-                "исправления",
-                "hyperos"
+                "одну",
+                "очень",
+                "бюджетную",
+                "видеокарту",
+                "прошлого",
+                "поколения",
+                "hwinfo",
+                "появилась",
+                "поддержка",
+                "radeon",
+                "7500"
             ],
             "editionDate": "2026-11-08"
         },
@@ -102,6 +123,21 @@
             "editionDate": "2026-11-08"
         },
         {
+            "url": "https://habr.com/ru/articles/1105098",
+            "tokens": [
+                "пять",
+                "слоев",
+                "памяти",
+                "ассистента",
+                "реально",
+                "работает",
+                "проде",
+                "осталось",
+                "библиотеке"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
             "url": "https://www.intermedia.ru/news/407971",
             "tokens": [
                 "британский",
@@ -129,23 +165,6 @@
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://www.ixbt.com/news/2026/11/08/novenkii-iphone-slomalsia-cerez-cetyre-dnia-posle-pokupki-apple-ocenila-remont-v-1500.html",
-            "tokens": [
-                "новенький",
-                "iphone",
-                "сломался",
-                "через",
-                "четыре",
-                "дня",
-                "покупки",
-                "apple",
-                "оценила",
-                "ремонт",
-                "1500"
-            ],
-            "editionDate": "2026-11-08"
-        },
-        {
             "url": "https://www.ixbt.com/news/2026/11/08/zapekat-35-minut-pri-130-c-polzovatel-pocinil-neispravnuiu-geforce-gtx-1080-neobycnym-sposobom-zapek-ee-v-duxovke.html",
             "tokens": [
                 "запекать",
@@ -165,6 +184,23 @@
             "editionDate": "2026-11-08"
         },
         {
+            "url": "https://dtf.ru/games/5399937-henderson-assassins-creed-hexe-otlozhili",
+            "tokens": [
+                "хендерсон",
+                "assassin",
+                "creed",
+                "hexe",
+                "отложили",
+                "игра",
+                "вряд",
+                "выйдет",
+                "раньше",
+                "2028",
+                "года"
+            ],
+            "editionDate": "2026-11-08"
+        },
+        {
             "url": "https://www.igromania.ru/news/169794/uyutnaya-hozy-vyijdet-na-ps5-i-xbox-series-uzhe-zavtra-9-noyabrya",
             "tokens": [
                 "уютная",
@@ -179,12 +215,13 @@
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://habr.com/ru/articles/1105036",
+            "url": "https://fantlab.ru/blogarticle98768",
             "tokens": [
-                "ускоряем",
-                "развитие",
-                "wine",
-                "помощью"
+                "амнуэль",
+                "нераскрытые",
+                "тайны",
+                "научной",
+                "фантастики"
             ],
             "editionDate": "2026-11-08"
         },
@@ -218,23 +255,6 @@
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://habr.com/ru/articles/1104998",
-            "tokens": [
-                "алдуин",
-                "летит",
-                "запустил",
-                "skyrim",
-                "ноутбуке",
-                "2012",
-                "года",
-                "nvidia",
-                "optimus",
-                "linux",
-                "mint"
-            ],
-            "editionDate": "2026-11-08"
-        },
-        {
             "url": "https://www.ixbt.com/news/2026/11/07/geforce-rtx-5080-uskorilas-v-220-raz-svezee-obnovlenie-directx-raytracing-proverili-nezavisimym-testom.html",
             "tokens": [
                 "geforce",
@@ -254,41 +274,26 @@
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://3dnews.ru/1151005",
+            "url": "https://habr.com/ru/articles/1104836",
             "tokens": [
-                "расследование",
-                "показало",
-                "сша",
-                "разрешили",
-                "закупать",
-                "чипы",
-                "nvidia",
-                "несуществующим",
-                "китайским",
-                "компаниям"
+                "межсетевой",
+                "экран",
+                "спасает",
+                "фишинга",
+                "делаю",
+                "tower",
+                "defense",
+                "про",
+                "защиту",
+                "сети"
             ],
             "editionDate": "2026-11-08"
         },
         {
-            "url": "https://cubiq.ru/igry-s-interesnoj-magicheskoj-sistemoj",
+            "url": "https://fantlab.ru/news7645",
             "tokens": [
-                "игры",
-                "интересной",
-                "магической",
-                "системой"
-            ],
-            "editionDate": "2026-11-08"
-        },
-        {
-            "url": "https://stopgame.ru/newsdata/73417/podrobnosti_kovenov_umbrii_novogo_dopolneniya_dlya_path_of_exile",
-            "tokens": [
-                "подробности",
-                "ковенов",
-                "умбрии",
-                "нового",
-                "дополнения",
-                "path",
-                "exile"
+                "джедедайя",
+                "берри"
             ],
             "editionDate": "2026-11-08"
         }

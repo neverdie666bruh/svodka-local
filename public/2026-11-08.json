@@ -2,18 +2,21 @@
     "schema": 1,
     "editionDate": "2026-11-08",
     "timezone": "Asia/Dushanbe",
-    "generatedAt": "2026-11-08T10:56:08.890891479Z",
+    "generatedAt": "2026-11-08T14:11:23.659619249Z",
     "windowHours": 36,
     "collector": "svodka-local-deterministic",
-    "partial": false,
+    "partial": true,
     "limitations": [
         "Отбор детерминированный: группа источника, ключевые слова и порог совпадения. Это не смысловой разбор.",
         "Фрагмент — текст, который отдала лента RSS или Atom. Он очищен от разметки и усечён. Полная статья не скачивается.",
         "Совпадение с другим источником не проверялось. Пометка «не проверено независимо» относится к каждому пункту.",
         "Мнений, чужих точек зрения и вердикта нет: сборщик их не сочиняет.",
-        "Мировые новости проходят только при нескольких сильных маркерах крупного события. Если уверенности нет, пункт опускается."
+        "Мировые новости проходят только при нескольких сильных маркерах крупного события. Если уверенности нет, пункт опускается.",
+        "Места в выпуске сначала отдаются разным темам, у которых есть прошедший порог материал. Пустая тема не заполняется чужой новостью.",
+        "Повтор того же заголовка из другой ленты склеивается в один пункт со ссылками. Это не проверка факта вторым источником.",
+        "Лайк и дизлайк меняют только порядок на этом телефоне и не перенастраивают серверный сбор."
     ],
-    "summary": "В окне 36 ч правила оставили 20 материалов. Это не оценка важности и не редакционный обзор.",
+    "summary": "В окне 36 ч в выпуске 20 материалов: ИИ 4, Гаджеты 3, Программирование 3, Железо 3, Безопасность 1, Игры 3, Музыка 1, Книги 2. Это счётчик правил, не обзор и не проверка фактов. Часть источников не ответила.",
     "schedule": {
         "timezone": "Asia/Dushanbe",
         "localTime": "08:15",
@@ -22,6 +25,34 @@
         "guarantee": "Точная минута не обещается: GitHub может задержать или пропустить запуск."
     },
     "items": [
+        {
+            "id": "700c2ff8d48507b1",
+            "title": "Новая HyperOS 4 ломает камеру и другие приложения — проверьте свой смартфон Xiaomi",
+            "url": "https://androidinsider.ru/os/xiaomi-perechislila-problemy-hyperos-4-kamera-i-prilozheniya-rabotayut-nepravilno.html",
+            "category": "gadgets",
+            "sourceId": "androidinsider",
+            "sourceName": "AndroidInsider",
+            "sourceFeed": "https://androidinsider.ru/feed",
+            "publishedAt": "2026-11-08T08:15:18Z",
+            "excerpt": "Xiaomi признала ошибки HyperOS 4 на нескольких смартфонах. Проверяем список моделей, проблемы с камерой и приложениями, а также сроки исправлений.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 1.0,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: смартфон, hyperos, xiaomi",
+                    "счёт 1.00 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "hyperos",
+                    "xiaomi",
+                    "смартфон"
+                ]
+            },
+            "related": []
+        },
         {
             "id": "cb187ea1b42281b8",
             "title": "Доступен Emscripten 7.0, компилятор из C/C++ в WebAssembly",
@@ -47,7 +78,8 @@
                     "webassembly",
                     "компилятор"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "62565ffa4fb87d20",
@@ -75,35 +107,35 @@
                     "ии",
                     "нейросет"
                 ]
-            }
+            },
+            "related": []
         },
         {
-            "id": "d8d29c3ca2b28445",
-            "title": "Зависания, вылеты и проблемы с камерой: Xiaomi готовит исправления для HyperOS 4",
-            "url": "https://www.ixbt.com/news/2026/11/07/zavisaniia-vylety-i-problemy-s-kameroi-xiaomi-gotovit-ispravleniia-dlia-hyperos-4.html",
-            "category": "gadgets",
+            "id": "223f0e4d54c7bc1d",
+            "title": "AMD готовит ещё одну очень бюджетную видеокарту из прошлого поколения? В ПО HWiNFO появилась поддержка Radeon RX 7500",
+            "url": "https://www.ixbt.com/news/2026/11/08/amd-gotovit-eshhe-odnu-ocen-biudzetnuiu-videokartu-iz-proslogo-pokoleniia-v-po-hwinfo-poiavilas-podderzka-radeon-rx-7500.html",
+            "category": "hardware",
             "sourceId": "ixbt",
             "sourceName": "iXBT",
             "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
-            "publishedAt": "2026-11-07T10:05:00Z",
-            "excerpt": "Xiaomi перечислила ошибки HyperOS 4, которые исправит в смартфонах линейки Xiaomi 17 Сотрудники Xiaomi опубликовали на официальном форуме список ошибок HyperOS 4, над устранением которых сейчас работает компания. Большая часть багов касается смартфонов серии Xiaomi 17. Исправления будут постепенно появляться в последующих обновлениях системы, причём сроки зависят от конкретной модели и версии приложений. Источник изображения: Xiaomi // https://www.mi.com/prod/xiaomi-17-pro На…",
+            "publishedAt": "2026-11-08T11:45:00Z",
+            "excerpt": "Без подробностей Программа HWiNFO с очередным обновлением получила поддержку видеокарты AMD, о которой мы ранее слышали, но которую так и не выпустили. Причём видеокарты из прошлого поколения. В списке поддерживаемого оборудования появилась Radeon RX 7500. Информация о ней появлялась в Сети ещё в 2021 году, затем в 2023 году, но, видимо, AMD отказалась от планов по её запуску. Теперь же, вероятно, её всё же выпустят. Источник изображения: Videocardz // https://videocardz.com/…",
             "excerptTruncated": true,
             "excerptOrigin": "feed_content_truncated",
             "match": {
-                "confidence": 0.86,
+                "confidence": 0.78,
                 "labels": [
                     "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: gadgets",
-                    "ключевые слова в заголовке: hyperos, xiaomi",
-                    "ключевые слова во фрагменте: смартфон",
-                    "счёт 0.86 при пороге 0.50"
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: видеокарт, radeon",
+                    "счёт 0.78 при пороге 0.50"
                 ],
                 "positiveTerms": [
-                    "hyperos",
-                    "xiaomi",
-                    "смартфон"
+                    "radeon",
+                    "видеокарт"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "235bd1e15658042d",
@@ -129,7 +161,8 @@
                     "iphone",
                     "смартфон"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "1befa7b2c9561e27",
@@ -157,7 +190,8 @@
                     "планшет",
                     "смартфон"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "f37a01a8ac053798",
@@ -185,7 +219,8 @@
                     "xbox",
                     "игры"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "433060571de61473",
@@ -213,7 +248,36 @@
                     "ии",
                     "нейросет"
                 ]
-            }
+            },
+            "related": []
+        },
+        {
+            "id": "54bb64d3389d4c03",
+            "title": "Пять слоёв памяти ИИ-ассистента: что реально работает в проде, а что осталось в библиотеке",
+            "url": "https://habr.com/ru/articles/1105098",
+            "category": "ai",
+            "sourceId": "habr-ml",
+            "sourceName": "Хабр: машинное обучение",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/machine_learning/articles/?fl=ru",
+            "publishedAt": "2026-11-08T11:46:39Z",
+            "excerpt": "Главная жалоба на чат-ботов всегда одна: «он меня не помнит». Своей памяти у LLM нет, и всё, что она якобы помнит, кладём в контекст мы сами. Рассказываю, как устроена память ассистента в проде на 16 тысячах раундов: файлы, PostgreSQL с pgvector, судья на дешёвой модели, выжимки, политика доступа между агентами. И что из задуманного так и осталось лежать в библиотеке. Читать далее",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "ключевые слова во фрагменте: llm",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "llm",
+                    "ии"
+                ]
+            },
+            "related": []
         },
         {
             "id": "577237517d396db6",
@@ -240,7 +304,8 @@
                     "выпустил альбом",
                     "новый альбом"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "3130fafa3602ea5a",
@@ -267,34 +332,8 @@
                     "llm",
                     "ии"
                 ]
-            }
-        },
-        {
-            "id": "24f0c572d90f0b63",
-            "title": "Новенький iPhone сломался через четыре дня после покупки: Apple оценила ремонт в $1500",
-            "url": "https://www.ixbt.com/news/2026/11/08/novenkii-iphone-slomalsia-cerez-cetyre-dnia-posle-pokupki-apple-ocenila-remont-v-1500.html",
-            "category": "gadgets",
-            "sourceId": "ixbt",
-            "sourceName": "iXBT",
-            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
-            "publishedAt": "2026-11-08T04:09:00Z",
-            "excerpt": "В Apple считают, что неисправность возникла по вине пользователя В Китае покупатель складного iPhone Duo столкнулся с серьезной неисправностью всего через четыре дня после приобретения смартфона. По словам мужчины по фамилии Чжан, он заплатил 18 000 юаней (около $2700) за версию с 512 ГБ памяти, однако внутренний экран внезапно перестал работать. Владелец утверждает, что устройство не падало и не получало механических повреждений. Обратившись в магазин Apple в Ханчжоу, он узн…",
-            "excerptTruncated": true,
-            "excerptOrigin": "feed_content_truncated",
-            "match": {
-                "confidence": 0.64,
-                "labels": [
-                    "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: gadgets",
-                    "ключевые слова в заголовке: iphone",
-                    "ключевые слова во фрагменте: смартфон",
-                    "счёт 0.64 при пороге 0.50"
-                ],
-                "positiveTerms": [
-                    "iphone",
-                    "смартфон"
-                ]
-            }
+            },
+            "related": []
         },
         {
             "id": "cc60aa6da4cc8a13",
@@ -321,7 +360,34 @@
                     "geforce",
                     "видеокарт"
                 ]
-            }
+            },
+            "related": []
+        },
+        {
+            "id": "3af1c029c173bc8a",
+            "title": "Хендерсон: Assassin's Creed Hexe отложили — игра вряд ли выйдет раньше 2028 года",
+            "url": "https://dtf.ru/games/5399937-henderson-assassins-creed-hexe-otlozhili",
+            "category": "games",
+            "sourceId": "dtf",
+            "sourceName": "DTF",
+            "sourceFeed": "https://dtf.ru/rss",
+            "publishedAt": "2026-11-08T11:16:36Z",
+            "excerpt": "Согласно другому источнику, Ubisoft также занята игрой про Древний Рим.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: игра",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "игра"
+                ]
+            },
+            "related": []
         },
         {
             "id": "b731b2dfd2d4cc4e",
@@ -346,32 +412,34 @@
                 "positiveTerms": [
                     "xbox"
                 ]
-            }
+            },
+            "related": []
         },
         {
-            "id": "0a2cb509b1306acf",
-            "title": "Ускоряем развитие Wine с помощью ИИ",
-            "url": "https://habr.com/ru/articles/1105036",
-            "category": "ai",
-            "sourceId": "habr-ai",
-            "sourceName": "Хабр: искусственный интеллект",
-            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
-            "publishedAt": "2026-11-08T08:06:56Z",
-            "excerpt": "Привет, Хабр! Это Иван Сорокин, вы меня знаете по статья про far2l, его идейному продолжению f4 и порту Dos Navigator на современные системы. Хочу рассказать про новый проект (на самом деле, проекты), вам наверняка понравится и пригодится! Представляю fix-it-in-wine и dllmgr . Первый это скилл, он позволяет поручать ИИ-агенту исправление ошибок совместимости Windows-приложений с Wine. Второй - что-то вроде пакетного менеджера для DLL: позволяет устанавливать исправленные библ…",
-            "excerptTruncated": true,
+            "id": "984014ae6a41f1e3",
+            "title": "П. Амнуэль \"Нераскрытые тайны научной фантастики\"",
+            "url": "https://fantlab.ru/blogarticle98768",
+            "category": "books",
+            "sourceId": "fantlab",
+            "sourceName": "FantLab",
+            "sourceFeed": "https://fantlab.ru/news.rss",
+            "publishedAt": "2026-11-08T07:56:55Z",
+            "excerpt": "Рецензия на книгу Джорджа Слассера \"Научная фантастика: На пути к мировой литературе\" опубликована в журнале \"Наука и жизнь\", № 11 за 2026 год. Упомянутые в рецензии книги: 1) Фантастический роман Оноре де Бальзака выходил на русском языке лишь однажды. Обладатели 24-тт огоньковского собрания сочинений Бальзака могут кусать локи: там нет десяти (!) романов. Оноре де БальзакСтолетний старец Издательство: ...",
+            "excerptTruncated": false,
             "excerptOrigin": "feed_description",
             "match": {
                 "confidence": 0.56,
                 "labels": [
                     "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: ai",
-                    "ключевые слова в заголовке: ии",
+                    "группа источника: books",
+                    "ключевые слова в заголовке: фантаст",
                     "счёт 0.56 при пороге 0.50"
                 ],
                 "positiveTerms": [
-                    "ии"
+                    "фантаст"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "dc58cb2326e24aa7",
@@ -396,7 +464,8 @@
                 "positiveTerms": [
                     "linux"
                 ]
-            }
+            },
+            "related": []
         },
         {
             "id": "f8ab8efdbf75feca",
@@ -421,41 +490,17 @@
                 "positiveTerms": [
                     "дистрибутив"
                 ]
-            }
-        },
-        {
-            "id": "950fbd7cd1ca8e06",
-            "title": "«Алдуин летит!»: как я запустил Skyrim на ноутбуке 2012 года с NVIDIA Optimus под Linux Mint",
-            "url": "https://habr.com/ru/articles/1104998",
-            "category": "programming",
-            "sourceId": "habr-develop",
-            "sourceName": "Хабр: поток разработки",
-            "sourceFeed": "https://habr.com/ru/rss/flows/develop/articles/?fl=ru",
-            "publishedAt": "2026-11-07T22:14:02Z",
-            "excerpt": "TL;DR: Купил на Avito ASUS N56VZ 2012 года (i7-3630QM, GT 650M) за 6800 ₽, восстановил его после чужого «ремонта», поставил Linux Mint 22.3 и упёрся в NVIDIA Optimus. Собрал драйвер 470 с патчами из репозитория joanbm под ядро 6.14.0-37, победил чёрный экран, настроил PRIME Render Offload и DXVK, заставил Vulkan увидеть NVIDIA и запустил Skyrim. Девять дней, один нерабочий nvidia-xconfig и одно «АЛДУИН ЛЕТИТ!». Читать далее",
-            "excerptTruncated": false,
-            "excerptOrigin": "feed_description",
-            "match": {
-                "confidence": 0.56,
-                "labels": [
-                    "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: programming",
-                    "ключевые слова в заголовке: linux",
-                    "счёт 0.56 при пороге 0.50"
-                ],
-                "positiveTerms": [
-                    "linux"
-                ]
-            }
+            },
+            "related": []
         },
         {
             "id": "a78220093668be91",
             "title": "GeForce RTX 5080 ускорилась в 220 раз. Свежее обновление DirectX Raytracing проверили независимым тестом",
             "url": "https://www.ixbt.com/news/2026/11/07/geforce-rtx-5080-uskorilas-v-220-raz-svezee-obnovlenie-directx-raytracing-proverili-nezavisimym-testom.html",
             "category": "hardware",
-            "sourceId": "ixbt",
-            "sourceName": "iXBT",
-            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "sourceId": "ixbt-hard",
+            "sourceName": "iXBT: железо",
+            "sourceFeed": "https://www.ixbt.com/export/hardnews.rss",
             "publishedAt": "2026-11-07T18:58:00Z",
             "excerpt": "Недавно Microsoft анонсировала самое значительное обновление DirectX Raytracing с 2018 года , и в Сети уже появились первые независимые результаты тестирования этой технологии. Напомним, представленные технологии технологии DirectX Raytracing (DXR) Clustered Geometry и Partitioned Top-Level Acceleration Structures (PTLAS), согласно данным самой Microsoft, позволяли в определённых специально созданных сценах повышать производительность трассировки лучей в десятки раз. Энтузиас…",
             "excerptTruncated": true,
@@ -471,82 +516,60 @@
                 "positiveTerms": [
                     "geforce"
                 ]
-            }
+            },
+            "related": []
         },
         {
-            "id": "a4851601a7bfe041",
-            "title": "Расследование показало, что США разрешили закупать чипы Nvidia несуществующим китайским компаниям",
-            "url": "https://3dnews.ru/1151005",
-            "category": "hardware",
-            "sourceId": "3dnews",
-            "sourceName": "3DNews",
-            "sourceFeed": "https://3dnews.ru/news/rss/",
-            "publishedAt": "2026-11-07T18:41:00Z",
-            "excerpt": "Министерство торговли США одобрило поставку чипов Nvidia H200 целому ряду китайских компаний. Как выяснилось в результате расследования The New York Times, некоторые из них связаны с фирмами, находящимися под санкциями по соображениям национальной безопасности, а некоторые существуют только на бумаге. Источник изображения: NVIDIA",
+            "id": "326ed3e8404fa379",
+            "title": "Межсетевой экран не спасает от фишинга: делаю tower defense про защиту сети",
+            "url": "https://habr.com/ru/articles/1104836",
+            "category": "security",
+            "sourceId": "habr-infosec",
+            "sourceName": "Хабр: информационная безопасность",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/infosecurity/articles/?fl=ru",
+            "publishedAt": "2026-11-07T09:39:09Z",
+            "excerpt": "Представьте обычный tower defense: противники идут по дорожкам, вы ставите вдоль них защиту. Только дорожки здесь соединяют роутер, рабочие ноутбуки, серверы и базы данных. А противник может прийти письмом, пролезть через поставщика ПО или просто позвонить директору. Куда в последнем случае ставить башню? Я один делаю игру про это. Хочется, чтобы человек без IT-опыта после неё понимал, зачем нужны двухфакторная аутентификация, резервные копии и SIEM. И почему «у нас стоит ант…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: security",
+                    "ключевые слова в заголовке: фишинг",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "фишинг"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "e8de2d9323459333",
+            "title": "Джедедайя Берри",
+            "url": "https://fantlab.ru/news7645",
+            "category": "books",
+            "sourceId": "fantlab",
+            "sourceName": "FantLab",
+            "sourceFeed": "https://fantlab.ru/news.rss",
+            "publishedAt": "2026-11-07T05:00:00Z",
+            "excerpt": "Составлена библиография Джедедайи Берри — американского писателя и редактора, работающего на пересечении фэнтези, детектива и нуара. Значительная часть профессиональной жизни Берри связана с независимым издательством Small Beer Press, основанным писателями Келли Линк и Гэвином Грантом. В 2004 году он пришёл туда волонтёром, занимался пресс-релизами, отправкой книг, корректурой и подготовкой ...",
             "excerptTruncated": false,
             "excerptOrigin": "feed_description",
             "match": {
                 "confidence": 0.56,
                 "labels": [
                     "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: hardware",
-                    "ключевые слова в заголовке: чипы",
+                    "группа источника: books",
+                    "ключевые слова во фрагменте: фэнтези",
                     "счёт 0.56 при пороге 0.50"
                 ],
                 "positiveTerms": [
-                    "чипы"
+                    "фэнтези"
                 ]
-            }
-        },
-        {
-            "id": "ff2e21140309e741",
-            "title": "Игры с интересной магической системой",
-            "url": "https://cubiq.ru/igry-s-interesnoj-magicheskoj-sistemoj",
-            "category": "games",
-            "sourceId": "cubiq",
-            "sourceName": "Cubiq",
-            "sourceFeed": "https://cubiq.ru/feed/",
-            "publishedAt": "2026-11-07T15:41:34Z",
-            "excerpt": "Магия – это круто, правда? Мечи, луки, арбалеты и мушкеты тоже хороши, но они редко так органично вплетаются в заданный сеттинг, как это обычно получается у магии. Вдобавок, благодаря знаниям и силе духа волшебники могут повелевать самой реальностью. Каким бы накачанным ни был бицепс, он не остановит летящий в лицо огненный шар. Давайте взглянем на игры, где использование магии стало в той или иной степени жутко крутым!",
-            "excerptTruncated": false,
-            "excerptOrigin": "feed_description",
-            "match": {
-                "confidence": 0.56,
-                "labels": [
-                    "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: games",
-                    "ключевые слова в заголовке: игры",
-                    "счёт 0.56 при пороге 0.50"
-                ],
-                "positiveTerms": [
-                    "игры"
-                ]
-            }
-        },
-        {
-            "id": "f1d41619af3a35d7",
-            "title": "Подробности «Ковенов Умбрии» — нового дополнения для Path of Exile",
-            "url": "https://stopgame.ru/newsdata/73417/podrobnosti_kovenov_umbrii_novogo_dopolneniya_dlya_path_of_exile",
-            "category": "games",
-            "sourceId": "stopgame",
-            "sourceName": "StopGame",
-            "sourceFeed": "https://rss.stopgame.ru/rss_news.xml",
-            "publishedAt": "2026-11-07T11:17:08Z",
-            "excerpt": "Прошедшей ночью студия Grinding Gear Games провела специальную трансляцию в честь запуска фестиваля ExileCon 2026. Помимо всего прочего на стриме состоялся полноценный анонс свежего контента для первой Path of Exile, который входит в состав… […]",
-            "excerptTruncated": false,
-            "excerptOrigin": "feed_description",
-            "match": {
-                "confidence": 0.56,
-                "labels": [
-                    "детерминированное совпадение, не смысловой разбор",
-                    "группа источника: games",
-                    "ключевые слова в заголовке: дополнен",
-                    "счёт 0.56 при пороге 0.50"
-                ],
-                "positiveTerms": [
-                    "дополнен"
-                ]
-            }
+            },
+            "related": []
         }
     ],
     "sources": [
@@ -557,10 +580,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 3
+            "itemsUsed": 2,
+            "paused": false
         },
         {
             "id": "habr-ml",
@@ -569,10 +593,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 1,
+            "paused": false
         },
         {
             "id": "habr-infosec",
@@ -581,10 +606,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 1,
+            "paused": false
         },
         {
             "id": "habr-android",
@@ -593,10 +619,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 1
+            "itemsUsed": 1,
+            "paused": false
         },
         {
             "id": "habr-gadgets",
@@ -605,10 +632,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "habr-hardware",
@@ -617,10 +645,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "habr-astronomy",
@@ -629,10 +658,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "habr-gamedev",
@@ -641,10 +671,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "habr-develop",
@@ -653,10 +684,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 1
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "habr-popsci",
@@ -665,10 +697,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "3dnews",
@@ -677,10 +710,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
-            "itemsSeen": 55,
-            "itemsUsed": 2
+            "itemsSeen": 57,
+            "itemsUsed": 1,
+            "lastModified": "Sun, 08 Nov 2026 14:07:59 GMT",
+            "paused": false
         },
         {
             "id": "3dnews-games",
@@ -689,10 +724,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 80,
-            "itemsUsed": 1
+            "itemsUsed": 1,
+            "paused": false
         },
         {
             "id": "3dnews-soft",
@@ -701,10 +737,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 80,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 14:04:36 GMT",
+            "paused": false
         },
         {
             "id": "ixbt",
@@ -713,10 +751,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 50,
-            "itemsUsed": 6
+            "itemsUsed": 4,
+            "etag": "\"28f4b13e61bc13329420c2cd27b7e4db\"",
+            "paused": false
         },
         {
             "id": "ixbt-hard",
@@ -725,10 +765,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 50,
-            "itemsUsed": 0
+            "itemsUsed": 1,
+            "etag": "\"b567f6903f5aa24764430051b171e9b6\"",
+            "paused": false
         },
         {
             "id": "opennet",
@@ -737,10 +779,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 40,
-            "itemsUsed": 2
+            "itemsUsed": 2,
+            "etag": "W/\"6af07704-cd26\"",
+            "lastModified": "Sun, 08 Nov 2026 13:20:04 GMT",
+            "paused": false
         },
         {
             "id": "securitylab",
@@ -749,10 +794,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 80,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "xakep",
@@ -761,10 +807,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 10,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "etag": "\"8b2e3d6f2a6e3071dd017032602bfcfd\"",
+            "lastModified": "Fri, 06 Nov 2026 18:30:45 GMT",
+            "paused": false
         },
         {
             "id": "stopgame",
@@ -773,10 +822,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 30,
-            "itemsUsed": 1
+            "itemsUsed": 0,
+            "etag": "\"6af0806a-8ce2\"",
+            "lastModified": "Sun, 08 Nov 2026 14:00:10 GMT",
+            "paused": false
         },
         {
             "id": "kanobu-pulse",
@@ -785,10 +837,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 30,
-            "itemsUsed": 1
+            "itemsUsed": 1,
+            "lastModified": "Sun, 08 Nov 2026 12:05:07 GMT",
+            "paused": false
         },
         {
             "id": "cubiq",
@@ -797,10 +851,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 30,
-            "itemsUsed": 1
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 13:21:52 GMT",
+            "paused": false
         },
         {
             "id": "4pda",
@@ -809,10 +865,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 30,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 14:11:40 GMT",
+            "paused": false
         },
         {
             "id": "overclockers",
@@ -821,10 +879,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 20,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "etag": "\"6af082b9-4118\"",
+            "lastModified": "Sun, 08 Nov 2026 14:10:01 GMT",
+            "paused": false
         },
         {
             "id": "androidinsider",
@@ -833,10 +894,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 20,
-            "itemsUsed": 0
+            "itemsUsed": 1,
+            "etag": "\"fa06b6a912cfc7c9c8d4830b4ddd066a\"",
+            "paused": false
         },
         {
             "id": "nplus1",
@@ -845,10 +908,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 10,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "elementy",
@@ -857,10 +921,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 10,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "postnauka",
@@ -869,10 +934,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 4,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "etag": "W/\"3de63ec8609b910de7b65211f4317374\"",
+            "paused": false
         },
         {
             "id": "mirf",
@@ -881,10 +948,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 12,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "intermedia",
@@ -893,10 +961,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 80,
-            "itemsUsed": 1
+            "itemsUsed": 1,
+            "paused": false
         },
         {
             "id": "newsmuz",
@@ -905,10 +974,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 10,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "etag": "\"1794144516-0\"",
+            "lastModified": "Sun, 08 Nov 2026 13:28:36 GMT",
+            "paused": false
         },
         {
             "id": "bbc-russian",
@@ -917,10 +989,11 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
-            "itemsSeen": 38,
-            "itemsUsed": 0
+            "itemsSeen": 39,
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "meduza-news",
@@ -929,10 +1002,12 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 30,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 14:12:02 GMT",
+            "paused": false
         },
         {
             "id": "kommersant-world",
@@ -941,10 +1016,13 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 80,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "etag": "\"84bbc21a896fdd1:0\"",
+            "lastModified": "Sun, 08 Nov 2026 13:57:34 GMT",
+            "paused": false
         },
         {
             "id": "interfax",
@@ -953,10 +1031,95 @@
             "enabled": true,
             "ok": true,
             "httpStatus": 200,
-            "fetchedAt": "2026-11-08T10:56:08.890891479Z",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
             "attempts": 1,
             "itemsSeen": 25,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 13:47:00 GMT",
+            "paused": false
+        },
+        {
+            "id": "fantlab",
+            "name": "FantLab",
+            "url": "https://fantlab.ru/news.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 1,
+            "itemsSeen": 75,
+            "itemsUsed": 2,
+            "paused": false
+        },
+        {
+            "id": "astronet",
+            "name": "Астронет",
+            "url": "https://www.astronet.ru/db/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 1,
+            "itemsSeen": 8,
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 06:14:18 GMT",
+            "paused": false
+        },
+        {
+            "id": "securelist",
+            "name": "Securelist",
+            "url": "https://securelist.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "W/\"c5d6f67af8774e29ae55edc996868a18\"",
+            "lastModified": "Fri, 06 Nov 2026 10:00:17 GMT",
+            "paused": false
+        },
+        {
+            "id": "kaspersky-blog",
+            "name": "Блог Касперского",
+            "url": "https://www.kaspersky.ru/blog/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "W/\"46734048f3084cfcf6014651d3cce3cd\"",
+            "lastModified": "Thu, 05 Nov 2026 19:05:36 GMT",
+            "paused": false
+        },
+        {
+            "id": "dtf",
+            "name": "DTF",
+            "url": "https://dtf.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 1,
+            "itemsSeen": 12,
+            "itemsUsed": 1,
+            "paused": false
+        },
+        {
+            "id": "animag",
+            "name": "АниМаг",
+            "url": "https://animag.ru/",
+            "enabled": true,
+            "ok": false,
+            "error": "общий таймаут 20 с",
+            "fetchedAt": "2026-11-08T14:11:23.659619249Z",
+            "attempts": 3,
+            "itemsSeen": 0,
+            "itemsUsed": 0,
+            "paused": false
         },
         {
             "id": "darker",
@@ -966,17 +1129,136 @@
             "ok": true,
             "attempts": 0,
             "itemsSeen": 0,
-            "itemsUsed": 0
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "nkj",
+            "name": "Наука и жизнь",
+            "url": "https://www.nkj.ru/rss/",
+            "enabled": false,
+            "ok": true,
+            "attempts": 0,
+            "itemsSeen": 0,
+            "itemsUsed": 0,
+            "paused": false
         }
     ],
     "counts": {
-        "seen": 1304,
+        "seen": 1422,
         "published": 20,
-        "duplicates": 7,
-        "outOfWindow": 838,
-        "excluded": 27,
-        "lowConfidence": 368,
+        "duplicates": 5,
+        "outOfWindow": 893,
+        "excluded": 31,
+        "lowConfidence": 422,
         "badDate": 2,
-        "notRussian": 7
-    }
+        "notRussian": 9
+    },
+    "collectionFailed": false,
+    "coverage": [
+        {
+            "category": "ai",
+            "enabledSources": 3,
+            "sourceDomains": 2,
+            "eligible": 24,
+            "published": 4,
+            "note": "в выпуске 4 из 24 прошедших порог"
+        },
+        {
+            "category": "gadgets",
+            "enabledSources": 5,
+            "sourceDomains": 5,
+            "eligible": 12,
+            "published": 3,
+            "note": "в выпуске 3 из 12 прошедших порог"
+        },
+        {
+            "category": "programming",
+            "enabledSources": 5,
+            "sourceDomains": 3,
+            "eligible": 5,
+            "published": 3,
+            "note": "в выпуске 3 из 5 прошедших порог"
+        },
+        {
+            "category": "hardware",
+            "enabledSources": 5,
+            "sourceDomains": 4,
+            "eligible": 7,
+            "published": 3,
+            "note": "в выпуске 3 из 7 прошедших порог"
+        },
+        {
+            "category": "security",
+            "enabledSources": 7,
+            "sourceDomains": 7,
+            "eligible": 1,
+            "published": 1,
+            "note": "в выпуске 1"
+        },
+        {
+            "category": "space",
+            "enabledSources": 5,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "brain",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "games",
+            "enabledSources": 7,
+            "sourceDomains": 6,
+            "eligible": 8,
+            "published": 3,
+            "note": "в выпуске 3 из 8 прошедших порог"
+        },
+        {
+            "category": "anime",
+            "enabledSources": 1,
+            "sourceDomains": 1,
+            "eligible": 0,
+            "published": 0,
+            "note": "источники этой группы не ответили"
+        },
+        {
+            "category": "music",
+            "enabledSources": 2,
+            "sourceDomains": 2,
+            "eligible": 1,
+            "published": 1,
+            "note": "в выпуске 1"
+        },
+        {
+            "category": "books",
+            "enabledSources": 2,
+            "sourceDomains": 2,
+            "eligible": 2,
+            "published": 2,
+            "note": "в выпуске 2"
+        },
+        {
+            "category": "oddities",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "world",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        }
+    ]
 }

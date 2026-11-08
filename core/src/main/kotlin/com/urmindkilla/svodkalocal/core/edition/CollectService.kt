@@ -21,6 +21,7 @@ import com.urmindkilla.svodkalocal.core.store.DataBranchReadme
 import com.urmindkilla.svodkalocal.core.store.DigestStore
 import com.urmindkilla.svodkalocal.core.time.EditionCalendar
 import com.urmindkilla.svodkalocal.core.time.RunDecision
+import java.time.Duration
 import java.time.Instant
 import java.time.ZoneId
 
@@ -71,7 +72,7 @@ class CollectService(
                 if (useValidators) prior?.etag else null,
                 if (useValidators) prior?.lastModified else null,
                 existing,
-                prior?.consecutiveFailures ?: 0,
+                prior,
                 force,
             )
         }
@@ -122,7 +123,21 @@ class CollectService(
         val previous = store.readHealth().sources.associateBy { it.id }
         val next = edition.sources.map { status ->
             val before = previous[status.id]
+            if (status.paused) {
+                return@map (before ?: SourceHealth(status.id, false, checkedAt = now.toString())).copy(
+                    ok = false,
+                    httpStatus = status.httpStatus ?: before?.httpStatus,
+                    error = status.error ?: before?.error,
+                    checkedAt = now.toString(),
+                )
+            }
             val failures = if (status.ok) 0 else (before?.consecutiveFailures ?: 0) + 1
+            val badDocument = SourceCircuit.malformed(status.error)
+            val nextProbe = if (!status.ok && failures >= SourceCircuit.THRESHOLD) {
+                now.plus(SourceCircuit.pauseFor(failures, badDocument)).toString()
+            } else {
+                null
+            }
             SourceHealth(
                 id = status.id,
                 ok = status.ok,
@@ -132,6 +147,8 @@ class CollectService(
                 consecutiveFailures = failures,
                 etag = status.etag ?: before?.etag,
                 lastModified = status.lastModified ?: before?.lastModified,
+                lastFailureAt = if (status.ok) null else now.toString(),
+                nextProbeAt = nextProbe,
             )
         }
         store.writeHealth(HealthState(next))
@@ -200,18 +217,21 @@ class CollectService(
         etag: String?,
         modifiedSince: String?,
         existing: Edition?,
-        consecutiveFailures: Int,
+        prior: com.urmindkilla.svodkalocal.core.model.SourceHealth?,
         force: Boolean,
     ): FetchedSource {
-        if (!force && consecutiveFailures >= 4) {
+        if (SourceCircuit.waiting(prior, now, force)) {
+            val until = prior?.nextProbeAt ?: ""
             return FetchedSource(
                 source,
                 emptyList(),
                 SourceStatus(
                     source.id, source.name, source.url, true, false,
-                    error = "пауза после повторных сбоев",
+                    httpStatus = prior?.httpStatus,
+                    error = prior?.error ?: "временная пауза",
                     fetchedAt = now.toString(), attempts = 0,
-                    note = "источник пропускается, пока сбор не запустят с force",
+                    note = "автопауза до $until. Следующая проверка сама, force не обязателен.",
+                    paused = true,
                 ),
             )
         }

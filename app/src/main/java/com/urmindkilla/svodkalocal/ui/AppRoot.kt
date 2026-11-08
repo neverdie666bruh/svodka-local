@@ -256,7 +256,8 @@ private fun StatusScreen(state: ReaderUi, model: ReaderViewModel) {
             item { Text("Источники выпуска ${edition.editionDate}", style = MaterialTheme.typography.titleLarge) }
             items(edition.sources, key = { it.id }) { source ->
                 val line = when {
-                    !source.enabled -> "выключен"
+                    !source.enabled -> "выключен в списке источников и сам не включается"
+                    source.paused -> source.note ?: "автопауза до следующей проверки"
                     source.ok -> "ок · ${source.itemsSeen} в ленте · ${source.itemsUsed} в выпуске"
                     else -> "ошибка · ${source.error ?: "без текста"}"
                 }

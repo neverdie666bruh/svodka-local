@@ -117,6 +117,7 @@ data class SourceStatus(
     val note: String? = null,
     val etag: String? = null,
     val lastModified: String? = null,
+    val paused: Boolean = false,
 )
 
 @Serializable
@@ -191,6 +192,8 @@ data class SourceHealth(
     val consecutiveFailures: Int = 0,
     val etag: String? = null,
     val lastModified: String? = null,
+    val lastFailureAt: String? = null,
+    val nextProbeAt: String? = null,
 )
 
 @Serializable

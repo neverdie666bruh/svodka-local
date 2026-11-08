@@ -2,6 +2,7 @@ package com.urmindkilla.svodkalocal.core
 
 import com.urmindkilla.svodkalocal.core.classify.Classifier
 import com.urmindkilla.svodkalocal.core.edition.CollectService
+import com.urmindkilla.svodkalocal.core.edition.SourceCircuit
 import com.urmindkilla.svodkalocal.core.edition.EditionBuilder
 import com.urmindkilla.svodkalocal.core.edition.FetchedSource
 import com.urmindkilla.svodkalocal.core.json.Codec
@@ -13,20 +14,26 @@ import com.urmindkilla.svodkalocal.core.model.FeedSource
 import com.urmindkilla.svodkalocal.core.model.FeedTransport
 import com.urmindkilla.svodkalocal.core.model.MatchInfo
 import com.urmindkilla.svodkalocal.core.model.ParsedEntry
+import com.urmindkilla.svodkalocal.core.model.HealthState
+import com.urmindkilla.svodkalocal.core.model.SourceHealth
 import com.urmindkilla.svodkalocal.core.model.SourceStatus
 import com.urmindkilla.svodkalocal.core.model.TransportResponse
 import com.urmindkilla.svodkalocal.core.net.FeedDiscovery
 import com.urmindkilla.svodkalocal.core.store.FileDigestStore
+import com.urmindkilla.svodkalocal.core.time.EditionCalendar
 import com.urmindkilla.svodkalocal.core.text.Tokens
 import com.urmindkilla.svodkalocal.core.net.BoundedBody
 import com.urmindkilla.svodkalocal.core.rss.HtmlIndexParser
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
+import java.nio.file.Files
 import java.nio.file.Path
+import java.time.Duration
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 import kotlin.io.path.readText
@@ -177,6 +184,79 @@ class EditionOneOneTest {
     }
 
     @Test
+    fun weeklyAstronomyCalendarIsNotADiscovery() {
+        val space = source(Category.space)
+        assertTrue(classifier.classify("Астрономическая неделя с 14 по 20 декабря", "календарь наблюдений", space) == null)
+        assertTrue(classifier.classify("Календарь наблюдателя на декабрь", "планеты", space) == null)
+        assertEquals(
+            Category.space,
+            classifier.classify("Телескоп нашёл экзопланету у соседней звезды", "астрономы", space)?.category,
+        )
+        assertEquals(Duration.ofHours(24), SourceCircuit.pauseFor(4, badDocument = false))
+        assertEquals(Duration.ofDays(3), SourceCircuit.pauseFor(4, badDocument = true))
+        assertEquals(Duration.ofDays(7), SourceCircuit.pauseFor(8, badDocument = false))
+    }
+
+    @Test
+    fun circuitProbesAgainWithoutForce(@TempDir dir: Path) {
+        val calls = mutableListOf<String>()
+        var fail = true
+        val transport = FeedTransport { url ->
+            calls += url
+            if (fail) {
+                TransportResponse(503, null, "HTTP 503", 1, url)
+            } else {
+                TransportResponse(200, telescopeRss(), null, 1, url)
+            }
+        }
+        var now = Instant.parse("2026-11-08T03:00:00Z")
+        val service = CollectService(transport, classifier, clock = { now }, sleep = {})
+        val store = FileDigestStore(dir)
+        val live = FeedSource("space", "space", "https://example.com/space.xml", listOf(Category.space), licenseNote = "тест")
+        val off = live.copy(id = "off", url = "https://example.com/off.xml", enabled = false)
+        repeat(4) { service.run(store, listOf(live, off), false) }
+        val paused = store.readHealth().sources.single { it.id == "space" }
+        assertEquals(4, paused.consecutiveFailures)
+        assertNotNull(paused.nextProbeAt)
+        assertNotNull(paused.lastFailureAt)
+        calls.clear()
+        now = Instant.parse(paused.nextProbeAt).minus(Duration.ofMinutes(1))
+        service.run(store, listOf(live, off), false)
+        assertTrue(calls.isEmpty())
+        assertEquals(4, store.readHealth().sources.single { it.id == "space" }.consecutiveFailures)
+        val pausedDay = EditionCalendar.editionDate(now).toString()
+        assertTrue(store.readEdition(pausedDay)!!.sources.single { it.id == "space" }.paused)
+        now = Instant.parse(paused.nextProbeAt)
+        fail = false
+        service.run(store, listOf(live, off), false)
+        val healedDay = EditionCalendar.editionDate(now).toString()
+        val healedSource = store.readEdition(healedDay)!!.sources.single { it.id == "space" }
+        assertEquals(
+            listOf(live.url),
+            calls.distinct(),
+            "calls=$calls ok=${healedSource.ok} err=${healedSource.error} note=${healedSource.note}",
+        )
+        val healed = store.readHealth().sources.single { it.id == "space" }
+        assertEquals(0, healed.consecutiveFailures)
+        assertNull(healed.nextProbeAt)
+        assertTrue(store.readEdition(EditionCalendar.editionDate(now).toString())!!.items.isNotEmpty())
+
+        val old = FileDigestStore(Files.createTempDirectory(dir, "old"))
+        old.writeHealth(HealthState(listOf(SourceHealth("space", false, checkedAt = now.toString(), consecutiveFailures = 4, error = "HTTP 503"))))
+        val migrated = mutableListOf<String>()
+        CollectService(
+            FeedTransport { url ->
+                migrated += url
+                TransportResponse(503, null, "HTTP 503", 1, url)
+            },
+            classifier,
+            clock = { now },
+            sleep = {},
+        ).run(old, listOf(live), false)
+        assertTrue(migrated.isNotEmpty() && migrated.all { it == live.url })
+    }
+
+    @Test
     fun blockedReadDoesNotWaitPastTheDeadline() {
         val stream = object : java.io.InputStream() {
             @Volatile var closed = false
@@ -237,6 +317,15 @@ class EditionOneOneTest {
         title, url, null, "Sun, 08 Nov 2026 01:00:00 GMT", now.minus(2, ChronoUnit.HOURS),
         "Короткий фрагмент ленты.", false, "feed_description",
     )
+
+    private fun telescopeRss() = """
+        <rss version="2.0"><channel><item>
+        <title>Телескоп нашёл экзопланету у соседней звезды</title>
+        <link>https://example.com/planet</link>
+        <pubDate>Sun, 08 Nov 2026 01:00:00 GMT</pubDate>
+        <description>Короткий фрагмент ленты про экзопланету.</description>
+        </item></channel></rss>
+    """.trimIndent().toByteArray()
 
     private fun sampleItem() = EditionItem(
         id = "keep", title = "Телескоп нашёл комету", url = "https://example.com/keep", category = Category.space,

@@ -19,6 +19,7 @@ ARGS=(--data-dir "${WORK}/data" --sources "${ROOT}/sources/sources.json" --rules
 if [[ "${SVODKA_FORCE:-false}" == "true" ]]; then
   ARGS+=(--force)
 fi
+bash "${ROOT}/scripts/bootstrap-gradle.sh"
 set +e
 (
   cd "${ROOT}"

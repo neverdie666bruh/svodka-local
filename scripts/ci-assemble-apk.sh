@@ -19,6 +19,8 @@ keyAlias=${SVODKA_LOCAL_KEY_ALIAS}
 keyPassword=${SVODKA_LOCAL_KEY_PASSWORD}
 EOF
 chmod 600 keystore.properties "${KS}" || true
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+bash "${ROOT}/scripts/bootstrap-gradle.sh"
 ./gradlew --no-daemon --no-build-cache :app:assembleRelease
 mkdir -p dist
 cp app/build/outputs/apk/release/app-release.apk dist/svodka-local-release.apk

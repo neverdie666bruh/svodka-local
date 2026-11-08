@@ -317,6 +317,15 @@ class BehaviorTest {
         assertFalse(apk.contains("tags:"))
         assertFalse(apk.contains("schedule:"))
         assertFalse(apk.contains("softprops"))
+        assertFalse(apk.contains("inputs:"))
+        assertTrue(apk.contains("verify-apk-cert.sh"))
+        assertTrue(apk.contains("C34A306AD94E7D3AE57AC4C503998DEECB3E32FCBBFE8089CC0072A31634D42C"))
+        val reader = root.resolve("app/src/main/java/com/urmindkilla/svodkalocal/ui/ReaderViewModel.kt").readText()
+        val screen = root.resolve("app/src/main/java/com/urmindkilla/svodkalocal/ui/AppRoot.kt").readText()
+        assertFalse(reader.contains("fun saveUrl"))
+        assertTrue(reader.contains("PublicDigest.INDEX_URL"))
+        assertFalse(screen.contains("OutlinedTextField"))
+        assertFalse(screen.contains("Сохранить адрес"))
         assertEquals(
             "https://raw.githubusercontent.com/neverdie666bruh/svodka-local/data/public/index.json",
             com.urmindkilla.svodkalocal.core.net.PublicDigest.INDEX_URL,

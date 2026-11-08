@@ -16,7 +16,6 @@ import com.urmindkilla.svodkalocal.core.model.SCHEMA
 import com.urmindkilla.svodkalocal.core.model.Vote
 import com.urmindkilla.svodkalocal.core.net.IndexLocator
 import com.urmindkilla.svodkalocal.core.net.PublicDigest
-import com.urmindkilla.svodkalocal.core.net.UrlPolicy
 import com.urmindkilla.svodkalocal.core.store.DeviceArchive
 import com.urmindkilla.svodkalocal.core.text.Tokens
 import com.urmindkilla.svodkalocal.core.time.EditionCalendar
@@ -42,7 +41,6 @@ data class ReaderUi(
     val lastSuccess: String? = null,
     val lastError: String? = null,
     val banner: String? = null,
-    val formError: String? = null,
 )
 
 class ReaderViewModel(app: Application) : AndroidViewModel(app) {
@@ -74,19 +72,6 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
             lastError = prefs.getString("last_error", null),
             banner = bannerFor(edition, prefs.getString("last_error", null)),
         )
-    }
-
-    fun saveUrl(raw: String) {
-        val url = raw.trim().ifEmpty { PublicDigest.INDEX_URL }
-        if (url.isNotEmpty()) {
-            val rejection = UrlPolicy.rejection(url)
-            if (rejection != null || !url.endsWith("index.json")) {
-                _state.value = _state.value.copy(formError = rejection ?: "адрес должен заканчиваться на index.json")
-                return
-            }
-        }
-        prefs.edit().putString("index_url", url).apply()
-        _state.value = _state.value.copy(indexUrl = url, formError = null)
     }
 
     fun refresh(manual: Boolean) {
@@ -164,10 +149,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         return Intent(Intent.ACTION_VIEW, Uri.parse(url))
     }
 
-    private fun storedUrl(): String {
-        val saved = prefs.getString("index_url", null)?.trim().orEmpty()
-        return saved.ifEmpty { PublicDigest.INDEX_URL }
-    }
+    private fun storedUrl(): String = PublicDigest.INDEX_URL
 
     private fun download(indexUrl: String) {
         val indexBytes = client.get(indexUrl)

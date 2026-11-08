@@ -28,7 +28,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -36,9 +35,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -56,6 +52,7 @@ import com.urmindkilla.svodkalocal.core.model.Edition
 import com.urmindkilla.svodkalocal.core.model.EditionItem
 import com.urmindkilla.svodkalocal.core.model.LIMITATIONS
 import com.urmindkilla.svodkalocal.core.model.titleRu
+import com.urmindkilla.svodkalocal.core.net.PublicDigest
 import com.urmindkilla.svodkalocal.core.time.EditionCalendar
 import java.time.LocalDate
 import java.time.OffsetDateTime
@@ -130,7 +127,7 @@ private fun TodayScreen(state: ReaderUi, model: ReaderViewModel, open: (String) 
                 item { EmptyCard("За это окно правила никого не пропустили. Пустой список честный: чужие темы сюда не добавляются.") }
             }
         } ?: item {
-            EmptyCard("Когда сервер опубликует ветку data, вставьте адрес index.json на экране «Сбор» и нажмите «Загрузить».")
+            EmptyCard("Когда сервер опубликует ветку data, нажмите «Загрузить» на экране «Сбор». Адрес указателя уже вшит.")
         }
         items(state.ranked, key = { it.id }) { item ->
             ArticleCard(item) { open(item.id) }
@@ -178,33 +175,28 @@ private fun BookmarkScreen(state: ReaderUi, open: (String) -> Unit) {
 
 @Composable
 private fun StatusScreen(state: ReaderUi, model: ReaderViewModel) {
-    var draft by remember(state.indexUrl) { mutableStateOf(state.indexUrl) }
     LazyColumn(contentPadding = PaddingValues(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         item { Text("Сбор", style = MaterialTheme.typography.headlineMedium) }
         item {
             InfoBlock(
                 "Расписание сервера",
-                "Цель — 08:15 Asia/Dushanbe (03:15 UTC), cron «15 8 * * *». " +
+                "Цель — 08:15 Asia/Dushanbe (03:15 UTC), cron «15 8 * * *» и timezone Asia/Dushanbe. " +
                     "Минута 15 выбрана потому, что начало часа у GitHub — час пик: запуск могут задержать или молча пропустить. " +
                     "У этой зоны нет летнего времени. Точную минуту приложение не обещает. " +
                     "Телефон сбор не запускает и разрешения на уведомления не просит.",
             )
         }
         item {
-            OutlinedTextField(
-                value = draft,
-                onValueChange = { draft = it },
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Адрес index.json") },
-                placeholder = { Text(com.urmindkilla.svodkalocal.core.net.PublicDigest.INDEX_URL) },
-                minLines = 2,
+            InfoBlock(
+                "Адрес выпуска",
+                "Указатель вшит в приложение. Другой адрес ввести нельзя.\n${PublicDigest.INDEX_URL}",
             )
-            state.formError?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                OutlinedButton(onClick = { model.saveUrl(draft) }) { Text("Сохранить адрес") }
-                Button(onClick = { model.saveUrl(draft); model.refresh(manual = true) }, enabled = !state.loading) {
-                    Text(if (state.loading) "Загрузка" else "Загрузить")
-                }
+            Button(
+                onClick = { model.refresh(manual = true) },
+                enabled = !state.loading,
+                modifier = Modifier.padding(top = 8.dp),
+            ) {
+                Text(if (state.loading) "Загрузка" else "Загрузить")
             }
         }
         item {

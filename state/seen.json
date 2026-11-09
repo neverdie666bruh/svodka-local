@@ -296,6 +296,332 @@
                 "берри"
             ],
             "editionDate": "2026-11-08"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105166",
+            "tokens": [
+                "токены",
+                "дешевеют",
+                "счета",
+                "растут",
+                "экономика",
+                "llm",
+                "конец",
+                "2026",
+                "года"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.securitylab.ru/news/579834.php",
+            "tokens": [
+                "хакерам",
+                "равно",
+                "windows",
+                "вас",
+                "macos",
+                "cad",
+                "редакторе",
+                "cobalt",
+                "раскрыли",
+                "сразу",
+                "пять",
+                "day",
+                "уязвимостей"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/etot-noutbuk-osnashhen-processorom-intel-iz-2018-goda-no-zato-u-nego-12-gb-ozu-pri-cene-470-evro-predstavlen-bmax-maxbook-x15-s-pro.html",
+            "tokens": [
+                "этот",
+                "ноутбук",
+                "оснащен",
+                "процессором",
+                "intel",
+                "2018",
+                "года",
+                "зато",
+                "него",
+                "озу",
+                "цене",
+                "470",
+                "евро",
+                "представлен",
+                "bmax",
+                "maxbook",
+                "x15",
+                "pro"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://androidinsider.ru/gadzhety/bolshaya-rasprodazha-oneplus-na-aliexpress-5-gadzhetov-kotorye-stoit-kupit.html",
+            "tokens": [
+                "пора",
+                "закупаться",
+                "oneplus",
+                "наушники",
+                "отдают",
+                "копейки",
+                "флагман",
+                "скидкой"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://3dnews.ru/1151014",
+            "tokens": [
+                "nokia",
+                "2035",
+                "году",
+                "долю",
+                "придется",
+                "почти",
+                "половина",
+                "мирового",
+                "сетевого",
+                "трафика"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://habr.com/ru/companies/bothub/articles/1105138",
+            "tokens": [
+                "промты",
+                "горят",
+                "может",
+                "написать",
+                "художественно",
+                "ценный",
+                "текст"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://4pda.to/2026/11/09/463072/mechrevo_vypustila_igrovoj_noutbuk_bez_diskretnoj_videokarty",
+            "tokens": [
+                "mechrevo",
+                "выпустила",
+                "игровой",
+                "ноутбук",
+                "дискретной",
+                "видеокарты"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://4pda.to/2026/11/09/463071/v_ekrannoj_klaviature_iphone_nashli_vstroennuyu_tsenzuru",
+            "tokens": [
+                "экранной",
+                "клавиатуре",
+                "iphone",
+                "нашли",
+                "встроенную",
+                "цензуру"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://3dnews.ru/1151006",
+            "tokens": [
+                "новая",
+                "статья",
+                "мастерская",
+                "локальных",
+                "flux",
+                "image",
+                "klein",
+                "рамки",
+                "контролем"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/daze-blok-pitaniia-za-500-evro-ne-garantiruet-bezopasnost-videokart-s-razieemom-12v-6x2-vladelec-dvux-rtx-pro-6000-vovremia-zametil-problemu.html",
+            "tokens": [
+                "даже",
+                "блок",
+                "питания",
+                "500",
+                "евро",
+                "гарантирует",
+                "безопасность",
+                "видеокарт",
+                "разъемом",
+                "12v",
+                "6x2",
+                "владелец",
+                "двух",
+                "rtx",
+                "pro",
+                "6000",
+                "вовремя",
+                "заметил",
+                "проблему"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105178",
+            "tokens": [
+                "предложений",
+                "llm",
+                "управляемому",
+                "исполнению",
+                "опыт",
+                "разработки",
+                "агента"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/tsmc-sozdala-potencialnuiu-zamenu-sram-novaia-pamiat-beol-vstraivaetsia-priamo-v-processor-i-imeet-resurs-100-trln-ciklov.html",
+            "tokens": [
+                "tsmc",
+                "создала",
+                "потенциальную",
+                "замену",
+                "sram",
+                "новая",
+                "память",
+                "beol",
+                "встраивается",
+                "прямо",
+                "процессор",
+                "имеет",
+                "ресурс",
+                "100",
+                "трлн",
+                "циклов"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/08/12-mln-rublei-za-bolsoi-polnoprivodnyi-gibrid-geely-s-moshhnost-462-ls-v-rossiiu-privezli-geely-galaxy-v900.html",
+            "tokens": [
+                "млн",
+                "рублей",
+                "большой",
+                "полноприводный",
+                "гибрид",
+                "geely",
+                "мощностью",
+                "462",
+                "россию",
+                "привезли",
+                "galaxy",
+                "v900"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66643",
+            "tokens": [
+                "представлен",
+                "kmorph",
+                "быстрого",
+                "восстановления",
+                "сбоя",
+                "обновления",
+                "ядра",
+                "linux"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105142",
+            "tokens": [
+                "создал",
+                "игру",
+                "чтобы",
+                "играть",
+                "нее",
+                "против",
+                "агентов",
+                "разу",
+                "выиграл"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1105128",
+            "tokens": [
+                "366",
+                "попыток",
+                "восстановить",
+                "linux",
+                "сервер",
+                "показала",
+                "статистика",
+                "месяц"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://www.securitylab.ru/news/579788.php",
+            "tokens": [
+                "одного",
+                "имени",
+                "пользователя",
+                "хватило",
+                "root",
+                "control",
+                "web",
+                "panel",
+                "нашли",
+                "уязвимостей",
+                "исправление",
+                "спасло"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://3dnews.ru/1151005",
+            "tokens": [
+                "расследование",
+                "показало",
+                "сша",
+                "разрешили",
+                "закупать",
+                "чипы",
+                "nvidia",
+                "несуществующим",
+                "китайским",
+                "компаниям"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://habr.com/ru/companies/timeweb/articles/1102776",
+            "tokens": [
+                "руководитель",
+                "мог",
+                "стать",
+                "архитектором",
+                "нью",
+                "йорке",
+                "такое",
+                "game",
+                "почему",
+                "phantom",
+                "blade",
+                "zero",
+                "порвала",
+                "рынок"
+            ],
+            "editionDate": "2026-11-09"
+        },
+        {
+            "url": "https://cubiq.ru/v-arma-reforger-poyavilis-ralliynye-gonki",
+            "tokens": [
+                "arma",
+                "reforger",
+                "появились",
+                "раллийные",
+                "гонки"
+            ],
+            "editionDate": "2026-11-09"
         }
     ]
 }

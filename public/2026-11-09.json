@@ -1,0 +1,1255 @@
+{
+    "schema": 1,
+    "editionDate": "2026-11-09",
+    "timezone": "Asia/Dushanbe",
+    "generatedAt": "2026-11-09T04:09:02.653234033Z",
+    "windowHours": 36,
+    "collector": "svodka-local-deterministic",
+    "partial": true,
+    "limitations": [
+        "Отбор детерминированный: группа источника, ключевые слова и порог совпадения. Это не смысловой разбор.",
+        "Фрагмент — текст, который отдала лента RSS или Atom. Он очищен от разметки и усечён. Полная статья не скачивается.",
+        "Совпадение с другим источником не проверялось. Пометка «не проверено независимо» относится к каждому пункту.",
+        "Мнений, чужих точек зрения и вердикта нет: сборщик их не сочиняет.",
+        "Мировые новости проходят только при нескольких сильных маркерах крупного события. Если уверенности нет, пункт опускается.",
+        "Места в выпуске сначала отдаются разным темам, у которых есть прошедший порог материал. Пустая тема не заполняется чужой новостью.",
+        "Повтор того же заголовка из другой ленты склеивается в один пункт со ссылками. Это не проверка факта вторым источником.",
+        "Лайк и дизлайк меняют только порядок на этом телефоне и не перенастраивают серверный сбор."
+    ],
+    "summary": "В окне 36 ч в выпуске 20 материалов: ИИ 5, Гаджеты 4, Программирование 2, Железо 4, Безопасность 2, Игры 3. Это счётчик правил, не обзор и не проверка фактов. Часть источников не ответила.",
+    "schedule": {
+        "timezone": "Asia/Dushanbe",
+        "localTime": "08:15",
+        "cron": "15 8 * * *",
+        "utcEquivalent": "03:15",
+        "guarantee": "Точная минута не обещается: GitHub может задержать или пропустить запуск."
+    },
+    "items": [
+        {
+            "id": "e8e842c00cf12c49",
+            "title": "Токены дешевеют, а счета за ИИ растут. Экономика LLM на конец 2026 года",
+            "url": "https://habr.com/ru/articles/1105166",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-09T04:00:28Z",
+            "excerpt": "Всем привет! В предыдущих статьях я разбирал локальный инференс: на каком железе запускать большие языковые модели и как подключить их к Claude Code . Локальные модели хороши тем, что за каждый токен платить не нужно. Но в мировой корпоративной практике основная нагрузка приходится на облачные модели OpenAI, Anthropic и Google, и вопрос их стоимости становится для продуктовых команд одним из ключевых при планировании. При этом картина складывается противоречивая. Исследовател…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.94,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: llm, ии",
+                    "ключевые слова во фрагменте: openai, anthropic",
+                    "счёт 0.94 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "anthropic",
+                    "llm",
+                    "openai",
+                    "ии"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "31d6835afd1d4d2f",
+            "title": "Хакерам всё равно, Windows у вас или macOS. В CAD-редакторе Cobalt раскрыли сразу пять 0-day уязвимостей",
+            "url": "https://www.securitylab.ru/news/579834.php",
+            "category": "security",
+            "sourceId": "securitylab",
+            "sourceName": "SecurityLab",
+            "sourceFeed": "https://www.securitylab.ru/_services/export/rss/",
+            "publishedAt": "2026-11-08T08:18:43Z",
+            "excerpt": "Разработчика предупреждали почти год, но опасные ошибки так и остались без исправлений.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.78,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: security",
+                    "ключевые слова в заголовке: уязвим, 0-day",
+                    "счёт 0.78 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "0-day",
+                    "уязвим"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "fddc458f29ecf6e7",
+            "title": "Этот ноутбук оснащён процессором Intel из 2018 года, но зато у него 12 ГБ ОЗУ при цене 470 евро. Представлен Bmax MaxBook X15 S Pro",
+            "url": "https://www.ixbt.com/news/2026/11/08/etot-noutbuk-osnashhen-processorom-intel-iz-2018-goda-no-zato-u-nego-12-gb-ozu-pri-cene-470-evro-predstavlen-bmax-maxbook-x15-s-pro.html",
+            "category": "hardware",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T19:38:00Z",
+            "excerpt": "А ещё тут 512 ГБ на SSD Компания Bmax выпустила на рынок новый ноутбук MaxBook X15 S Pro, который основан на старом процессоре. И речь не о модели, вышедшей три-четыре года назад, как у некоторых других производителей. В основе новинки лежит Core i3-8109U, представленный в далёком по меркам рынка 2018 году. Это CPU линейки Coffee Lake, который производили по 14-нанометровому техпроцессу. У него всего два ядра и частота до 3,6 ГГц. Откуда производитель взял запасы таких чипов,…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.72,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: процессор",
+                    "ключевые слова во фрагменте: ssd, нанометр",
+                    "счёт 0.72 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ssd",
+                    "нанометр",
+                    "процессор"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "f648d9ee7e413125",
+            "title": "Пора закупаться OnePlus: наушники отдают за копейки, а флагман уже со скидкой",
+            "url": "https://androidinsider.ru/gadzhety/bolshaya-rasprodazha-oneplus-na-aliexpress-5-gadzhetov-kotorye-stoit-kupit.html",
+            "category": "gadgets",
+            "sourceId": "androidinsider",
+            "sourceName": "AndroidInsider",
+            "sourceFeed": "https://androidinsider.ru/feed",
+            "publishedAt": "2026-11-08T12:00:05Z",
+            "excerpt": "На AliExpress подешевели смартфоны, наушники и планшет OnePlus. Собрали пять интересных устройств с распродажи 11.11 и разобрали их преимущества.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.72,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: наушник",
+                    "ключевые слова во фрагменте: смартфон, планшет",
+                    "счёт 0.72 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "наушник",
+                    "планшет",
+                    "смартфон"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "3f72c7fec0aa9484",
+            "title": "Nokia: к 2035 году на долю ИИ придётся почти половина мирового сетевого трафика",
+            "url": "https://3dnews.ru/1151014",
+            "category": "ai",
+            "sourceId": "3dnews",
+            "sourceName": "3DNews",
+            "sourceFeed": "https://3dnews.ru/news/rss/",
+            "publishedAt": "2026-11-08T20:57:00Z",
+            "excerpt": "Компания Nokia прогнозирует масштабные изменения в структуре глобального сетевого трафика под влиянием ИИ. Наблюдающаяся тенденция создаст серьёзные технологические вызовы из-за специфики работы нейросетевых систем, включая высокую нагрузку на восходящие каналы связи. Финский технологический гигант ожидает, что вплоть до 2035-го ежегодный рост глобального трафика составит около 28 %. В результате, к середине следующего десятилетия объём передаваемых данных увеличится почти в…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "ключевые слова во фрагменте: нейросет",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ии",
+                    "нейросет"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "3d96ec794bd7760e",
+            "title": "Промты не горят: может ли ИИ написать художественно ценный текст",
+            "url": "https://habr.com/ru/companies/bothub/articles/1105138",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-08T15:21:53Z",
+            "excerpt": "Попросила нейросеть написать сцену по мотивам своего рассказа. Она придумала героям сына, общее прошлое и взялась их мирить. Разбираюсь, как ИИ сочиняет прозу и как объяснить ему, что у автора тоже были планы. Читать далее",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.64,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "ключевые слова во фрагменте: нейросет",
+                    "счёт 0.64 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ии",
+                    "нейросет"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "e0c82fe40451a7f5",
+            "title": "Mechrevo выпустила игровой ноутбук без дискретной видеокарты",
+            "url": "https://4pda.to/2026/11/09/463072/mechrevo_vypustila_igrovoj_noutbuk_bez_diskretnoj_videokarty",
+            "category": "gadgets",
+            "sourceId": "4pda",
+            "sourceName": "4PDA",
+            "sourceFeed": "https://4pda.to/feed/",
+            "publishedAt": "2026-11-09T04:00:00Z",
+            "excerpt": "Mechrevo представила новый лэптоп Unbounded 15X Blizzard Gaming Edition. Модель с 240-герцевым экраном и процессором AMD Ryzen AI 9 365 позиционируется как геймерская — даже несмотря на отсутствие дискретной [...]",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: ноутбук",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ноутбук"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "2b456fa783de5a33",
+            "title": "В экранной клавиатуре iPhone нашли встроенную цензуру",
+            "url": "https://4pda.to/2026/11/09/463071/v_ekrannoj_klaviature_iphone_nashli_vstroennuyu_tsenzuru",
+            "category": "gadgets",
+            "sourceId": "4pda",
+            "sourceName": "4PDA",
+            "sourceFeed": "https://4pda.to/feed/",
+            "publishedAt": "2026-11-09T03:00:00Z",
+            "excerpt": "В iOS обнаружили скрытый список из тысяч выражений, которые система намеренно не предлагает пользователям при подсказках во время набора текста. Среди них оказались как вполне ожидаемые политические выражения, [...]",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: iphone",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "iphone"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "d7765d336beaf122",
+            "title": "Новая статья: Мастерская локальных ИИ: FLUX 3 Image Klein — рамки под контролем",
+            "url": "https://3dnews.ru/1151006",
+            "category": "ai",
+            "sourceId": "3dnews",
+            "sourceName": "3DNews",
+            "sourceFeed": "https://3dnews.ru/news/rss/",
+            "publishedAt": "2026-11-08T21:00:00Z",
+            "excerpt": "Хорошим выйдет рисунок или нет, во многом определяет его композиция, контролировать которую в ходе ИИ-генерации чаще всего затруднительно",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: ии",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "ии"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "61809bc7edbb256d",
+            "title": "Даже блок питания за 500 евро не гарантирует безопасность видеокарт с разъёмом 12V-6x2. Владелец двух RTX Pro 6000 вовремя заметил проблему",
+            "url": "https://www.ixbt.com/news/2026/11/08/daze-blok-pitaniia-za-500-evro-ne-garantiruet-bezopasnost-videokart-s-razieemom-12v-6x2-vladelec-dvux-rtx-pro-6000-vovremia-zametil-problemu.html",
+            "category": "hardware",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T18:19:00Z",
+            "excerpt": "Каждая такая карта стоит десятки тысяч долларов Даже очень недешёвые блоки питания от топовых производителей не застрахованы от проблем с разъёмом питания 12V-6x2 на современных видеокартах. Так владелец двух RTX Pro 6000 Blackwell показал, что его Seasonic PRIME TX-1600 Noctua Edition явно работал не в самом штатном режиме. Сам блок питания и видеокарты были в порядке, когда их владелец обратил внимание на проблему. Однако не исключено, что через время ситуация дошла бы до о…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: видеокарт",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "видеокарт"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "37f4c99a9e111528",
+            "title": "От предложений LLM к управляемому исполнению: опыт разработки AI‑агента",
+            "url": "https://habr.com/ru/articles/1105178",
+            "category": "ai",
+            "sourceId": "habr-ai",
+            "sourceName": "Хабр: искусственный интеллект",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "publishedAt": "2026-11-08T17:47:13Z",
+            "excerpt": "Подключить AI-агента к инструментам - лишь часть задачи. Гораздо сложнее организовать его работу там, где недостаточно уверенного ответа модели и необходимо соблюдать ограничения, контролировать действия и проверять последствия. Например, если агент предлагает восстановить деградировавший сервис, кто проверит: выдержит ли инфраструктура переключение трафика? выполнены ли все необходимые условия? действительно ли сервис восстановился? Я решил исследовать эти вопросы на примере…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: ai",
+                    "ключевые слова в заголовке: llm",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "llm"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "75c1f4c84d4f1845",
+            "title": "TSMC создала потенциальную замену SRAM: новая память BEOL встраивается прямо в процессор и имеет ресурс 100 трлн циклов",
+            "url": "https://www.ixbt.com/news/2026/11/08/tsmc-sozdala-potencialnuiu-zamenu-sram-novaia-pamiat-beol-vstraivaetsia-priamo-v-processor-i-imeet-resurs-100-trln-ciklov.html",
+            "category": "hardware",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T16:42:00Z",
+            "excerpt": "BEOL использует ячейки 1T1C — с одним транзистором и одним конденсатором TSMC представила экспериментальную архитектуру памяти — BEOL (Back-End-Of-Line), которую планируется размещать непосредственно в слоях межсоединений процессорного чипа. Она построена на ячейках 1T1C — с одним транзистором и одним конденсатором — и может стать более компактной альтернативой SRAM. Источник изображения: ИИ Gemini // https://gemini.google.com/ В обычной ячейке SRAM используются шесть транзис…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: процессор",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "процессор"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "ec2d435863c11f41",
+            "title": "12 млн рублей за большой полноприводный гибрид Geely с мощностью 462 л.с. В Россию привезли Geely Galaxy V900",
+            "url": "https://www.ixbt.com/news/2026/11/08/12-mln-rublei-za-bolsoi-polnoprivodnyi-gibrid-geely-s-moshhnost-462-ls-v-rossiiu-privezli-geely-galaxy-v900.html",
+            "category": "gadgets",
+            "sourceId": "ixbt",
+            "sourceName": "iXBT",
+            "sourceFeed": "https://www.ixbt.com/export/news/rss.xml",
+            "publishedAt": "2026-11-08T16:31:00Z",
+            "excerpt": "Это аналог GAC M8, Voyah Dream, Toyota Alhard и прочих подобных семейных минивэнов Один из московских дилеров выставил на продажу в России гибридный минивэн Geely Galaxy V900. Как сообщает «Российская газета», это первый автомобиль такого класса в линейке бренда Galaxy. Машину привезли в страну по схеме параллельного импорта. Источник изображения: Geely // https://www.galaxy-geely.com/YHV900 Geely Galaxy V900 представляет собой последовательный гибрид длиной 5,36 м. Его силов…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_content_truncated",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: gadgets",
+                    "ключевые слова в заголовке: galaxy",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "galaxy"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "d9ecc1c73ffc7728",
+            "title": "Представлен kmorph для быстрого восстановления после сбоя или обновления ядра Linux",
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66643",
+            "category": "programming",
+            "sourceId": "opennet",
+            "sourceName": "OpenNET",
+            "sourceFeed": "https://www.opennet.ru/opennews/opennews_all_utf.rss",
+            "publishedAt": "2026-11-08T15:50:51Z",
+            "excerpt": "Разработчики проекта Multikernel, позволяющего на одном физическом компьютере выполнять несколько независимых экземпляров ядра без гипервизора и виртуализации, представили инструментарий kmorph, реализующий средства для быстрого восстановления после аварийной остановки ядра Linux или для замены ядра в Live-режиме без полноценной перезагрузки. Проект развивает Конг Ванг (Cong Wang), сопровождающий подсистему управления трафиком (TC, Traffic Control) в ядре. Метод быстрого пере…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: linux",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "linux"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "142d60c2e6e23568",
+            "title": "Создал игру, чтобы играть в нее против ИИ-агентов и ни разу не выиграл",
+            "url": "https://habr.com/ru/articles/1105142",
+            "category": "games",
+            "sourceId": "habr-gamedev",
+            "sourceName": "Хабр: игры и разработка игр",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/gamedev/articles/?fl=ru",
+            "publishedAt": "2026-11-08T15:45:09Z",
+            "excerpt": "Я написал пошаговую стратегию, в которую играют с помощью и против ИИ-агента, и за десяток партий ни разу в неё не выиграл. Меня разгромили на моём же поле. Теперь я считаю, что в регламентированных условиях искин гораздо лучший менеджер, чем человек. Читать далее и попробовать выиграть",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова в заголовке: игру",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "игру"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "8e642e234a4506d8",
+            "title": "366 попыток восстановить Linux‑сервер: что показала статистика за месяц",
+            "url": "https://habr.com/ru/articles/1105128",
+            "category": "programming",
+            "sourceId": "habr-develop",
+            "sourceName": "Хабр: поток разработки",
+            "sourceFeed": "https://habr.com/ru/rss/flows/develop/articles/?fl=ru",
+            "publishedAt": "2026-11-08T14:21:18Z",
+            "excerpt": "Последний месяц я собирал статистику прохождения инцидентов в учебном Linux-окружении. Идея простая: пользователь получает сервер со сломанным сервисом, открывает терминал в браузере и пытается самостоятельно найти и устранить неисправность. Никакой заранее заданной последовательности команд нет. Можно смотреть журналы, изучать процессы, проверять сетевые соединения и конфигурацию. Главное - восстановить работоспособность сервиса. За месяц набралось 366 взятых в работу инциде…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: programming",
+                    "ключевые слова в заголовке: linux",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "linux"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "eb013482ec329497",
+            "title": "Одного имени пользователя хватило для root. В Control Web Panel нашли 10 уязвимостей, исправление не спасло",
+            "url": "https://www.securitylab.ru/news/579788.php",
+            "category": "security",
+            "sourceId": "securitylab",
+            "sourceName": "SecurityLab",
+            "sourceFeed": "https://www.securitylab.ru/_services/export/rss/",
+            "publishedAt": "2026-11-08T13:15:04Z",
+            "excerpt": "Специалист сумел получить максимальные привилегии, даже не проходя авторизацию.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: security",
+                    "ключевые слова в заголовке: уязвим",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "уязвим"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "a4851601a7bfe041",
+            "title": "Расследование показало, что США разрешили закупать чипы Nvidia несуществующим китайским компаниям",
+            "url": "https://3dnews.ru/1151005",
+            "category": "hardware",
+            "sourceId": "3dnews",
+            "sourceName": "3DNews",
+            "sourceFeed": "https://3dnews.ru/news/rss/",
+            "publishedAt": "2026-11-07T18:41:00Z",
+            "excerpt": "Министерство торговли США одобрило поставку чипов Nvidia H200 целому ряду китайских компаний. Как выяснилось в результате расследования The New York Times, некоторые из них связаны с фирмами, находящимися под санкциями по соображениям национальной безопасности, а некоторые существуют только на бумаге. Источник изображения: NVIDIA",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.56,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: hardware",
+                    "ключевые слова в заголовке: чипы",
+                    "счёт 0.56 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "чипы"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "8f8b87e0c250f4ed",
+            "title": "Ее руководитель мог стать архитектором в Нью‑Йорке. Что такое S‑Game и почему Phantom Blade Zero порвала рынок",
+            "url": "https://habr.com/ru/companies/timeweb/articles/1102776",
+            "category": "games",
+            "sourceId": "habr-gamedev",
+            "sourceName": "Хабр: игры и разработка игр",
+            "sourceFeed": "https://habr.com/ru/rss/hubs/gamedev/articles/?fl=ru",
+            "publishedAt": "2026-11-08T16:05:44Z",
+            "excerpt": "А вы тоже заметили, что раз в пару лет приходят девелоперы из Китая и рвут все чарты игрой, о которой вы могли ни разу и не слышать? Сначала весь мир узнал про гача-игры через бесплатный Genshin Impact, потом все культурно обогатились по эпосу из Black Myth: Wu-Kong, а вот прямо когда я пишу этот текст (еле оторвав себя от игры, стоит заметить), в Steam к миллиону одновременных игроков приближается Phantom Blade Zero от никому на западе не известной S-Game. И тут, с одной сто…",
+            "excerptTruncated": true,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.5,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова во фрагменте: игры, steam",
+                    "счёт 0.50 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "steam",
+                    "игры"
+                ]
+            },
+            "related": []
+        },
+        {
+            "id": "734ee7241c572aec",
+            "title": "В Arma Reforger появились раллийные гонки",
+            "url": "https://cubiq.ru/v-arma-reforger-poyavilis-ralliynye-gonki",
+            "category": "games",
+            "sourceId": "cubiq",
+            "sourceName": "Cubiq",
+            "sourceFeed": "https://cubiq.ru/feed/",
+            "publishedAt": "2026-11-08T08:25:07Z",
+            "excerpt": "Дополнение Arma Reforger – Rally добавляет в игру заезды по сложным трассам.",
+            "excerptTruncated": false,
+            "excerptOrigin": "feed_description",
+            "match": {
+                "confidence": 0.5,
+                "labels": [
+                    "детерминированное совпадение, не смысловой разбор",
+                    "группа источника: games",
+                    "ключевые слова во фрагменте: игру, дополнен",
+                    "счёт 0.50 при пороге 0.50"
+                ],
+                "positiveTerms": [
+                    "дополнен",
+                    "игру"
+                ]
+            },
+            "related": []
+        }
+    ],
+    "sources": [
+        {
+            "id": "habr-ai",
+            "name": "Хабр: искусственный интеллект",
+            "url": "https://habr.com/ru/rss/hubs/artificial_intelligence/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 3,
+            "paused": false
+        },
+        {
+            "id": "habr-ml",
+            "name": "Хабр: машинное обучение",
+            "url": "https://habr.com/ru/rss/hubs/machine_learning/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-infosec",
+            "name": "Хабр: информационная безопасность",
+            "url": "https://habr.com/ru/rss/hubs/infosecurity/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-android",
+            "name": "Хабр: разработка под Android",
+            "url": "https://habr.com/ru/rss/hubs/android_dev/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-gadgets",
+            "name": "Хабр: гаджеты",
+            "url": "https://habr.com/ru/rss/hubs/gadgets/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-hardware",
+            "name": "Хабр: железо",
+            "url": "https://habr.com/ru/rss/hubs/hardware/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-astronomy",
+            "name": "Хабр: астрономия",
+            "url": "https://habr.com/ru/rss/hubs/astronomy/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "habr-gamedev",
+            "name": "Хабр: игры и разработка игр",
+            "url": "https://habr.com/ru/rss/hubs/gamedev/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 2,
+            "paused": false
+        },
+        {
+            "id": "habr-develop",
+            "name": "Хабр: поток разработки",
+            "url": "https://habr.com/ru/rss/flows/develop/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 1,
+            "paused": false
+        },
+        {
+            "id": "habr-popsci",
+            "name": "Хабр: научпоп",
+            "url": "https://habr.com/ru/rss/hubs/popular_science/articles/?fl=ru",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "3dnews",
+            "name": "3DNews",
+            "url": "https://3dnews.ru/news/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 57,
+            "itemsUsed": 3,
+            "lastModified": "Mon, 09 Nov 2026 04:01:58 GMT",
+            "paused": false
+        },
+        {
+            "id": "3dnews-games",
+            "name": "3DNews: игры",
+            "url": "https://3dnews.ru/games/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "3dnews-soft",
+            "name": "3DNews: программы",
+            "url": "https://3dnews.ru/software/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0,
+            "lastModified": "Mon, 09 Nov 2026 04:02:15 GMT",
+            "paused": false
+        },
+        {
+            "id": "ixbt",
+            "name": "iXBT",
+            "url": "https://www.ixbt.com/export/news/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 50,
+            "itemsUsed": 4,
+            "etag": "\"7df34ad4cd74e048d0133c48ece73f7f\"",
+            "paused": false
+        },
+        {
+            "id": "ixbt-hard",
+            "name": "iXBT: железо",
+            "url": "https://www.ixbt.com/export/hardnews.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 50,
+            "itemsUsed": 0,
+            "etag": "\"e6736b6fed12ece0273e31ebfe393dbd\"",
+            "paused": false
+        },
+        {
+            "id": "opennet",
+            "name": "OpenNET",
+            "url": "https://www.opennet.ru/opennews/opennews_all_utf.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 40,
+            "itemsUsed": 1,
+            "etag": "W/\"6af11fc4-cc4a\"",
+            "lastModified": "Mon, 09 Nov 2026 01:20:04 GMT",
+            "paused": false
+        },
+        {
+            "id": "securitylab",
+            "name": "SecurityLab",
+            "url": "https://www.securitylab.ru/_services/export/rss/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 2,
+            "paused": false
+        },
+        {
+            "id": "xakep",
+            "name": "Хакер",
+            "url": "https://xakep.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "\"8b2e3d6f2a6e3071dd017032602bfcfd\"",
+            "lastModified": "Fri, 06 Nov 2026 18:30:45 GMT",
+            "paused": false
+        },
+        {
+            "id": "stopgame",
+            "name": "StopGame",
+            "url": "https://rss.stopgame.ru/rss_news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 0,
+            "etag": "\"6af1454a-8ba2\"",
+            "lastModified": "Mon, 09 Nov 2026 04:00:10 GMT",
+            "paused": false
+        },
+        {
+            "id": "kanobu-pulse",
+            "name": "Kanobu",
+            "url": "https://www.igromania.ru/rss/news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 12:05:07 GMT",
+            "paused": false
+        },
+        {
+            "id": "cubiq",
+            "name": "Cubiq",
+            "url": "https://cubiq.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 1,
+            "lastModified": "Sun, 08 Nov 2026 13:21:52 GMT",
+            "paused": false
+        },
+        {
+            "id": "4pda",
+            "name": "4PDA",
+            "url": "https://4pda.to/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 2,
+            "lastModified": "Mon, 09 Nov 2026 04:06:29 GMT",
+            "paused": false
+        },
+        {
+            "id": "overclockers",
+            "name": "Overclockers.ru",
+            "url": "https://overclockers.ru/rss/news.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 20,
+            "itemsUsed": 0,
+            "etag": "\"6af1466e-4069\"",
+            "lastModified": "Mon, 09 Nov 2026 04:05:02 GMT",
+            "paused": false
+        },
+        {
+            "id": "androidinsider",
+            "name": "AndroidInsider",
+            "url": "https://androidinsider.ru/feed",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 20,
+            "itemsUsed": 1,
+            "etag": "\"f1d8071f59f24038dc0751426ec8e912\"",
+            "paused": false
+        },
+        {
+            "id": "nplus1",
+            "name": "N+1",
+            "url": "https://nplus1.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "elementy",
+            "name": "Элементы",
+            "url": "https://elementy.ru/rss/news",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "postnauka",
+            "name": "ПостНаука",
+            "url": "https://postnauka.org/feed",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 4,
+            "itemsUsed": 0,
+            "etag": "W/\"3de63ec8609b910de7b65211f4317374\"",
+            "paused": false
+        },
+        {
+            "id": "mirf",
+            "name": "Мир фантастики",
+            "url": "https://www.mirf.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 12,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "intermedia",
+            "name": "InterMedia",
+            "url": "https://www.intermedia.ru/rss/news.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "newsmuz",
+            "name": "NewsMuz",
+            "url": "https://newsmuz.com/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "\"1794187675-0\"",
+            "lastModified": "Mon, 09 Nov 2026 01:27:55 GMT",
+            "paused": false
+        },
+        {
+            "id": "bbc-russian",
+            "name": "BBC Russian",
+            "url": "https://feeds.bbci.co.uk/russian/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 37,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "meduza-news",
+            "name": "Meduza: новости",
+            "url": "https://meduza.io/rss/news",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 30,
+            "itemsUsed": 0,
+            "lastModified": "Mon, 09 Nov 2026 04:09:31 GMT",
+            "paused": false
+        },
+        {
+            "id": "kommersant-world",
+            "name": "Коммерсантъ: мир",
+            "url": "https://www.kommersant.ru/rss/section-world.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 80,
+            "itemsUsed": 0,
+            "etag": "W/\"42f6f727ff6fdd1:0\"",
+            "lastModified": "Mon, 09 Nov 2026 04:02:36 GMT",
+            "paused": false
+        },
+        {
+            "id": "interfax",
+            "name": "Интерфакс",
+            "url": "https://www.interfax.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 25,
+            "itemsUsed": 0,
+            "lastModified": "Mon, 09 Nov 2026 04:00:00 GMT",
+            "paused": false
+        },
+        {
+            "id": "fantlab",
+            "name": "FantLab",
+            "url": "https://fantlab.ru/news.rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 76,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "astronet",
+            "name": "Астронет",
+            "url": "https://www.astronet.ru/db/rss.xml",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 1,
+            "itemsUsed": 0,
+            "lastModified": "Sun, 08 Nov 2026 21:30:05 GMT",
+            "paused": false
+        },
+        {
+            "id": "securelist",
+            "name": "Securelist",
+            "url": "https://securelist.ru/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "W/\"c5d6f67af8774e29ae55edc996868a18\"",
+            "lastModified": "Fri, 06 Nov 2026 10:00:17 GMT",
+            "paused": false
+        },
+        {
+            "id": "kaspersky-blog",
+            "name": "Блог Касперского",
+            "url": "https://www.kaspersky.ru/blog/feed/",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 10,
+            "itemsUsed": 0,
+            "etag": "W/\"46734048f3084cfcf6014651d3cce3cd\"",
+            "lastModified": "Thu, 05 Nov 2026 19:05:36 GMT",
+            "paused": false
+        },
+        {
+            "id": "dtf",
+            "name": "DTF",
+            "url": "https://dtf.ru/rss",
+            "enabled": true,
+            "ok": true,
+            "httpStatus": 200,
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 1,
+            "itemsSeen": 12,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "animag",
+            "name": "АниМаг",
+            "url": "https://animag.ru/",
+            "enabled": true,
+            "ok": false,
+            "error": "общий таймаут 20 с",
+            "fetchedAt": "2026-11-09T04:09:02.653234033Z",
+            "attempts": 3,
+            "itemsSeen": 0,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "darker",
+            "name": "DARKER",
+            "url": "https://darkermagazine.ru/feed",
+            "enabled": false,
+            "ok": true,
+            "attempts": 0,
+            "itemsSeen": 0,
+            "itemsUsed": 0,
+            "paused": false
+        },
+        {
+            "id": "nkj",
+            "name": "Наука и жизнь",
+            "url": "https://www.nkj.ru/rss/",
+            "enabled": false,
+            "ok": true,
+            "attempts": 0,
+            "itemsSeen": 0,
+            "itemsUsed": 0,
+            "paused": false
+        }
+    ],
+    "counts": {
+        "seen": 1414,
+        "published": 20,
+        "duplicates": 20,
+        "outOfWindow": 958,
+        "excluded": 26,
+        "lowConfidence": 362,
+        "badDate": 2,
+        "notRussian": 9
+    },
+    "collectionFailed": false,
+    "coverage": [
+        {
+            "category": "ai",
+            "enabledSources": 3,
+            "sourceDomains": 2,
+            "eligible": 20,
+            "published": 5,
+            "note": "в выпуске 5 из 20 прошедших порог"
+        },
+        {
+            "category": "gadgets",
+            "enabledSources": 5,
+            "sourceDomains": 5,
+            "eligible": 5,
+            "published": 4,
+            "note": "в выпуске 4 из 5 прошедших порог"
+        },
+        {
+            "category": "programming",
+            "enabledSources": 5,
+            "sourceDomains": 3,
+            "eligible": 2,
+            "published": 2,
+            "note": "в выпуске 2"
+        },
+        {
+            "category": "hardware",
+            "enabledSources": 5,
+            "sourceDomains": 4,
+            "eligible": 5,
+            "published": 4,
+            "note": "в выпуске 4 из 5 прошедших порог"
+        },
+        {
+            "category": "security",
+            "enabledSources": 7,
+            "sourceDomains": 7,
+            "eligible": 2,
+            "published": 2,
+            "note": "в выпуске 2"
+        },
+        {
+            "category": "space",
+            "enabledSources": 5,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "brain",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "games",
+            "enabledSources": 7,
+            "sourceDomains": 6,
+            "eligible": 3,
+            "published": 3,
+            "note": "в выпуске 3"
+        },
+        {
+            "category": "anime",
+            "enabledSources": 1,
+            "sourceDomains": 1,
+            "eligible": 0,
+            "published": 0,
+            "note": "источники этой группы не ответили"
+        },
+        {
+            "category": "music",
+            "enabledSources": 2,
+            "sourceDomains": 2,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "books",
+            "enabledSources": 2,
+            "sourceDomains": 2,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "oddities",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        },
+        {
+            "category": "world",
+            "enabledSources": 4,
+            "sourceDomains": 4,
+            "eligible": 0,
+            "published": 0,
+            "note": "в окне 36 ч порог не прошёл ни один пункт"
+        }
+    ]
+}

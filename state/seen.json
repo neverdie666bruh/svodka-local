@@ -925,6 +925,300 @@
                 "году"
             ],
             "editionDate": "2026-11-10"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/10/14-dnei-raboty-na-odnoi-zariadke-hyperos-4-oflain-navigaciia-nfc-vodozashhita-umnye-casy-xiaomi-watch-s5-vyxodia-za-predelami-kitaia.html",
+            "tokens": [
+                "дней",
+                "работы",
+                "одной",
+                "зарядке",
+                "hyperos",
+                "офлайн",
+                "навигация",
+                "nfc",
+                "водозащита",
+                "умные",
+                "часы",
+                "xiaomi",
+                "watch",
+                "выходят",
+                "пределы",
+                "китая"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://3dnews.ru/1151117",
+            "tokens": [
+                "openai",
+                "anthropic",
+                "начали",
+                "блокировать",
+                "пользователей",
+                "реверс",
+                "инжиринг",
+                "помощью"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://androidinsider.ru/novosti/sobralsya-brat-flagman-na-11-11-proveril-czeny-a-oni-vyrosli.html",
+            "tokens": [
+                "смартфоны",
+                "android",
+                "которые",
+                "отдают",
+                "скидкой",
+                "честь"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://stopgame.ru/newsdata/73439/v_steam_dobavili_informaciyu_o_chastote_kadrov_pri_igre_na_steam_deck",
+            "tokens": [
+                "steam",
+                "добавили",
+                "информацию",
+                "частоте",
+                "кадров",
+                "игре",
+                "deck"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://www.igromania.ru/news/169841/rolevaya-igra-lestvitsa-v-stile-disco-elysium-vyishla-v-steam-i-dostupna-besplatno",
+            "tokens": [
+                "ролевая",
+                "игра",
+                "лествица",
+                "стиле",
+                "disco",
+                "elysium",
+                "вышла",
+                "steam",
+                "доступна",
+                "бесплатно"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://habr.com/ru/companies/pt/articles/1106050",
+            "tokens": [
+                "откройте",
+                "приказ",
+                "эксплуатация",
+                "cve",
+                "2026",
+                "21513",
+                "доставки",
+                "jscript",
+                "бэкдора"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://4pda.to/2026/11/11/463145/maket_iphone_air_2_raskryl_ozhidaemyj_dizajn_smartfona",
+            "tokens": [
+                "макет",
+                "iphone",
+                "air",
+                "раскрыл",
+                "ожидаемый",
+                "дизайн",
+                "смартфона"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://3dnews.ru/1151126",
+            "tokens": [
+                "создатели",
+                "cyanogen",
+                "готовят",
+                "linux",
+                "напичканный",
+                "новая",
+                "kora",
+                "объединит",
+                "разные",
+                "нейросети"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://3dnews.ru/1151120",
+            "tokens": [
+                "openai",
+                "создала",
+                "аварийный",
+                "выключатель",
+                "особо",
+                "опасных",
+                "непослушных",
+                "моделей"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://cubiq.ru/luchshie-besplatnye-igry-dlya-switch",
+            "tokens": [
+                "лучшие",
+                "бесплатные",
+                "игры",
+                "nintendo",
+                "switch"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106234",
+            "tokens": [
+                "обновление",
+                "открытого",
+                "музыкального",
+                "плеера",
+                "fooyin",
+                "windows",
+                "linux"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://xakep.ru/2026/11/10/sshole-attacks",
+            "tokens": [
+                "уязвимость",
+                "sshole",
+                "взяли",
+                "вооружение",
+                "хакеры"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/10/malo-bylo-problem-s-geforce-rtx-5090-i-5080-u-vladelca-geforce-rtx-5070-rasplavilsia-razieem-pitaniia.html",
+            "tokens": [
+                "мало",
+                "было",
+                "проблем",
+                "geforce",
+                "rtx",
+                "5090",
+                "5080",
+                "владельца",
+                "5070",
+                "расплавился",
+                "разъем",
+                "питания"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://3dnews.ru/1151122",
+            "tokens": [
+                "будущие",
+                "ryzen",
+                "получат",
+                "ядер",
+                "много",
+                "кеша",
+                "одном",
+                "кристалле",
+                "amd",
+                "раскрыла",
+                "подробности",
+                "архитектуры",
+                "zen"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/10/zacem-pokupat-doroguiu-operativku-esli-est-ssd-amd-predstavila-texnologiiu-mext-kotoraia-sposobna-zamenit-do-75-ozu-v-serverax-fles-nakopiteliami.html",
+            "tokens": [
+                "зачем",
+                "покупать",
+                "дорогую",
+                "оперативку",
+                "если",
+                "есть",
+                "ssd",
+                "amd",
+                "представила",
+                "технологию",
+                "mext",
+                "которая",
+                "способна",
+                "заменить",
+                "озу",
+                "серверах",
+                "флеш",
+                "накопителями"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://xakep.ru/2026/11/10/d-link-0-days",
+            "tokens": [
+                "link",
+                "предупреждает",
+                "нескольких",
+                "day",
+                "свитчах",
+                "серии",
+                "dgs",
+                "3130"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://fantlab.ru/blogarticle98840",
+            "tokens": [
+                "центре",
+                "внимания",
+                "2026"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://www.mirf.ru/news/fantast-vpervye-poluchil-bukerovskuu-premiu-m-djon-harrison-za-konec-vsego",
+            "tokens": [
+                "фантаст",
+                "получил",
+                "букеровскую",
+                "премию",
+                "джон",
+                "харрисон",
+                "конец",
+                "всего"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/10/astronomy-otkryli-kandidata-v-temnye-galaktiki-s-zapasom-vodoroda-na-2-mlrd-solnc.html",
+            "tokens": [
+                "астрономы",
+                "открыли",
+                "кандидата",
+                "темные",
+                "галактики",
+                "запасом",
+                "водорода",
+                "млрд",
+                "солнц"
+            ],
+            "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://animag.ru/news/podrobnosti-filma-ghostyoru-no-hate",
+            "tokens": [
+                "подробности",
+                "фильма",
+                "ghost",
+                "yoru",
+                "hate"
+            ],
+            "editionDate": "2026-11-11"
         }
     ]
 }

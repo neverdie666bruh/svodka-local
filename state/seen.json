@@ -1219,6 +1219,304 @@
                 "hate"
             ],
             "editionDate": "2026-11-11"
+        },
+        {
+            "url": "https://habr.com/ru/companies/selectel/articles/1106194",
+            "tokens": [
+                "openai",
+                "заявила",
+                "опровержении",
+                "eth",
+                "anthropic",
+                "подала",
+                "ipo",
+                "происходит"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/11/odin-iz-samyx-populiarnyx-android-smartfonov-v-mire-polucil-andoird-17-samsung-vypustila-one-ui-90-dlia-galaxy-a15-4g-za-predelami-iuznoi-korei.html",
+            "tokens": [
+                "один",
+                "самых",
+                "популярных",
+                "android",
+                "смартфонов",
+                "мире",
+                "получил",
+                "samsung",
+                "выпустила",
+                "one",
+                "galaxy",
+                "a15",
+                "пределами",
+                "южной",
+                "кореи"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/11/krizis-idei-v-samsung-maket-galaxy-s27-ultra-sravnili-so-smartfonom-poco.html",
+            "tokens": [
+                "кризис",
+                "идей",
+                "samsung",
+                "макет",
+                "galaxy",
+                "s27",
+                "ultra",
+                "сравнили",
+                "смартфоном",
+                "poco"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://3dnews.ru/1151143",
+            "tokens": [
+                "openai",
+                "ускорилась",
+                "пока",
+                "anthropic",
+                "замедлилась",
+                "выручка",
+                "взлетела",
+                "почти",
+                "втрое",
+                "маржа",
+                "стала",
+                "менее",
+                "отрицательной"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://androidinsider.ru/smartfony/poco-vypustila-kompaktnyj-flagman-k-11-11-dozhdalis-smartfona-kotoryj-udobno-derzhat-odnoj-rukoj.html",
+            "tokens": [
+                "новый",
+                "poco",
+                "x8s",
+                "выглядит",
+                "дорогой",
+                "xiaomi",
+                "стоит",
+                "гораздо",
+                "дешевле"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://stopgame.ru/newsdata/73466/nekotorye_vidyat_v_etom_problemu_a_my_vozmozhnost_indi_studii_ne_boyatsya_vypuskat_igry_ryadom_s_gta_vi",
+            "tokens": [
+                "некоторые",
+                "видят",
+                "этом",
+                "проблему",
+                "возможность",
+                "инди",
+                "студии",
+                "боятся",
+                "выпускать",
+                "игры",
+                "рядом",
+                "gta"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://3dnews.ru/1151169",
+            "tokens": [
+                "глава",
+                "anthropic",
+                "пообещал",
+                "победить",
+                "рак",
+                "помощью",
+                "через",
+                "лет"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://dtf.ru/games/5406211-dve-igry-piece-by-piece-na-nintendo-switch",
+            "tokens": [
+                "две",
+                "игры",
+                "названием",
+                "piece",
+                "выйдут",
+                "nintendo",
+                "switch",
+                "ноября",
+                "одном",
+                "наборе"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://securelist.ru/citrus-ransomware/117647",
+            "tokens": [
+                "citrus",
+                "ransomware",
+                "vless",
+                "трафика",
+                "sn00py",
+                "шифрования",
+                "llm",
+                "помощь"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106838",
+            "tokens": [
+                "зачем",
+                "написал",
+                "один",
+                "patroni",
+                "postgresql",
+                "встроенным",
+                "raft"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://3dnews.ru/1151172",
+            "tokens": [
+                "amd",
+                "придумала",
+                "сэкономить",
+                "миллионы",
+                "серверной",
+                "памяти",
+                "ssd",
+                "потерь",
+                "заменят",
+                "половину",
+                "дорогой",
+                "dram"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://fantlab.ru/blogarticle98860",
+            "tokens": [
+                "малоизвестная",
+                "классика",
+                "англо",
+                "американской",
+                "фантастики",
+                "гарри",
+                "бэйтс",
+                "лучшее"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://xakep.ru/2026/11/11/plex2shell-qnap",
+            "tokens": [
+                "уязвимости",
+                "plex2shell",
+                "используются",
+                "атак",
+                "nas",
+                "qnap"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://3dnews.ru/1151163",
+            "tokens": [
+                "ученые",
+                "придумали",
+                "капельное",
+                "охлаждение",
+                "процессоров",
+                "оно",
+                "сбивает",
+                "температуру",
+                "секунд"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106770",
+            "tokens": [
+                "база",
+                "mount",
+                "linux",
+                "простым",
+                "языком"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106734",
+            "tokens": [
+                "shopify",
+                "отказалась",
+                "react",
+                "native",
+                "пользу",
+                "swift",
+                "kotlin"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://fantlab.ru/blogarticle98853",
+            "tokens": [
+                "сага",
+                "алом",
+                "восстании",
+                "комплект",
+                "футляре",
+                "пирса",
+                "брауна",
+                "предзаказе"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106388",
+            "tokens": [
+                "почему",
+                "телескопу",
+                "elt",
+                "понадобилось",
+                "пять",
+                "зеркал",
+                "разбираем",
+                "оптическую",
+                "схему",
+                "метрового",
+                "гиганта"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://animag.ru/news/data-vyhoda-sikvela-boushoku-no-berserk",
+            "tokens": [
+                "дата",
+                "выхода",
+                "сиквела",
+                "boushoku",
+                "berserk"
+            ],
+            "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://www.mirf.ru/news/tretii-sezon-anime-magiya-i-muskuly-startuet-v-yanvare",
+            "tokens": [
+                "третий",
+                "сезон",
+                "аниме",
+                "магия",
+                "мускулы",
+                "стартует",
+                "январе"
+            ],
+            "editionDate": "2026-11-12"
         }
     ]
 }

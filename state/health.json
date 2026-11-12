@@ -4,205 +4,205 @@
             "id": "habr-ai",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-ml",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-infosec",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-android",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-gadgets",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-hardware",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-astronomy",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-gamedev",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-develop",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "habr-popsci",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "3dnews",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 04:00:32 GMT"
+            "lastModified": "Thu, 12 Nov 2026 04:00:26 GMT"
         },
         {
             "id": "3dnews-games",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "3dnews-soft",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 03:58:58 GMT"
+            "lastModified": "Thu, 12 Nov 2026 04:00:59 GMT"
         },
         {
             "id": "ixbt",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"97eff94fb85bf4fb7da74bd69e08a620\""
+            "etag": "\"30d0f18a53cbc89971c7da5fa6d58aff\""
         },
         {
             "id": "ixbt-hard",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"31c3e3d762e0072201f9f6f8877079d7\""
+            "etag": "\"2ae5e78d2c339ec847a2030331f93d79\""
         },
         {
             "id": "opennet",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "W/\"6af3e845-c6e3\"",
-            "lastModified": "Wed, 11 Nov 2026 04:00:05 GMT"
+            "etag": "W/\"6af51445-c829\"",
+            "lastModified": "Thu, 12 Nov 2026 01:20:05 GMT"
         },
         {
             "id": "securitylab",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "xakep",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"01227c02141fda52f6a7a4bfa55b9104\"",
-            "lastModified": "Tue, 10 Nov 2026 20:51:15 GMT"
+            "etag": "\"ee59ac8d56daac2c278a873ea81cd114\"",
+            "lastModified": "Wed, 11 Nov 2026 18:14:22 GMT"
         },
         {
             "id": "stopgame",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"6af3e886-8412\"",
-            "lastModified": "Wed, 11 Nov 2026 04:01:10 GMT"
+            "etag": "\"6af539ca-8534\"",
+            "lastModified": "Thu, 12 Nov 2026 04:00:10 GMT"
         },
         {
             "id": "kanobu-pulse",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 03:43:00 GMT"
+            "lastModified": "Thu, 12 Nov 2026 03:58:04 GMT"
         },
         {
             "id": "cubiq",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Tue, 10 Nov 2026 23:04:00 GMT"
+            "lastModified": "Thu, 12 Nov 2026 01:06:44 GMT"
         },
         {
             "id": "4pda",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 04:08:10 GMT"
+            "lastModified": "Thu, 12 Nov 2026 03:10:27 GMT"
         },
         {
             "id": "overclockers",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"6af3e96e-4011\"",
-            "lastModified": "Wed, 11 Nov 2026 04:05:02 GMT"
+            "etag": "\"6af53aed-3ece\"",
+            "lastModified": "Thu, 12 Nov 2026 04:05:01 GMT"
         },
         {
             "id": "androidinsider",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"59a53bbf925f48f1b9781bebc8200fef\""
+            "etag": "\"af7f678d7defb3576b65c34d42d419d6\""
         },
         {
             "id": "nplus1",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "elementy",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "postnauka",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
             "etag": "W/\"82afc53540288deb98da4f680529735d\""
         },
@@ -210,86 +210,86 @@
             "id": "mirf",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "intermedia",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "newsmuz",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"1794360544-0\"",
-            "lastModified": "Wed, 11 Nov 2026 01:29:04 GMT"
+            "etag": "\"1794447145-0\"",
+            "lastModified": "Thu, 12 Nov 2026 01:32:25 GMT"
         },
         {
             "id": "bbc-russian",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "meduza-news",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 04:08:20 GMT"
+            "lastModified": "Thu, 12 Nov 2026 04:07:08 GMT"
         },
         {
             "id": "kommersant-world",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"8b9819179071dd1:0\"",
-            "lastModified": "Wed, 11 Nov 2026 03:52:36 GMT"
+            "etag": "\"97cc5b15972dd1:0\"",
+            "lastModified": "Thu, 12 Nov 2026 03:55:45 GMT"
         },
         {
             "id": "interfax",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Wed, 11 Nov 2026 04:01:00 GMT"
+            "lastModified": "Thu, 12 Nov 2026 03:59:00 GMT"
         },
         {
             "id": "fantlab",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "astronet",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "lastModified": "Tue, 10 Nov 2026 21:30:08 GMT"
+            "lastModified": "Wed, 11 Nov 2026 21:30:05 GMT"
         },
         {
             "id": "securelist",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "W/\"d5c945a444cbb30c25e55fd0381cc29d\"",
-            "lastModified": "Tue, 10 Nov 2026 10:09:22 GMT"
+            "etag": "W/\"d2302abb6ffce0b8e4e63095101c467e\"",
+            "lastModified": "Wed, 11 Nov 2026 10:00:08 GMT"
         },
         {
             "id": "kaspersky-blog",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
             "etag": "W/\"af3155adadb1f1e3a78fd9f1aa881a37\"",
             "lastModified": "Tue, 10 Nov 2026 14:53:17 GMT"
@@ -298,28 +298,28 @@
             "id": "dtf",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "animag",
             "ok": true,
             "httpStatus": 200,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0,
-            "etag": "\"1794366528-0\"",
-            "lastModified": "Wed, 11 Nov 2026 03:08:48 GMT"
+            "etag": "\"1794452861-0\"",
+            "lastModified": "Thu, 12 Nov 2026 03:07:41 GMT"
         },
         {
             "id": "darker",
             "ok": true,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         },
         {
             "id": "nkj",
             "ok": true,
-            "checkedAt": "2026-11-11T04:07:52.656306598Z",
+            "checkedAt": "2026-11-12T04:06:41.572539580Z",
             "consecutiveFailures": 0
         }
     ]

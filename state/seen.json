@@ -1517,6 +1517,315 @@
                 "январе"
             ],
             "editionDate": "2026-11-12"
+        },
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66669",
+            "tokens": [
+                "уязвимость",
+                "git",
+                "допускающая",
+                "выполнение",
+                "кода",
+                "клонировании",
+                "вредоносного",
+                "репозитория"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://3dnews.ru/1151241",
+            "tokens": [
+                "могут",
+                "погубить",
+                "всех",
+                "нас",
+                "сша",
+                "через",
+                "суд",
+                "потребовали",
+                "запретить",
+                "openai",
+                "google",
+                "другим",
+                "обучать",
+                "передовые",
+                "модели"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107102",
+            "tokens": [
+                "почему",
+                "chatgpt",
+                "вчера",
+                "ссылался",
+                "сайт",
+                "бренда",
+                "сегодня",
+                "считать",
+                "видимость",
+                "нейросетях"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107326",
+            "tokens": [
+                "публиковать",
+                "статьи",
+                "чтобы",
+                "нейросети",
+                "вас",
+                "цитировали",
+                "алисы",
+                "chatgpt",
+                "perplexity",
+                "deepseek"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://xakep.ru/2026/11/12/november-2026-patches",
+            "tokens": [
+                "microsoft",
+                "выпустила",
+                "патчи",
+                "1200",
+                "уязвимостей",
+                "включая",
+                "day",
+                "outlook"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://4pda.to/2026/11/12/463243/xiaomi_predstavila_v_rossii_tonkie_smart_chasy_watch_s5_s_avtonomnostyu_do_14_dnej",
+            "tokens": [
+                "xiaomi",
+                "представила",
+                "россии",
+                "тонкие",
+                "смарт",
+                "часы",
+                "watch",
+                "автономностью",
+                "дней"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.igromania.ru/news/169878/na-pc-skoro-mogut-vyijti-tes-iii-morrowind-igryi-serii-zvyozdnyie-vojnyi-i-drugaya-klassika-s-og-xbox",
+            "tokens": [
+                "скоро",
+                "могут",
+                "выйти",
+                "tes",
+                "iii",
+                "morrowind",
+                "игры",
+                "серии",
+                "звездные",
+                "войны",
+                "другая",
+                "классика",
+                "xbox"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://nplus1.ru/news/2026/11/12/pn-new-candidates",
+            "tokens": [
+                "алгоритм",
+                "справился",
+                "поиском",
+                "планетарных",
+                "туманностей",
+                "хуже",
+                "астрономов"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.igromania.ru/news/169876/tomb-raider-catalyst-doberyotsya-i-do-nintendo-switch-2-amazon-napomnila-o-relize-igryi-v-2028-godu",
+            "tokens": [
+                "tomb",
+                "raider",
+                "catalyst",
+                "доберется",
+                "nintendo",
+                "switch",
+                "amazon",
+                "напомнила",
+                "релизе",
+                "игры",
+                "2028",
+                "году"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/12/litrovyi-pk-gigabyte-s-processorom-nvidia-grace-i-grafikoi-blackwel-polucil-128-gb-ozu-i-ssd-na-4-tb.html",
+            "tokens": [
+                "литровый",
+                "gigabyte",
+                "процессором",
+                "nvidia",
+                "grace",
+                "графикой",
+                "blackwell",
+                "получил",
+                "128",
+                "озу",
+                "ssd"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/12/v-prodaze-poiavilas-geforce-rtx-5090-s-96-gb-pamiati.html",
+            "tokens": [
+                "продаже",
+                "появилась",
+                "geforce",
+                "rtx",
+                "5090",
+                "памяти"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1106954",
+            "tokens": [
+                "смартфонах",
+                "google",
+                "pixel",
+                "перестают",
+                "работать",
+                "сразу",
+                "камеры",
+                "обновления",
+                "android"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/12/iphone-18-pro-max-obosel-samsung-galaxy-s26-ultra-i-30-drugix-modelei-smartfonov-v-bolsom-teste-na-avtonomnost.html",
+            "tokens": [
+                "iphone",
+                "pro",
+                "max",
+                "обошел",
+                "samsung",
+                "galaxy",
+                "s26",
+                "ultra",
+                "других",
+                "моделей",
+                "смартфонов",
+                "большом",
+                "тесте",
+                "автономность"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66671",
+            "tokens": [
+                "первый",
+                "выпуск",
+                "разрядной",
+                "версии",
+                "клиента",
+                "steam",
+                "linux"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://fantlab.ru/blogarticle98880",
+            "tokens": [
+                "задачи",
+                "трех",
+                "тел",
+                "новых",
+                "имен",
+                "живет",
+                "китайская",
+                "научная",
+                "фантастика",
+                "какие",
+                "перспективы",
+                "нее",
+                "русском",
+                "книжном",
+                "рынке"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107152",
+            "tokens": [
+                "три",
+                "маршрута",
+                "своего",
+                "сервера",
+                "xray",
+                "core",
+                "внутри",
+                "android",
+                "приложения",
+                "kotlin",
+                "multiplatform"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://fantlab.ru/blogarticle98871",
+            "tokens": [
+                "смерть",
+                "пионерском",
+                "галстуке",
+                "смелик",
+                "горбунова"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://nplus1.ru/news/2026/11/12/fluoridated-and-cognitive",
+            "tokens": [
+                "фторирование",
+                "воды",
+                "повлияло",
+                "когнитивные",
+                "функции",
+                "пожилом",
+                "возрасте"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://animag.ru/news/treyler-i-komanda-seriala-nabe-ni-dangan-wo-ukenagara",
+            "tokens": [
+                "трейлер",
+                "команда",
+                "сериала",
+                "nabe",
+                "dangan",
+                "ukenagara"
+            ],
+            "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://animag.ru/news/data-vyhoda-seriala-toratsugumi-tsugumi-project",
+            "tokens": [
+                "дата",
+                "выхода",
+                "сериала",
+                "toratsugumi",
+                "tsugumi",
+                "project"
+            ],
+            "editionDate": "2026-11-13"
         }
     ]
 }

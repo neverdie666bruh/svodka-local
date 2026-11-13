@@ -1,8 +1,8 @@
 {
     "schema": 1,
     "timezone": "Asia/Dushanbe",
-    "latest": "2026-11-12",
-    "checkedAt": "2026-11-12T04:06:41.572539580Z",
+    "latest": "2026-11-13",
+    "checkedAt": "2026-11-13T04:05:18.138619922Z",
     "schedule": {
         "timezone": "Asia/Dushanbe",
         "localTime": "08:15",
@@ -11,6 +11,12 @@
         "guarantee": "Точная минута не обещается: GitHub может задержать или пропустить запуск."
     },
     "editions": [
+        {
+            "date": "2026-11-13",
+            "file": "2026-11-13.json",
+            "itemCount": 20,
+            "partial": false
+        },
         {
             "date": "2026-11-12",
             "file": "2026-11-12.json",

@@ -1826,6 +1826,289 @@
                 "project"
             ],
             "editionDate": "2026-11-13"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/13/xiaomi-vypustila-finalnuiu-hyperos-4-dlia-14-modelei-smartfonov-xiaomi-i-redmi-spisok-ustroistv.html",
+            "tokens": [
+                "xiaomi",
+                "выпустила",
+                "финальную",
+                "hyperos",
+                "моделей",
+                "смартфонов",
+                "redmi",
+                "список",
+                "устройств"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://3dnews.ru/1151279",
+            "tokens": [
+                "chatgpt",
+                "появился",
+                "кошелек",
+                "теперь",
+                "агенты",
+                "смогут",
+                "совершать",
+                "покупки",
+                "имени",
+                "пользователя"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/14/okolo-30-vladelcev-iphone-duo-vernuli-smartfon-apple-v-tecenie-dvux-nedel-itogi-bolsogo-oprosa-9to5mac.html",
+            "tokens": [
+                "около",
+                "владельцев",
+                "iphone",
+                "duo",
+                "вернули",
+                "смартфон",
+                "apple",
+                "течение",
+                "двух",
+                "недель",
+                "итоги",
+                "большого",
+                "опроса",
+                "9to5mac"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107724",
+            "tokens": [
+                "базы",
+                "данных",
+                "docker",
+                "один",
+                "вечер",
+                "postgresql",
+                "clickhouse",
+                "qdrant"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://3dnews.ru/1151289",
+            "tokens": [
+                "процессоры",
+                "могут",
+                "повторить",
+                "судьбу",
+                "видеокарт",
+                "бум",
+                "грозит",
+                "новым",
+                "дефицитом",
+                "комплектующих"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://4pda.to/2026/11/13/463284/insajdy_3977_srazu_shest_smartfonov_nothing_shirokie_oppo_i_vivo_a_takzhe_novyj_galaxy_xcover",
+            "tokens": [
+                "инсайды",
+                "3977",
+                "сразу",
+                "шесть",
+                "смартфонов",
+                "nothing",
+                "широкие",
+                "oppo",
+                "vivo",
+                "новый",
+                "galaxy",
+                "xcover"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107650",
+            "tokens": [
+                "openai",
+                "поддержала",
+                "ограничения",
+                "поставки",
+                "чипов",
+                "китай",
+                "отставки",
+                "дженсена",
+                "хуанга"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/companies/speshu_ai/articles/1107596",
+            "tokens": [
+                "перевод",
+                "можно",
+                "доверять",
+                "покупках",
+                "проверка",
+                "chatgpt",
+                "gemini",
+                "perplexity"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://www.mirf.ru/podcast/protivostoim-drevnim-v-videoigrah-po-lavkraftu-v-247-vypuske-fantasticheskogo-podkasta",
+            "tokens": [
+                "противостоим",
+                "древним",
+                "видеоиграх",
+                "лавкрафту",
+                "247",
+                "выпуске",
+                "фантастического",
+                "подкаста"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://cubiq.ru/luchshie-igry-dlya-dvoih-na-nintendo-switch",
+            "tokens": [
+                "лучшие",
+                "игры",
+                "двоих",
+                "nintendo",
+                "switch"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107612",
+            "tokens": [
+                "универсальный",
+                "язык",
+                "программирования",
+                "человеков"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://www.ixbt.com/news/2026/11/12/plata-za-8-pozvolila-prevratit-videokartu-nvidia-s-8-gb-dostupnoi-pamiati-v-uskoritel-urovnia-a100-s-80-gb-pamiati.html",
+            "tokens": [
+                "плата",
+                "позволила",
+                "превратить",
+                "видеокарту",
+                "nvidia",
+                "доступной",
+                "памяти",
+                "ускоритель",
+                "уровня",
+                "a100"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://xakep.ru/2026/11/13/n-able-0days",
+            "tokens": [
+                "компания",
+                "able",
+                "отключила",
+                "платформу",
+                "central",
+                "обнаружения",
+                "уязвимостей",
+                "нулевого"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107512",
+            "tokens": [
+                "собираем",
+                "рекламные",
+                "шортсы",
+                "прямо",
+                "движка",
+                "игры",
+                "godot",
+                "python",
+                "ffmpeg"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://fantlab.ru/news7654",
+            "tokens": [
+                "лауреаты",
+                "всероссийской",
+                "литпремии",
+                "области"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://habr.com/ru/articles/1107658",
+            "tokens": [
+                "уязвимости",
+                "исправили",
+                "первая",
+                "неделя",
+                "html",
+                "виджетов",
+                "telegram"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://www.opennet.ru/opennews/art.shtml?num=66680",
+            "tokens": [
+                "выпуск",
+                "rust",
+                "100",
+                "компилятор",
+                "tsrs",
+                "typescript",
+                "оптимизатор",
+                "компиляции",
+                "rustd",
+                "ftl"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://www.intermedia.ru/news/408110",
+            "tokens": [
+                "выпустили",
+                "новый",
+                "альбом",
+                "последней",
+                "записью",
+                "долли",
+                "партон"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://animag.ru/news/podrobnosti-isekai-tensei-soudouki",
+            "tokens": [
+                "подробности",
+                "isekai",
+                "tensei",
+                "soudouki"
+            ],
+            "editionDate": "2026-11-14"
+        },
+        {
+            "url": "https://animag.ru/news/anonsirovana-anime-adaptaciya-ranobe-isekai-douraku-ni-akitara",
+            "tokens": [
+                "анонсирована",
+                "аниме",
+                "адаптация",
+                "ранобэ",
+                "isekai",
+                "douraku",
+                "akitara"
+            ],
+            "editionDate": "2026-11-14"
         }
     ]
 }
